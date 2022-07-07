@@ -1,0 +1,8 @@
+asgiref==3.5.2
+Django==4.0.6
+djangorestframework==3.13.1
+mysqlclient==2.1.1
+python-decouple==3.6
+pytz==2022.1
+shortuuid==1.0.9
+sqlparse==0.4.2

@@ -28,7 +28,6 @@ DEBUG = False
 
 ALLOWED_HOSTS = ['pasteme.pythonanywhere.com']
 
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -41,6 +40,7 @@ INSTALLED_APPS = [
 
     # 3rd parties
     'rest_framework',
+    'drf_yasg',
 
     # apps
     'snippet',
@@ -135,6 +135,8 @@ MEDIA_ROOT = 'media/'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+DOMAIN_URL = 'https://pasteme.pythonanywhere.com/'
 
 # Import local settings
 

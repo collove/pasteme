@@ -22,7 +22,7 @@ class Snippet(models.Model):
         verbose_name='Language',
         max_length=120,
         choices=LANGUAGES,
-        blank=True,
+        default='plaintext',
     )
     created_at = models.DateTimeField(
         verbose_name='Created at',

@@ -1,8 +1,6 @@
 {% extends '_base.html' %}
 {% load static %}
 
-{% block title %}{{snippet.title}} ({{snippet.language}}){% endblock %}
-
 {% block addon_style %}
 <link rel="stylesheet" href="{% static 'css/themes/default.min.css' %}">
 {% endblock %}
@@ -15,10 +13,8 @@
 {% block content %}
 <section>
     <div class="container">
-        <h3>{{snippet.title}}</h3><br>
-        <div>
-            <pre class="rounded"><code class="language-{{snippet.language}}">{{snippet.body}}</code></pre>
-        </div>
+        <h3>Opps!</h3>
+        <p>Looks the page you're looking for is missing at the moment. I mean 404.</p>
     </div>
 </section>
 {% endblock %}

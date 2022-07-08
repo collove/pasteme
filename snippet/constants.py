@@ -1,15 +1,11 @@
 # Language choices
 
 LANGUAGES = (
-    ('arduino', 'Arduino'),
     ('bash', 'Bash'),
     ('c', 'C'),
     ('cpp', 'C++'),
     ('csharp', 'C#'),
     ('css', 'CSS'),
-    ('dart', 'Dart'),
-    ('docker', 'DockerFile'),
-    ('docker-compose', 'DockerCompose'),
     ('go', 'Go'),
     ('html', 'HTML'),
     ('java', 'Java'),
@@ -17,8 +13,8 @@ LANGUAGES = (
     ('json', 'JSON'),
     ('lua', 'Lua'),
     ('md', 'markdown'),
-    ('mysql', 'MySQL'),
     ('php', 'PHP'),
+    ('plaintext', 'PlainText'),
     ('python', 'Python'),
     ('rb', 'Ruby'),
 )

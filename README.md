@@ -1,4 +1,4 @@
-## PasteMe!
+## > PasteMe
 A RESTful pastebin service made for [@hashnode](https://github.com/hashnode) purposes powered by the [@PlanetScale](https://github.com/planetscale) MySQL database. There is a minimal UI interface designed with the Bootstrap framework to show the information but the focuse is on the RESTful service where you can access the services through the APIs.
 
 ### Technologies & Services

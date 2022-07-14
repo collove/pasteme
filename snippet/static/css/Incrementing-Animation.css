@@ -1,0 +1,35 @@
+.all-capital {
+  text-transform: uppercase;
+}
+
+.counter-font {
+  font-size: 60px;
+  font-weight: 500;
+  line-height: 76px;
+  letter-spacing: 0px;
+  text-align: center;
+}
+
+span.plus-k::after {
+  content: 'K +';
+}
+
+span.plus::after {
+  content: '+';
+}
+
+.Justify-Flex-Center {
+  display: flex;
+  justify-content: center;
+}
+
+.font-dark {
+  color: var(--primary-color);
+}
+
+.Justify-Flex-Center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+

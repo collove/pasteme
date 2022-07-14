@@ -1,6 +1,5 @@
 {% extends '_base.html' %}
 {% load static %}
-{% block home_active %}active{% endblock %}
 
 {% block addon_style %}
 <link rel="stylesheet" href="{% static 'css/themes/default.min.css' %}">
@@ -12,49 +11,43 @@
 {% endblock %}
 
 {% block content %}
-<section>
+<section class="text-white" style="padding: 30px;background: url('{% static 'img/banner.svg' %}');">
   <div class="container">
-      <figure>
-          <blockquote class="blockquote">
-              <p class="mb-0">PasteMe is an open-source RESTful pastebin service powered by&nbsp;<a href="#">PlanetScale</a>&nbsp;DBaaS.<br></p>
-          </blockquote>
-          <figcaption class="blockquote-footer">Sadra Yahyapour <em>~Creator</em></figcaption>
-      </figure>
-  </div>
-</section>
-<section class="py-4 py-xl-5">
-  <div class="text-white border-0 border-success p-4 p-md-5" style="background: #f7f7f7;">
-      <div class="container">
-          <h2 class="text-capitalize fs-4 fw-bold text-start text-dark mb-3">Featured For Hashnode &amp; PlanetScale</h2>
-          <p class="text-muted mb-4">This project is developed for the&nbsp;<a href="#">July Hashnode Hackathon</a> which includes a partnership with the PlanetScale service.</p>
-          <div class="my-3"><a class="btn btn-dark btn-sm me-2" role="button" href="https://github.com/collove/pasteme" target="_blank">GitHub Repository</a><a class="btn btn-light btn-sm" role="button" href="https://imsadra.me/pasteme-the-restful-pastebin" target="_blank">Article</a></div>
+    <div class="row">
+      <div class="col-lg">
+          <h2 class="fw-bold" style="line-height: 42.4px;">Open-Source RESTful Pastebin Service Featured for Hashnode &amp; PlanetScale!</h2>
       </div>
+      <div class="col-lg"><script src="https://asciinema.org/a/14.js" id="asciicast-14" data-size="big" data-autoplay="true" data-speed="3" data-cols="190"></script></div>
+    </div>
   </div>
 </section>
-<div class="container">
-  <h4 class="fw-bold">What is PasteMe?!</h4>
-  <p class="fs-6 fw-bold">PasteMe is a RESTful pastebin service that allows users/developers share their snippets, code blocks, buggy functions through almost all platforms. There is a CLI tool called&nbsp;<code>pasteme-cli</code>&nbsp;that interacts with the open-source APIs and helps you record your snippets from terminals and CLI shells.</p>
-</div>
-<div class="container">
-  <h4 class="fw-bold"><code>pasteme-cli</code>&nbsp;Installation</h4>
-  <p class="fs-6 fw-bold">This CLI tool is an open-source SDK that interacts with the&nbsp;<a href="#">PasteMe APIs</a>. The following steps would help you install this package on your distribution.</p>
-</div>
-<div class="container">
-  <div>
-    <pre class="rounded"><code class="language-sh">$ git clone https://github.com/collove/pasteme-cli.git
-$ cd pasteme-cli
-$ ./setup.sh</code></pre>
-  </div>
-</div>
-<div class="container">
-  <h4 class="fw-bold">Usage</h4>
-</div>
-<div class="container">
-  <div>
-    <pre class="rounded"><code class="language-sh">$ echo "print('hey')" | pasteme -l python
-https://pasteme.pythonanywhere.com/paste/a1c13
-$ cat main.cpp | pasteme -l cpp
-https://pasteme.pythonanywhere.com/paste/c12b4</code></pre>
-  </div>
-</div>
+<section>
+  <section data-aos="fade-up" data-aos-duration="400" data-aos-once="true" class="font-dark" style="font-family: Manrope, sans-serif;">
+      <div class="container">
+          <h3 class="text-dark text-center all-capital p-4" data-aos="fade-up" data-aos-duration="400" data-aos-delay="200" data-aos-once="true" style="font-size: 30px;font-weight: 300;line-height: 38px;letter-spacing: 2px;">PyPi Package Statistics</h3>
+          <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-4 row-cols-xl-4 row-cols-xxl-4" data-aos="fade-up" data-aos-duration="800" data-aos-delay="150" data-aos-once="true" style="padding-top: 20px;padding-bottom: 40px;">
+              <div class="col">
+                  <div><span class="Justify-Flex-Center purecounter counter-font count plus" data-purecounter-start="0" data-purecounter-end="20" data-purecounter-duration="2">20</span>
+                      <p class="text-center text-uppercase">starts</p>
+                  </div>
+              </div>
+              <div class="col">
+                  <div><span class="Justify-Flex-Center purecounter counter-font plus" data-purecounter-start="0" data-purecounter-end="450" data-purecounter-duration="1">450</span>
+                      <p class="text-center text-uppercase">downloads</p>
+                  </div>
+              </div>
+              <div class="col">
+                  <div><span class="Justify-Flex-Center purecounter counter-font plus-k" data-purecounter-start="0" data-purecounter-end="23" data-purecounter-duration="1">23</span>
+                      <p class="text-center text-uppercase">views</p>
+                  </div>
+              </div>
+              <div class="col">
+                  <div><span class="Justify-Flex-Center purecounter counter-font plus" data-purecounter-start="0" data-purecounter-end="275" data-purecounter-duration="1">275</span>
+                      <p class="text-center text-uppercase">something</p>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+</section>
 {% endblock %}

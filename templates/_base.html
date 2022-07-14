@@ -5,30 +5,30 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>{% block title %}PasteMe; The RESTful Pastebin{% endblock %}</title>
-    <meta name="twitter:description" content="A RESTful pastebin service that allows users/developers share their snippets, code blocks, buggy functions through almost all platforms.">
-    <meta name="twitter:card" content="summary">
-    <meta name="description" content="A RESTful pastebin service that allows users/developers share their snippets, code blocks, buggy functions through almost all platforms.">
-    <meta property="og:type" content="website">
-    <meta name="twitter:title" content="PasteMe">
+    <title>{% block title %}PasteMe Service{% endblock %}</title>
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono&amp;display=swap">
-    <link rel="stylesheet" href="{% static 'css/Navbar-Centered-Links.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Manrope&amp;display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="{% static 'css/Incrementing-Animation.css' %}">
+    <link rel="stylesheet" href="{% static 'css/Navbar-With-Button.css' %}">
+    <link rel="stylesheet" href="{% static 'css/Projects-Grid.css' %}">
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
     {% block addon_style %}{% endblock %}
 </head>
 
-<body style="font-family: 'Roboto Mono', monospace;">
-    <nav class="navbar navbar-light navbar-expand-md py-3" style="margin: 0px;margin-top: 50px;margin-bottom: 30px;">
-        <div class="container"><a class="navbar-brand d-flex align-items-center" href="{% url 'home' %}"><span class="fw-bold">&gt; PasteMe</span></a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1" style="transform: perspective(0px);"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+<body style="font-family: Manrope, sans-serif;">
+    <nav class="navbar navbar-light navbar-expand-md sticky-top bg-white py-3">
+        <div class="container"><a class="navbar-brand d-flex align-items-center" href="#"><span class="bs-icon-md d-flex justify-content-center align-items-center me-2 bs-icon"><img src="{% static 'img/icon.svg' %}" width="40"></span><span>PasteMe</span></a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1" style="border-style: none;"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navcol-1">
                 <ul class="navbar-nav me-auto">
-                    <li class="nav-item"><a class="nav-link {% block home_active %}{% endblock %}" href="{% url 'home' %}">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{% url 'schema-redoc' %}">API Documentation</a></li>
-                </ul><a href="#"></a><a class="btn btn-dark" role="button" href="https://github.com/collove/pasteme" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" viewBox="-8 0 512 512" width="1em" height="1em" fill="currentColor">
+                    <li class="nav-item"><a class="nav-link active" href="#">API Docs</a></li>
+                    <li class="nav-item"></li>
+                    <li class="nav-item"></li>
+                </ul><span class="bs-icon-md d-flex justify-content-center align-items-center navbar-text me-2 bs-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="-16 0 512 512" width="1em" height="1em" fill="currentColor">
                         <!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. -->
-                        <path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path>
-                    </svg>&nbsp;GitHub</a>
+                        <path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"></path>
+                    </svg></span>
             </div>
         </div>
     </nav>
@@ -37,23 +37,20 @@
     <footer class="text-center">
         <div class="container text-muted py-4 py-lg-5">
             <ul class="list-inline">
-                <li class="list-inline-item me-4"><a class="link-secondary" href="{% url 'home' %}">Home</a></li>
-                <li class="list-inline-item me-4"><a class="link-secondary" href="{% url 'schema-redoc' %}">API</a></li>
-                <li class="list-inline-item"><a class="link-secondary" href="https://github.com/collove/pasteme">GitHub</a></li>
+                <li class="list-inline-item me-4"><a class="link-secondary" href="#">API Documentation</a></li>
+                <li class="list-inline-item me-4"><a class="link-secondary" href="#">GitHub</a></li>
+                <li class="list-inline-item"><a class="link-secondary" href="#">Hashnode</a></li>
+                <li class="list-inline-item"><a class="link-secondary" href="#">PlanetScale</a></li>
             </ul>
-            <ul class="list-inline">
-                <li class="list-inline-item me-4"></li>
-                <li class="list-inline-item me-4"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-github">
-                        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path>
-                    </svg></li>
-                <li class="list-inline-item"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="1em" height="1em" fill="currentColor">
-                        <!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. -->
-                        <path d="M35.19 171.1C-11.72 217.1-11.72 294 35.19 340.9L171.1 476.8C217.1 523.7 294 523.7 340.9 476.8L476.8 340.9C523.7 294 523.7 217.1 476.8 171.1L340.9 35.19C294-11.72 217.1-11.72 171.1 35.19L35.19 171.1zM315.5 315.5C282.6 348.3 229.4 348.3 196.6 315.5C163.7 282.6 163.7 229.4 196.6 196.6C229.4 163.7 282.6 163.7 315.5 196.6C348.3 229.4 348.3 282.6 315.5 315.5z"></path>
-                    </svg></li>
-            </ul>
+            <p class="mb-0">Copyright © 2022 PasteMe</p>
         </div>
     </footer>
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/bs-init.js' %}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="{% static 'js/Incrementing-Animation.js' %}"></script>
     {% block addon_script %}{% endblock %}
 </body>
 

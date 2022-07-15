@@ -15,7 +15,8 @@
 {% block content %}
 <section>
     <div class="container">
-        <h3>{{snippet.title}}</h3><br>
+        <h4 style="font-weight: bold;">{{snippet.title}}</h4>
+        <p><span class="badge bg-dark">{{snippet.get_language_display}}</span>&nbsp;<span class="badge bg-dark">{{snippet.created_at.date}}</span></p>
         <div>
             <pre class="rounded"><code class="language-{{snippet.language}}">{{snippet.body}}</code></pre>
         </div>

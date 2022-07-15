@@ -5,6 +5,24 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    {% block metas %}
+    <!-- Primary Meta Tags -->
+    <meta name="title" content="PasteMe; The RESTful Pastebin Service">
+    <meta name="description" content="PasteMe is an open-source pastebin service that works with the power of RESTful APIs.">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://pasteme.pythonanywhere.com/">
+    <meta property="og:title" content="PasteMe; The RESTful Pastebin Service">
+    <meta property="og:description" content="PasteMe is an open-source pastebin service that works with the power of RESTful APIs.">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://pasteme.pythonanywhere.com/">
+    <meta property="twitter:title" content="PasteMe; The RESTful Pastebin Service">
+    <meta property="twitter:description" content="PasteMe is an open-source pastebin service that works with the power of RESTful APIs.">
+    {% endblock %}
+
     <title>{% block title %}PasteMe Service{% endblock %}</title>
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Manrope&amp;display=swap">
@@ -35,7 +53,7 @@
                     <li class="nav-item"><a class="nav-link {% block home_active %}{% endblock %}" href="{% url 'home' %}">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="{% url 'schema-redoc' %}" target="blank">API Docs</a></li>
                 </ul>
-                <span>Open Source on </span><a class="btn btn-dark ms-md-2" role="button" href="https://github.com/collove/pasteme" target="blank">GitHub</a>
+                <span>Open Source on&nbsp;</span><a class="btn btn-dark ms-md-2" role="button" href="https://github.com/collove/pasteme" target="blank">GitHub</a>
             </div>
         </div>
     </nav>

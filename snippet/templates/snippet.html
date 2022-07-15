@@ -1,7 +1,25 @@
 {% extends '_base.html' %}
 {% load static %}
 
-{% block title %}{{snippet.title}} ({{snippet.language}}){% endblock %}
+{% block title %}{{snippet.title}} ({{snippet.get_language_display}}){% endblock %}
+
+{% block metas %}
+    <!-- Primary Meta Tags -->
+    <meta name="title" content="{{snippet.title}} ({{snippet.get_language_display}})">
+    <meta name="description" content="">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{% url 'view-paste' snippet.id %}">
+    <meta property="og:title" content="{{snippet.title}} ({{snippet.get_language_display}})">
+    <meta property="og:description" content="">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="{% url 'view-paste' snippet.id %}">
+    <meta property="twitter:title" content="{{snippet.title}} ({{snippet.get_language_display}})">
+    <meta property="twitter:description" content="">
+{% endblock %}
 
 {% block addon_style %}
 <link rel="stylesheet" href="{% static 'css/themes/default.min.css' %}">

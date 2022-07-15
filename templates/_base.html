@@ -20,7 +20,7 @@
         code.phrase {
             color: rgb(250, 250, 250);
             background-color: rgb(31, 41, 55);
-            padding: 4px;
+            padding: 1px 5px 3px 6px;
             border-radius: 5px;
             font-weight: bold;
         }
@@ -35,6 +35,7 @@
                     <li class="nav-item"><a class="nav-link {% block home_active %}{% endblock %}" href="{% url 'home' %}">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="{% url 'schema-redoc' %}" target="blank">API Docs</a></li>
                 </ul>
+                <span>Open Source on </span><a class="btn btn-dark ms-md-2" role="button" href="https://github.com/collove/pasteme" target="blank">GitHub</a>
             </div>
         </div>
     </nav>

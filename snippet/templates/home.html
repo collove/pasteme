@@ -10,23 +10,27 @@
 <script>hljs.highlightAll();</script>
 {% endblock %}
 
+{% block home_active %}active{% endblock %}
+
+{% block body_css %}background: url('{% static 'img/banner.svg' %}') fixed;{% endblock %}
+
 {% block content %}
-<section class="text-white" style="padding: 30px;background: url('{% static 'img/banner.svg' %}');">
+<section class="text-white" style="padding: 30px;">
   <div class="container">
-    <div class="row">
-      <div class="col-lg" style="padding:25px">
-          <h2 class="fw-bold" style="line-height: 42.4px;">Open-Source RESTful Pastebin Service Featured for Hashnode &amp; PlanetScale!</h2>
-          <p align="justify">PasteMe is an open-source pastebin service that works with the power of RESTful APIs. Install the <code>pasteme-cli</code> package and start pasting right from your terminals and CLI shells.</p><br>
+    <div class="row align-items-center">
+      <div class="col-sm">
+          <h2 class="fw-bold" style="line-height: 50px;">Open-Source RESTful Pastebin Service Featured for Hashnode &amp; PlanetScale!</h2>
+          <p align="justify">PasteMe is an open-source pastebin service that works with the power of RESTful APIs. Install the <code class="phrase">pasteme-cli</code> package and start pasting right from your terminals and CLI shells.</p><br>
           <div>
-            <pre class="rounded"><code class="language-bash">$ pip install pasteme-cli</code></pre>
+            <pre class="rounded"><code class="language-shell">$ pip install pasteme-cli</code></pre>
           </div>
       </div>
-      <div class="col-lg"><script src="https://asciinema.org/a/14.js" id="asciicast-14" data-theme="tango" data-size="big" data-speed="3" data-rows="20"></script></div>
+      <div class="col-sm"><script src="https://asciinema.org/a/14.js" id="asciicast-14" data-theme="tango" data-size="big" data-speed="3" data-rows="30"></script></div>
     </div>
   </div>
 </section>
 <section>
-  <section data-aos="fade-up" data-aos-duration="400" data-aos-once="true" class="font-dark" style="font-family: Manrope, sans-serif;">
+  <section data-aos="fade-up" data-aos-duration="400" data-aos-once="true" class="font-dark bg-white" style="font-family: Manrope, sans-serif;">
       <div class="container">
           <h3 class="text-dark text-center all-capital p-4" data-aos="fade-up" data-aos-duration="400" data-aos-delay="200" data-aos-once="true" style="font-size: 30px;font-weight: 300;line-height: 38px;letter-spacing: 2px;">PyPi Package Statistics</h3>
           <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-4 row-cols-xl-4 row-cols-xxl-4" data-aos="fade-up" data-aos-duration="800" data-aos-delay="150" data-aos-once="true" style="padding-top: 20px;padding-bottom: 40px;">
@@ -54,4 +58,19 @@
       </div>
   </section>
 </section>
+
+<section style="padding: 30px;">
+    <div class="container">
+        <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active" data-bs-interval="500">
+                <h1>Salam</h1>
+              </div>
+              <div class="carousel-item" data-bs-interval="500">
+                <h1>khoobi??</h1>
+              </div>
+            </div>
+          </div>
+    </div>
+  </section>
 {% endblock %}

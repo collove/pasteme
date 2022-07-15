@@ -12,7 +12,7 @@ LANGUAGES = (
     ('js', 'JavaScript'),
     ('json', 'JSON'),
     ('lua', 'Lua'),
-    ('md', 'markdown'),
+    ('md', 'MarkDown'),
     ('php', 'PHP'),
     ('plaintext', 'PlainText'),
     ('python', 'Python'),

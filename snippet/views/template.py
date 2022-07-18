@@ -1,4 +1,5 @@
-from django.views.generic import TemplateView, DetailView
+from django.views.generic import DetailView, TemplateView
+
 from snippet.models import Snippet
 
 

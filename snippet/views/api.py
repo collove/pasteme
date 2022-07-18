@@ -1,6 +1,7 @@
-from rest_framework.generics import RetrieveAPIView, CreateAPIView
-from snippet.serializers import SnippetSerializer
+from rest_framework.generics import CreateAPIView, RetrieveAPIView
+
 from snippet.models import Snippet
+from snippet.serializers import SnippetSerializer
 
 
 class CreateSnippetAPI(CreateAPIView):

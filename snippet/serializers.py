@@ -1,9 +1,10 @@
-from pyexpat import model
-from rest_framework.serializers import ModelSerializer
-from .models import Snippet
+from os import path
 
 from django.conf import settings
-from os import path
+from pyexpat import model
+from rest_framework.serializers import ModelSerializer
+
+from .models import Snippet
 
 
 class SnippetSerializer(ModelSerializer):

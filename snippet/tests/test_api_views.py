@@ -1,11 +1,11 @@
-from pdb import post_mortem
-from urllib import response
+import json
+
 from django.urls import reverse
 from rest_framework import status
 from rest_framework.test import APITestCase
-from snippet.models import Snippet
+
 from snippet.constants import LANGUAGES
-import json
+from snippet.models import Snippet
 from snippet.serializers import SnippetSerializer
 
 

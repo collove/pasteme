@@ -1,6 +1,7 @@
 from django.db import models
-from .constants import LANGUAGES
 from shortuuid.django_fields import ShortUUIDField
+
+from .constants import LANGUAGES
 
 
 class Snippet(models.Model):

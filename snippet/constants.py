@@ -18,3 +18,14 @@ LANGUAGES = (
     ('python', 'Python'),
     ('rb', 'Ruby'),
 )
+
+# Themes
+
+THEMES = (
+    ('default.min.css', 'default'),
+    ('dark.min.css', 'dark'),
+    ('atom-one-light.min.css', 'atom-one-light'),
+    ('atom-one-dark.min.css', 'atom-one-dark'),
+    ('github.min.css', 'github-light'),
+    ('github-dark.min.css', 'github-dark'),
+)

@@ -22,7 +22,7 @@
 {% endblock %}
 
 {% block addon_style %}
-<link rel="stylesheet" href="{% static 'css/themes/default.min.css' %}">
+<link rel="stylesheet" href="{% static 'css/themes/' %}{{snippet.theme}}.min.css">
 {% endblock %}
 
 {% block addon_script %}
@@ -32,9 +32,10 @@
 
 {% block content %}
 <section>
+    {{snippet.theme}}
     <div class="container p-5">
         <h3 style="font-weight: bold;">{{snippet.title}}</h3>
-        <p><span class="badge bg-dark">{{snippet.get_language_display}}</span>&nbsp;<span class="badge bg-dark">{{snippet.created_at.date}}</span></p>
+        <p><span class="badge bg-dark">{{snippet.get_language_display}}</span>&nbsp;<span class="badge bg-dark">{{snippet.get_theme_display}} Theme</span>&nbsp;-&nbsp;<span class="badge bg-dark">{{snippet.created_at.date}}</span></p>
         <div>
             <pre class="rounded"><code class="language-{{snippet.language}}">{{snippet.body}}</code></pre>
         </div>

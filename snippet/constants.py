@@ -22,10 +22,10 @@ LANGUAGES = (
 # Themes
 
 THEMES = (
-    ('default.min.css', 'default'),
-    ('dark.min.css', 'dark'),
-    ('atom-one-light.min.css', 'atom-one-light'),
-    ('atom-one-dark.min.css', 'atom-one-dark'),
-    ('github.min.css', 'github-light'),
-    ('github-dark.min.css', 'github-dark'),
+    ('default', 'Default Light'),
+    ('dark', 'Default Dark'),
+    ('atom-one-light', 'Atom One Light'),
+    ('atom-one-dark', 'Atom One Dark'),
+    ('github', 'Github Light'),
+    ('github-dark', 'Github Dark'),
 )

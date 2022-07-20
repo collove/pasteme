@@ -1,29 +1,30 @@
 from django.db import models
 from shortuuid.django_fields import ShortUUIDField
 
-from .constants import LANGUAGES
+from .constants import LANGUAGES, THEMES
 
 
 class Snippet(models.Model):
     id = ShortUUIDField(
         length=5,
         max_length=40,
-        alphabet="abcdefg1234",
+        alphabet="abcdefg12345",
         primary_key=True,
     )
     title = models.CharField(
-        verbose_name='Title',
         max_length=120,
         default='Untitled',
     )
-    body = models.TextField(
-        verbose_name='Body'
-    )
+    body = models.TextField()
     language = models.CharField(
-        verbose_name='Language',
         max_length=120,
         choices=LANGUAGES,
         default='plaintext',
+    )
+    theme = models.CharField(
+        max_length=120,
+        default='default',
+        choices=THEMES,
     )
     created_at = models.DateTimeField(
         verbose_name='Created at',

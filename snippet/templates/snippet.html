@@ -27,7 +27,11 @@
 
 {% block addon_script %}
 <script src="{% static 'js/highlight.min.js' %}"></script>
-<script>hljs.highlightAll();</script>
+<script src="{% static 'js/highlightjs-line-numbers.min.js' %}"></script>
+<script>
+    hljs.highlightAll();
+    hljs.initLineNumbersOnLoad();
+</script>
 {% endblock %}
 
 {% block content %}

@@ -42,6 +42,22 @@
             border-radius: 5px;
             font-weight: bold;
         }
+        .hljs-ln-numbers {
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        
+            text-align: right;
+            color: #ccc;
+            vertical-align: top;
+            padding-right: 5px;
+        }
+        .hljs-ln-code {
+            padding-left: 18px !important;
+        }
     </style>
 </head>
 
@@ -67,7 +83,7 @@
                 <li class="list-inline-item"><a class="link-secondary" href="https://hashnode.com" target="blank">Hashnode</a></li>
                 <li class="list-inline-item"><a class="link-secondary" href="https://planetscale.com" target="blank">PlanetScale</a></li>
             </ul>
-            <p class="mb-0">Copyright © 2022 PasteMe</p>
+            <p class="mb-0">Open Source <a href="https://github.com/collove/pasteme/blob/main/LICENSE" target="blank">MIT License</a> © {% now 'Y' %} PasteMe</p>
         </div>
     </footer>
     <script src="{% static 'js/bootstrap.min.js' %}"></script>

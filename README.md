@@ -73,4 +73,4 @@ PasteMe is being licensed under the [MIT License](https://github.com/collove/pas
 - [Hashnode](https://hashnode.com/)
 - [PlanetScale](https://planetscale.com/)
 
-<a href="https://townhall.hashnode.com/planetscale-hackathon"><img width="190" height="45" src="https://raw.githubusercontent.com/collove/pasteme/main/.git_components/development_badge.png"></a>
+<br><a href="https://townhall.hashnode.com/planetscale-hackathon"><img width="190" height="45" src="https://raw.githubusercontent.com/collove/pasteme/main/.git_components/development_badge.png"></a>

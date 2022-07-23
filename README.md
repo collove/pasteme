@@ -72,3 +72,5 @@ PasteMe is being licensed under the [MIT License](https://github.com/collove/pas
 ### Special Thanks to
 - [Hashnode](https://hashnode.com/)
 - [PlanetScale](https://planetscale.com/)
+
+<img width="190" height="45" src="https://raw.githubusercontent.com/collove/pasteme/main/.git_components/development_badge.png">

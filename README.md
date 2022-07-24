@@ -49,7 +49,38 @@ Generate a new Django `SECRET_KEY` using [Djecrety](https://djecrety.ir/) and pa
 SECRET_KEY=<COPIED SECRET_KEY HERE>
 ```
 
-#### 4. Finally, migrate the make-ready migrations and start the service.
+#### 4. PlanetScale database setup (Optional)
+In order to use PlanetScale databases as your backend database,
+
+- Create a new account on https://planetscale.com
+- Create your first database
+- Get the credentials (By pressing the "Connect" button in the dashboard)
+
+and run the following command in the root path of your project.
+
+```shell
+$ git clone https://github.com/planetscale/django_psdb_engine.git && rm -rf django_psdb_engine/.git
+```
+
+Open the early-modified `local_settings.py` file. Use the credentials and add the following `DATABASES` configuration at the end of the file.
+
+```python
+DATABASES = {
+  'default': {
+    'ENGINE': 'django_psdb_engine',
+    'NAME': <DB NAME>,
+    'HOST': <HOST NAME>,
+    'PORT': <PORT>,
+    'USER': <USER>,
+    'PASSWORD': <PASSWORD>,
+    'OPTIONS': {'ssl': {'ca': '/etc/ssl/certs/ca-certificates.crt', 'charset': 'utf8mb4'}
+  }
+}
+```
+
+Optional: Since `python-decouple` is one of the required packages, you can also use this package to keep your PlanetScale database configurations safe.
+
+#### 5. Finally, migrate the make-ready migrations and start the service.
 
 ```shell
 $ python manage.py migrate

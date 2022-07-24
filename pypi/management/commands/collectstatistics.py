@@ -1,9 +1,10 @@
-from django.core.management.base import BaseCommand
-from pypi.models import Statistic
-
-import requests
-import pypistats
 import json
+
+import pypistats
+import requests
+from django.core.management.base import BaseCommand
+
+from pypi.models import Statistic
 
 
 class Command(BaseCommand):

@@ -1,40 +1,49 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    {% block metas %}
-    <!-- Primary Meta Tags -->
-    <meta name="title" content="PasteMe - Paste Codes From Your Terminal">
-    <meta name="description" content="PasteMe is an open-source pastebin service that works with the power of RESTful APIs.">
-    
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://pasteme.pythonanywhere.com/">
-    <meta property="og:title" content="PasteMe - Paste Codes From Your Terminal">
-    <meta property="og:description" content="PasteMe is an open-source pastebin service that works with the power of RESTful APIs.">
-    
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://pasteme.pythonanywhere.com/">
-    <meta property="twitter:title" content="PasteMe - Paste Codes From Your Terminal">
-    <meta property="twitter:description" content="PasteMe is an open-source pastebin service that works with the power of RESTful APIs.">
-    {% endblock %}
-
-    <title>{% block title %}PasteMe Service{% endblock %}</title>
-    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Manrope&amp;display=swap">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
-    <link rel="icon" type="image/x-icon" href="{% static 'img/icon.svg' %}">
-    <link rel="stylesheet" href="{% static 'css/Incrementing-Animation.css' %}">
-    <link rel="stylesheet" href="{% static 'css/Navbar-With-Button.css' %}">
-    <link rel="stylesheet" href="{% static 'css/Projects-Grid.css' %}">
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
-    {% block addon_style %}{% endblock %}
-    <style>
+<html lang="en" class="h-100">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport"
+              content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+        {% block metas %}
+            <!-- Primary Meta Tags -->
+            <meta name="title" content="PasteMe - Paste Codes From Your Terminal">
+            <meta name="description"
+                  content="PasteMe is an open-source pastebin service that works with the power of RESTful APIs.">
+            <!-- Open Graph / Facebook -->
+            <meta property="og:type" content="website">
+            <meta property="og:url" content="https://pasteme.pythonanywhere.com/">
+            <meta property="og:title"
+                  content="PasteMe - Paste Codes From Your Terminal">
+            <meta property="og:description"
+                  content="PasteMe is an open-source pastebin service that works with the power of RESTful APIs.">
+            <!-- Twitter -->
+            <meta property="twitter:card" content="summary_large_image">
+            <meta property="twitter:url" content="https://pasteme.pythonanywhere.com/">
+            <meta property="twitter:title"
+                  content="PasteMe - Paste Codes From Your Terminal">
+            <meta property="twitter:description"
+                  content="PasteMe is an open-source pastebin service that works with the power of RESTful APIs.">
+        {% endblock %}
+        <title>
+            {% block title %}
+                PasteMe Service
+            {% endblock title %}
+        </title>
+        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+        <link rel="stylesheet"
+              href="https://fonts.googleapis.com/css?family=Manrope&amp;display=swap">
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+        <link rel="icon" type="image/x-icon" href="{% static 'img/icon.svg' %}">
+        <link rel="stylesheet" href="{% static 'css/Incrementing-Animation.css' %}">
+        <link rel="stylesheet" href="{% static 'css/Navbar-With-Button.css' %}">
+        <link rel="stylesheet" href="{% static 'css/Projects-Grid.css' %}">
+        <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+        {% block addon_style %}{% endblock %}
+        <style>
         code.phrase {
             color: rgb(250, 250, 250);
             background-color: rgb(31, 41, 55);
@@ -49,7 +58,7 @@
             -moz-user-select: none;
             -ms-user-select: none;
             user-select: none;
-        
+
             text-align: right;
             color: #ccc;
             vertical-align: top;
@@ -64,35 +73,90 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-    </style>
-</head>
-
-<body style="font-family: Manrope, sans-serif; {% block body_css %}{% endblock %}">
-    <nav class="navbar navbar-light navbar-expand-md sticky-top bg-white py-3">
-        <div class="container"><a class="navbar-brand d-flex align-items-center" href="{% url 'home' %}"><span class="bs-icon-md d-flex justify-content-center align-items-center me-2 bs-icon"><img src="{% static 'img/icon.svg' %}" width="40"></span><span>PasteMe</span></a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1" style="border-style: none;"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse" id="navcol-1">
-                <ul class="navbar-nav me-auto">
-                    <li class="nav-item"><a class="nav-link {% block home_active %}{% endblock %}" href="{% url 'home' %}">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{% url 'schema-redoc' %}" target="blank">API Docs</a></li>
-                </ul>
-                <span>Open Source on&nbsp;</span><a class="btn btn-dark ms-md-2" role="button" href="https://github.com/collove/pasteme" target="blank">GitHub</a>
+        </style>
+    </head>
+    <body style="font-family: Manrope, sans-serif; {% block body_css %}{% endblock %}"
+          class="d-flex flex-column h-100">
+        <nav class="navbar navbar-light navbar-expand-md sticky-top bg-white py-3">
+            <div class="container">
+                <a class="navbar-brand d-flex align-items-center"
+                   href="{% url 'home' %}"><span class="bs-icon-md d-flex justify-content-center align-items-center me-2 bs-icon">
+                    <img src="{% static 'img/icon.svg' %}" width="40">
+                </span><span>PasteMe</span></a>
+                <button data-bs-toggle="collapse"
+                        class="navbar-toggler"
+                        data-bs-target="#navcol-1"
+                        style="border-style: none;">
+                    <span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navcol-1">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item">
+                            <a class="nav-link {% block home_active %}{% endblock %}"
+                               href="{% url 'home' %}">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'schema-redoc' %}" target="blank">API Docs</a>
+                        </li>
+                    </ul>
+                    <span>Open Source on&nbsp;</span><a class="btn btn-dark ms-md-2"
+   role="button"
+   href="https://github.com/collove/pasteme"
+   target="blank">GitHub</a>
+                </div>
             </div>
-        </div>
-    </nav>
-    {% block content %}
-    {% endblock %}
-    <footer class="text-center bg-white">
-        <div class="container text-muted py-4 py-lg-5">
-            <ul class="list-inline">
-                <li class="list-inline-item me-4"><a class="link-secondary" href="{% url 'schema-redoc' %}" target="blank">API Documentation</a></li>
-                <li class="list-inline-item me-4"><a class="link-secondary" href="https://github.com/collove/pasteme" target="blank">GitHub</a></li>
-                <li class="list-inline-item"><a class="link-secondary" href="https://hashnode.com" target="blank">Hashnode</a></li>
-                <li class="list-inline-item"><a class="link-secondary" href="https://planetscale.com" target="blank">PlanetScale</a></li>
-            </ul>
-            <p class="mb-0"><a href="https://github.com/collove/pasteme/blob/main/LICENSE" target="blank">MIT License</a> © {% now 'Y' %} PasteMe | Developed for &nbsp;<svg class="flex-shrink-0 block" style="color: black; margin-bottom: 5px;" width="17" height="17" viewBox="0 0 44 44" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M0 22C1.03435e-06 9.84973 9.84974 -1.03435e-06 22 0C30.9336 7.80998e-07 38.6235 5.3248 42.069 12.9737L12.9737 42.069C11.7252 41.5066 10.5385 40.8311 9.42689 40.0555L27.4824 22H22L6.44366 37.5563C2.46244 33.5751 -5.31105e-07 28.0751 0 22Z"></path><path d="M44 22.0076L22.0076 44C34.1518 43.9959 43.9959 34.1518 44 22.0076Z"></path></svg>&nbsp; X&nbsp;&nbsp;<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="1em" height="1em" fill="currentColor" style="color: var(--bs-blue); margin-bottom: 5px;">
-                <!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. -->
-                <path d="M35.19 171.1C-11.72 217.1-11.72 294 35.19 340.9L171.1 476.8C217.1 523.7 294 523.7 340.9 476.8L476.8 340.9C523.7 294 523.7 217.1 476.8 171.1L340.9 35.19C294-11.72 217.1-11.72 171.1 35.19L35.19 171.1zM315.5 315.5C282.6 348.3 229.4 348.3 196.6 315.5C163.7 282.6 163.7 229.4 196.6 196.6C229.4 163.7 282.6 163.7 315.5 196.6C348.3 229.4 348.3 282.6 315.5 315.5z"></path>
-            </svg>&nbsp;<span class="hackathon">Hackathon</span></p></p>
+        </nav>
+        <main class="flex-shrink-0">
+            {% block content %}{% endblock %}
+        </main>
+        <footer class="text-center bg-white mt-auto">
+            <div class="container text-muted py-4 py-lg-5">
+                <ul class="list-inline">
+                    <li class="list-inline-item me-4">
+                        <a class="link-secondary" href="{% url 'schema-redoc' %}" target="blank">API Documentation</a>
+                    </li>
+                    <li class="list-inline-item me-4">
+                        <a class="link-secondary"
+                           href="https://github.com/collove/pasteme"
+                           target="blank">GitHub</a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a class="link-secondary" href="https://hashnode.com" target="blank">Hashnode</a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a class="link-secondary" href="https://planetscale.com" target="blank">PlanetScale</a>
+                    </li>
+                </ul>
+                <p class="mb-0">
+                    <a href="https://github.com/collove/pasteme/blob/main/LICENSE"
+                       target="blank">MIT License</a> © {% now 'Y' %} PasteMe | Developed for &nbsp;
+                    <svg class="flex-shrink-0 block"
+                         style="color: black;
+                                margin-bottom: 5px;"
+                         width="17"
+                         height="17"
+                         viewBox="0 0 44 44"
+                         fill="currentColor"
+                         xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0 22C1.03435e-06 9.84973 9.84974 -1.03435e-06 22 0C30.9336 7.80998e-07 38.6235 5.3248 42.069 12.9737L12.9737 42.069C11.7252 41.5066 10.5385 40.8311 9.42689 40.0555L27.4824 22H22L6.44366 37.5563C2.46244 33.5751 -5.31105e-07 28.0751 0 22Z">
+                        </path>
+                        <path d="M44 22.0076L22.0076 44C34.1518 43.9959 43.9959 34.1518 44 22.0076Z"></path>
+                    </svg>
+                    &nbsp; X&nbsp;&nbsp;
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                         viewBox="0 0 512 512"
+                         width="1em"
+                         height="1em"
+                         fill="currentColor"
+                         style="color: var(--bs-blue);
+                                margin-bottom: 5px;">
+                        <!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. -->
+                        <path d="M35.19 171.1C-11.72 217.1-11.72 294 35.19 340.9L171.1 476.8C217.1 523.7 294 523.7 340.9 476.8L476.8 340.9C523.7 294 523.7 217.1 476.8 171.1L340.9 35.19C294-11.72 217.1-11.72 171.1 35.19L35.19 171.1zM315.5 315.5C282.6 348.3 229.4 348.3 196.6 315.5C163.7 282.6 163.7 229.4 196.6 196.6C229.4 163.7 282.6 163.7 315.5 196.6C348.3 229.4 348.3 282.6 315.5 315.5z">
+                        </path>
+                    </svg>
+                    &nbsp;<span class="hackathon">Hackathon</span>
+                </p>
+            </p>
         </div>
     </footer>
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
@@ -103,5 +167,4 @@
     <script src="{% static 'js/Incrementing-Animation.js' %}"></script>
     {% block addon_script %}{% endblock %}
 </body>
-
 </html>

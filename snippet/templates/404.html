@@ -1,19 +1,12 @@
 {% extends '_base.html' %}
-{% load static %}
 {% block title %}404 - Not Found{% endblock %}
-{% block addon_style %}
-    <link rel="stylesheet" href="{% static 'css/themes/default.min.css' %}">
-{% endblock %}
-{% block addon_script %}
-    <script src="{% static 'js/highlight.min.js' %}"></script>
-    <script>hljs.highlightAll();</script>
-{% endblock %}
+
 {% block content %}
     <section>
         <div class="container p-5">
             <div class="container">
-                <h1>Opps! You're lost.</h1>
-                <h3>Looks the page you're looking for is missing at the moment. I mean 404. :(</h3>
+                <h2>Opps! You're lost.</h2>
+                <p>Looks the page you're looking for is missing at the moment. I mean 404. :(</p>
             </div>
         </div>
     </section>

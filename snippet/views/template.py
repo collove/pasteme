@@ -11,8 +11,6 @@ class HomeView(TemplateView):
         context = super().get_context_data(**kwargs)
         context["stats"] = Statistic.objects.last()
         return context
-    
-    
 
 
 class SnippetView(DetailView):

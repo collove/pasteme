@@ -1,6 +1,6 @@
 <p align="center">
     <img src="https://raw.githubusercontent.com/collove/pasteme/development/.git_components/dark.svg#gh-dark-mode-only" width="140">
-        <img src="https://raw.githubusercontent.com/collove/pasteme/development/.git_components/light.svg#gh-light-mode-only" width="140">
+    <img src="https://raw.githubusercontent.com/collove/pasteme/development/.git_components/light.svg#gh-light-mode-only" width="140">
     <h4 align="center">PasteMe - RESTful Pastebin Service</h4>
 </p><br>
 
@@ -105,4 +105,6 @@ PasteMe is being licensed under the [MIT License](https://github.com/collove/pas
 - [Hashnode](https://hashnode.com/)
 - [PlanetScale](https://planetscale.com/)
 
-<br><a href="https://townhall.hashnode.com/planetscale-hackathon"><img width="190" height="45" src="https://raw.githubusercontent.com/collove/pasteme/main/.git_components/development_badge.png"></a>
+<img width="240" height="60" src="https://raw.githubusercontent.com/collove/pasteme/ee9db4cc136c004ef67d93e2942fbc17d990b6e7/.git_components/badge_light.svg#gh-light-mode-only">
+
+<img width="240" height="60" src="https://raw.githubusercontent.com/collove/pasteme/ee9db4cc136c004ef67d93e2942fbc17d990b6e7/.git_components/badge_dark.svg#gh-dark-mode-only">

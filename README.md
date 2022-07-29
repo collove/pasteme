@@ -30,42 +30,49 @@ $ virtualenv venv && source venv/bin/activate
 $ pip install -r requirements.txt
 ```
 
-#### 3. PlanetScale database configuration.
-> In spite PasteMe prefers to connect to a PlanetScale database, you can simply use whatever database you want as your backend database.
+#### 3. Get the `SECRET_KEY`.
+Create a `.env` file in the root path of project (next to the `manage.py`) and generate a `SECRET_KEY` token using [Djecrety](https://djecrety.ir/) and paste it in the file.
 
-In order to use PlanetScale databases as your backend database,
+```sh
+# .env
+SECRET_KEY=<TOKEN>
+```
 
-- Create a new account on https://planetscale.com
+#### 4. PlanetScale database configuration. (Optional)
+PasteMe uses the traditional SQLite database by default. However, you can override the `DATABASES` configuration by writing to the `pasteme/local_settings.py`. Follow the steps to connect your PasteMe to PlanetScale services.
+
+- Create a new account on https://planetscale.com for FREE
 - Create a new database
 - Get the credentials (By pressing the "Connect" button in the dashboard)
 
-and add the following variables in a `.env` file in the root path of the project.
+Add the following configurations to the end of the `.env` file based on the recieved credentials.
 
 ```sh
-SECRET_KEY=<Token>
-
-DB_DATABASE=<Database Name>
-DB_USER=<Database Username>
-DB_PASSWORD=<Database Password>
-DB_HOST=<Database Hostname>
+# .env
+...
+DB_DATABASE=<Name>
+DB_USER=<User>
+DB_PASSWORD=<Password>
+DB_HOST=<Host>
 DB_PORT=3306
 MYSQL_ATTR_SSL_CA=/etc/ssl/certs/ca-certificates.crt
 ```
 
-Generate a new `SECRET_KEY` token using [Djecrety](https://djecrety.ir/) and paste it in front of `SECRET_KEY`. Value other variables based on the crendentials you recieved from the PlanetScale dashboard.
-
-#### 4. SQLite database configuration.
-If you want to use a sqlite database for your service, create `pasteme/.local_settings.py` (next to `settings.py`) file and write the following database configuration into it.
+Create a new file named `pasteme/local_settings.py` (next to `settings.py`) and add the following PlanetScale datatbase configurations.
 
 ```python
 # local_settings.py
-from django.conf import settings
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': settings.BASE_DIR / 'db.sqlite3',
-    }
+   'default': {
+     'ENGINE': 'django_psdb_engine', # <-- already available as a 3rd party
+     'NAME': config('DB_DATABASE'),
+     'HOST': config('DB_HOST'),
+     'PORT': config('DB_PORT'),
+     'USER': config('DB_USER'),
+     'PASSWORD': config('DB_PASSWORD'),
+     'OPTIONS': {'ssl': {'ca': config('MYSQL_ATTR_SSL_CA')}, 'charset': 'utf8mb4'}
+   }
 }
 ```
 
@@ -76,7 +83,7 @@ $ python manage.py runserver
 ```
 
 #### 6. Docker (Optional)
-You can have a PasteMe running in a Docker container on your machine. Make sure you have both `docker` and `docker-compose` installed on your system and run the following command.
+You can have a PasteMe instance running in a Docker container on your machine. Make sure you have both `docker` and `docker-compose` installed on your system and run the following command.
 
 ```sh
 $ docker-compose up -d --build

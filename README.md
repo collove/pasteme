@@ -20,82 +20,83 @@ $ pasteme --help
 ### Service Installation
 
 #### 1. To setup the webservice locally, clone the repository first.
-
 ```shell
 $ git clone https://github.com/collove/pasteme.git && cd ./pasteme
 ```
 
 #### 2. Create a new `venv` and install the dependencies.
-
 ```shell
 $ virtualenv venv && source venv/bin/activate
 $ pip install -r requirements.txt
 ```
 
-#### 3. Create both `./pasteme/local_settings.py` and `.env` files and write the following contents in them.
+#### 3. Get the `SECRET_KEY`.
+Create a `.env` file in the root path of project (next to the `manage.py`) and generate a `SECRET_KEY` token using [Djecrety](https://djecrety.ir/) and paste it in the file.
 
-```shell
-$ touch ./pasteme/local_settings.py && touch .env
+```sh
+# .env
+SECRET_KEY=<TOKEN>
 ```
+
+#### 4. PlanetScale database configuration. (Optional)
+PasteMe uses the traditional SQLite database by default. However, you can override the `DATABASES` configuration by writing to the `pasteme/local_settings.py`. Follow the steps to connect your PasteMe to PlanetScale services.
+
+- Create a new account on https://planetscale.com for FREE
+- Create a new database
+- Get the credentials (By pressing the "Connect" button in the dashboard)
+
+Add the following configurations to the end of the `.env` file based on the recieved credentials.
+
+```sh
+# .env
+...
+DB_DATABASE=<Name>
+DB_USER=<User>
+DB_PASSWORD=<Password>
+DB_HOST=<Host>
+DB_PORT=3306
+MYSQL_ATTR_SSL_CA=/etc/ssl/certs/ca-certificates.crt
+```
+
+Create a new file named `pasteme/local_settings.py` (next to `settings.py`) and add the following PlanetScale datatbase configurations.
 
 ```python
 # local_settings.py
-DEBUG = True
-ALLOWED_HOSTS = []
-```
 
-Generate a new Django `SECRET_KEY` using [Djecrety](https://djecrety.ir/) and paste it in the `.env` file in the root path of the project as follows.
-
-```shell
-SECRET_KEY=<COPIED SECRET_KEY HERE>
-```
-
-#### 4. PlanetScale database setup (Optional)
-In order to use PlanetScale databases as your backend database,
-
-- Create a new account on https://planetscale.com
-- Create your first database
-- Get the credentials (By pressing the "Connect" button in the dashboard)
-
-and run the following command in the root path of your project.
-
-```shell
-$ git clone https://github.com/planetscale/django_psdb_engine.git && rm -rf django_psdb_engine/.git
-```
-
-Open the early-modified `local_settings.py` file. Use the credentials and add the following `DATABASES` configuration at the end of the file.
-
-```python
 DATABASES = {
-  'default': {
-    'ENGINE': 'django_psdb_engine',
-    'NAME': <DB NAME>,
-    'HOST': <HOST NAME>,
-    'PORT': <PORT>,
-    'USER': <USER>,
-    'PASSWORD': <PASSWORD>,
-    'OPTIONS': {'ssl': {'ca': '/etc/ssl/certs/ca-certificates.crt', 'charset': 'utf8mb4'}
-  }
+   'default': {
+     'ENGINE': 'django_psdb_engine', # <-- already available as a 3rd party
+     'NAME': config('DB_DATABASE'),
+     'HOST': config('DB_HOST'),
+     'PORT': config('DB_PORT'),
+     'USER': config('DB_USER'),
+     'PASSWORD': config('DB_PASSWORD'),
+     'OPTIONS': {'ssl': {'ca': config('MYSQL_ATTR_SSL_CA')}, 'charset': 'utf8mb4'}
+   }
 }
 ```
 
-Optional: Since `python-decouple` is one of the required packages, you can also use this package to keep your PlanetScale database configurations safe.
-
 #### 5. Finally, migrate the make-ready migrations and start the service.
-
 ```shell
 $ python manage.py migrate
 $ python manage.py runserver
 ```
 
+#### 6. Docker (Optional)
+You can have a PasteMe instance running in a Docker container on your machine. Make sure you have both `docker` and `docker-compose` installed on your system and run the following command.
+
+```sh
+$ docker-compose up -d --build
+```
+
 Check out http://localhost:8000 for the result!
 
-### Technologies & Services
+### Tech Stack
 - __Frameworks and Tools__
   - [Django 4.0.6](https://www.djangoproject.com/) + [DRF](https://www.django-rest-framework.org/)
   - [Bootstrap 5](https://getbootstrap.com/docs/5.0/getting-started/introduction/)
 - __Infrastructures & Hosting Services__
-  - [PythonAnyWhere](https://pythonanywhere.com)
+  - [PythonAnywhere](https://pythonanywhere.com)
   - [PlanetScale](https://planetscale.com)
 
 ### License

@@ -144,4 +144,4 @@ DOMAIN_URL = 'https://pasteme.pythonanywhere.com/'
 
 try:
     from .local_settings import *
-except: pass
+except ImportError: pass

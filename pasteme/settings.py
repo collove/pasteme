@@ -82,15 +82,10 @@ WSGI_APPLICATION = 'pasteme.wsgi.application'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
 DATABASES = {
-  'default': {
-    'ENGINE': 'django_psdb_engine',
-    'NAME': config('DB_DATABASE'),
-    'HOST': config('DB_HOST'),
-    'PORT': config('DB_PORT'),
-    'USER': config('DB_USER'),
-    'PASSWORD': config('DB_PASSWORD'),
-    'OPTIONS': {'ssl': {'ca': config('MYSQL_ATTR_SSL_CA')}, 'charset': 'utf8mb4'}
-  }
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
 }
 
 # Password validation

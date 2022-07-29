@@ -1,5 +1,6 @@
 <p align="center">
-    <img src="https://raw.githubusercontent.com/collove/pasteme/295b20a2fc7375661fb123b140ed7089314c193d/.git_components/logo.svg" width="140">
+    <img src="https://raw.githubusercontent.com/collove/pasteme/development/.git_components/dark.svg#gh-dark-mode-only" width="140">
+        <img src="https://raw.githubusercontent.com/collove/pasteme/development/.git_components/light.svg#gh-light-mode-only" width="140">
     <h4 align="center">PasteMe - RESTful Pastebin Service</h4>
 </p><br>
 

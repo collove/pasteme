@@ -3,5 +3,5 @@ from .features import DatabaseFeatures
 
 
 class DatabaseWrapper(MysqlDatabaseWrapper):
-    vendor = 'planetscale'
+    vendor = "planetscale"
     features_class = DatabaseFeatures

@@ -13,23 +13,24 @@ class Snippet(models.Model):
     )
     title = models.CharField(
         max_length=120,
-        default='Untitled',
+        default="Untitled",
     )
     body = models.TextField()
     language = models.CharField(
         max_length=120,
         choices=LANGUAGES,
-        default='plaintext',
+        default="plaintext",
     )
     theme = models.CharField(
         max_length=120,
-        default='default',
+        default="default",
         choices=THEMES,
     )
     created_at = models.DateTimeField(
-        verbose_name='Created at',
+        verbose_name="Created at",
         auto_now=True,
         editable=False,
     )
 
-    def __str__(self): return f'{self.title} at {self.created_at.date()}'
+    def __str__(self):
+        return f"{self.title} at {self.created_at.date()}"

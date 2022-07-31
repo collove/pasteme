@@ -5,7 +5,7 @@ from pypi.models import Statistic
 
 
 class HomeView(TemplateView):
-    template_name = 'home.html'
+    template_name = "home.html"
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -15,5 +15,5 @@ class HomeView(TemplateView):
 
 class SnippetView(DetailView):
     model = Snippet
-    template_name = 'snippet.html'
-    context_object_name = 'snippet'
+    template_name = "snippet.html"
+    context_object_name = "snippet"

@@ -5,7 +5,7 @@ from blog.models import Blog
 
 class BlogListView(ListView):
     template_name = 'blogs.html'
-    queryset = Blog.objects.all()
+    queryset = Blog.objects.all().order_by('-published_at')
     context_object_name = 'blogs'
 
 

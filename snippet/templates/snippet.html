@@ -1,47 +1,50 @@
 {% extends '_base.html' %}
 {% load static %}
-
-{% block title %}{{snippet.title}} ({{snippet.get_language_display}}){% endblock %}
-
+{% block title %}{{ snippet.title }} ({{ snippet.get_language_display }}){% endblock %}
 {% block metas %}
     <!-- Primary Meta Tags -->
-    <meta name="title" content="{{snippet.title}} ({{snippet.get_language_display}})">
+    <meta name="title"
+          content="{{ snippet.title }} ({{ snippet.get_language_display }})">
     <meta name="description" content="">
-    
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="{% url 'view-paste' snippet.id %}">
-    <meta property="og:title" content="{{snippet.title}} ({{snippet.get_language_display}})">
+    <meta property="og:title"
+          content="{{ snippet.title }} ({{ snippet.get_language_display }})">
     <meta property="og:description" content="">
-    
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="{% url 'view-paste' snippet.id %}">
-    <meta property="twitter:title" content="{{snippet.title}} ({{snippet.get_language_display}})">
+    <meta property="twitter:title"
+          content="{{ snippet.title }} ({{ snippet.get_language_display }})">
     <meta property="twitter:description" content="">
 {% endblock %}
-
 {% block addon_style %}
-<link rel="stylesheet" href="{% static 'css/themes/' %}{{snippet.theme}}.min.css">
+    <link rel="stylesheet"
+          href="{% static 'css/themes/' %}{{ snippet.theme }}.min.css">
 {% endblock %}
-
 {% block addon_script %}
-<script src="{% static 'js/highlight.min.js' %}"></script>
-<script src="{% static 'js/highlightjs-line-numbers.min.js' %}"></script>
-<script>
+    <script src="{% static 'js/highlight.min.js' %}"></script>
+    <script src="{% static 'js/highlightjs-line-numbers.min.js' %}"></script>
+    <script>
     hljs.highlightAll();
     hljs.initLineNumbersOnLoad();
-</script>
+    </script>
 {% endblock %}
-
 {% block content %}
-<section>
-    <div class="container p-5">
-        <h3 style="font-weight: bold;">{{snippet.title}}</h3>
-        <p><span class="badge bg-dark">{{snippet.get_language_display}}</span>&nbsp;<span class="badge bg-dark">{{snippet.get_theme_display}} Theme</span>&nbsp;-&nbsp;<span class="badge bg-dark">{{snippet.created_at.date}}</span></p>
-        <div>
-            <pre class="rounded"><code class="language-{{snippet.language}}">{{snippet.body}}</code></pre>
+    <section>
+        <div class="container p-5">
+            <h3 style="font-weight: bold;">{{ snippet.title }}</h3>
+            <p class="mb-0">
+                <span class="badge bg-dark">{{ snippet.get_language_display }}</span>&nbsp;<span class="badge bg-dark">{{ snippet.get_theme_display }} Theme</span>
+            </p>
+            <p>
+                <span class="badge bg-dark">Created at {{ snippet.created_at.date }}</span>
+                <span class="badge bg-dark">Expires at {{ snippet.get_expires_at_display | lower }}</span>
+            </p>
+            <div>
+                <pre class="rounded"><code class="language-{{snippet.language}}">{{snippet.body}}</code></pre>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 {% endblock %}

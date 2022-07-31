@@ -44,6 +44,7 @@
         <link rel="stylesheet" href="{% static 'css/Navbar-With-Button.css' %}">
         <link rel="stylesheet" href="{% static 'css/Projects-Grid.css' %}">
         <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+        {% block addon_link %}{% endblock %}
         <style>
         code.phrase {
             color: rgb(250, 250, 250);
@@ -115,7 +116,6 @@
             filter: blur(5px);
             /* IE6-9 */
             }
-            {% block addon_style %}{% endblock %}
         </style>
     </head>
     <body style="font-family: Manrope, sans-serif; {% block body_css %}{% endblock %}"
@@ -159,6 +159,9 @@
         <footer class="text-center bg-white mt-auto">
             <div class="container text-muted py-4 py-lg-5">
                 <ul class="list-inline">
+                    <li class="list-inline-item me-4">
+                        <a class="link-secondary" href="{% url 'blogs' %}">Blog</a>
+                    </li>
                     <li class="list-inline-item me-4">
                         <a class="link-secondary" href="{% url 'schema-redoc' %}" target="blank">API Documentation</a>
                     </li>

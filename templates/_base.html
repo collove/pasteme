@@ -115,6 +115,13 @@
             filter: blur(5px);
             /* IE6-9 */
             }
+        .navbar-toggler>.close {
+             display:inline;
+        }
+        .navbar-toggler.collapsed>.close, 
+        .navbar-toggler:not(.collapsed)>.navbar-toggler-icon{
+            display:none;
+        }
         </style>
     </head>
     <body style="font-family: Manrope, sans-serif; {% block body_css %}{% endblock %}"
@@ -129,7 +136,10 @@
                         class="navbar-toggler"
                         data-bs-target="#navcol-1"
                         style="border-style: none;">
-                    <span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span>
+                    <span class="visually-hidden">Toggle navigation</span>
+                    <span class="my-1 mx-2 close">X</span>
+                    <span class="navbar-toggler-icon"></span>
+
                 </button>
                 <div class="collapse navbar-collapse" id="navcol-1">
                     <ul class="navbar-nav me-auto">

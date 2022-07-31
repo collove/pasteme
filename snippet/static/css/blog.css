@@ -23,3 +23,10 @@
 .body a{
     color: black;
 }
+
+.body code{
+    color: #fff;
+    background-color: black;
+    padding: 0 5px 0px 5px;
+    border-radius: 3px;blue;
+}

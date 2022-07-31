@@ -1,0 +1,52 @@
+{% extends '_base.html' %}
+{% load static %}
+
+{% block title %}PasteMe - Blogs{% endblock %}
+
+{% block blog_active %}active{% endblock %}
+
+{% block metas %}
+<!-- Primary Meta Tags -->
+<meta name="title" content="PasteMe - Blogs">
+<meta name="description"
+      content="Follow the feed and keep up with the tech.">
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="{% url 'blogs' %}">
+<meta property="og:title"
+      content="PasteMe - Blogs">
+<meta property="og:description"
+      content="Follow the feed and keep up with the tech.">
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="{% url 'blogs' %}">
+<meta property="twitter:title"
+      content="PasteMe - Blogs">
+<meta property="twitter:description"
+      content="Follow the feed and keep up with the tech.">
+{% endblock %}
+
+{% block content %}
+<section class="p-4">
+  <div class="container">
+    {% if blogs.exists %}
+      {% for blog in blogs %}
+      <div class="card card-body" style="border: unset;">
+            <a href="{% url 'blog' blog.slug %}" class="link-dark" style="text-decoration: unset;"><h3 class="card-title" style="font-family: Lora, serif"><b>{{blog.title}}</b></h3></a>
+            <p class="card-subtitle mb-2 text-muted">Published on {{blog.published_at | date:'M d, Y'}}</p>
+            <h5 class="card-text" align="justify" style="font-family: Lora, serif">{{blog.abstract|truncatechars:85}}</h5>
+            <p class="card-text mt-1">
+                  {% for tag in blog.tags.all %}
+                  <span class="badge me-1 bg-dark">{{tag.name}}</span>
+                  {% endfor %%}
+            </p>
+      </div>
+      {% endfor %}
+    {% else %}
+    <h2>No feeds to follow up!</h2>
+    <p>No blog post found in the archive.</p>
+    
+    {% endif %}
+  </div>
+</section>
+{% endblock %}

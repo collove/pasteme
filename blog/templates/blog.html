@@ -1,0 +1,41 @@
+{% extends '_base.html' %}
+{% load static %}
+{% load markdown_extras %}
+
+{% block title %}{{blog.title}}{% endblock %}
+
+{% block addon_style %}
+      font-family: Lora, serif;
+{% endblock %}
+
+{% block metas %}
+<!-- Primary Meta Tags -->
+<meta name="title" content="{{blog.title}}">
+<meta name="description"
+      content="{{blog.abstract}}">
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="{% url 'blog' blog.slug %}">
+<meta property="og:title"
+      content="{{blog.title}}">
+<meta property="og:description"
+      content="{{blog.abstract}}">
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="{% url 'blog' blog.slug %}">
+<meta property="twitter:title"
+      content="{{blog.title}}">
+<meta property="twitter:description"
+      content="{{blog.abstract}}">
+{% endblock %}
+
+{% block content %}
+<section class="p-5">
+  <div class="container">
+    <h1 style="font-family: Lora, serif; font-weight: bold;">{{blog.title}}</h1>
+    <p class="text-muted">Published at {{blog.published_at | date:'M d, Y'}} | Author: PasteMe</p>
+    <h5 align="justify" class="text-muted mt-4" style="font-family: Lora, serif;">{{blog.abstract}}</h5><br>
+    <div>{{blog.body | markdown | safe}}</div>
+  </div>
+</section>
+{% endblock %}

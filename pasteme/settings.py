@@ -45,6 +45,7 @@ INSTALLED_APPS = [
 
     # apps
     'snippet',
+    'blog',
     'pypi',
 ]
 

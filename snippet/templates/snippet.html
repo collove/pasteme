@@ -21,7 +21,7 @@
     <meta property="twitter:description" content="">
 {% endblock %}
 
-{% block addon_style %}
+{% block addon_link %}
 <link rel="stylesheet" href="{% static 'css/themes/' %}{{snippet.theme}}.min.css">
 {% endblock %}
 
@@ -35,8 +35,8 @@
 {% endblock %}
 
 {% block content %}
-<section>
-    <div class="container p-5">
+<section class="p-4">
+    <div class="container">
         <h3 style="font-weight: bold;">{{snippet.title}}</h3>
         <p><span class="badge bg-dark">{{snippet.get_language_display}}</span>&nbsp;<span class="badge bg-dark">{{snippet.get_theme_display}} Theme</span>&nbsp;-&nbsp;<span class="badge bg-dark">{{snippet.created_at.date}}</span></p>
         <div>

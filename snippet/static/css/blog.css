@@ -1,0 +1,32 @@
+.title, .abstract, .body{
+    font-family: Lora, serif;
+}
+
+.abstract{
+    text-align: justify;
+}
+
+.title{
+    font-weight: bold;
+}
+
+.body h1, h2, h3, h4, h5{
+    font-weight: bold;
+    margin-top: 25px;
+}
+
+.body p{
+    font-size: 20px;
+    text-align: justify;
+}
+
+.body a{
+    color: black;
+}
+
+.body code{
+    color: #fff;
+    background-color: black;
+    padding: 0 5px 0px 5px;
+    border-radius: 3px;blue;
+}

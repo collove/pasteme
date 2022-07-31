@@ -26,18 +26,33 @@
       content="Follow the feed and keep up with the tech.">
 {% endblock %}
 
+{% block body_css %}background: url('{% static 'img/banner.svg' %}') fixed;{% endblock %}
+
 {% block content %}
-<section class="p-4">
-  <div class="container">
+<section class="text-white" style="padding: 30px;">
+      <div class="container">
+          <div class="row align-items-center">
+            <div class="col-md">
+              <h2 class="fw-bold" style="line-height: 40px;">Welcome to the PasteMe Library!</h2>
+              <p align="justify">In library, our professional writers write awesome articles about tricks, best practices, implementations, and new technologes. Follow the feed and enjoy the blogs.</p>
+            </div>
+            <div class="col-md order-first order-md-last" align="center">
+              <img class="img-fluid" src="{% static 'img/reader_octocat.svg' %}" width="250">
+          </div>
+        </div>
+      </div>
+</section>
+<section class="p-4 font-dark bg-white">
+  <div class="container mb-3">
     {% if blogs.exists %}
       {% for blog in blogs %}
       <div class="card card-body" style="border: unset;">
             <a href="{% url 'blog' blog.slug %}" class="link-dark" style="text-decoration: unset;"><h3 class="card-title" style="font-family: Lora, serif"><b>{{blog.title}}</b></h3></a>
             <p class="card-subtitle mb-2 text-muted">Published on {{blog.published_at | date:'M d, Y'}}</p>
-            <h5 class="card-text" align="justify" style="font-family: Lora, serif">{{blog.abstract|truncatechars:85}}</h5>
+            <h5 class="card-text" style="font-family: Lora, serif">{{blog.abstract|truncatechars:85}}</h5>
             <p class="card-text mt-1">
                   {% for tag in blog.tags.all %}
-                  <span class="badge me-1 bg-dark">{{tag.name}}</span>
+                  <span class="badge me-1 bg-black">{{tag.name}}</span>
                   {% endfor %%}
             </p>
       </div>
@@ -45,7 +60,6 @@
     {% else %}
     <h2>No feeds to follow up!</h2>
     <p>No blog post found in the archive.</p>
-    
     {% endif %}
   </div>
 </section>

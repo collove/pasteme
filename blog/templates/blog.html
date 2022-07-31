@@ -4,10 +4,6 @@
 
 {% block title %}{{blog.title}}{% endblock %}
 
-{% block addon_style %}
-      font-family: Lora, serif;
-{% endblock %}
-
 {% block metas %}
 <!-- Primary Meta Tags -->
 <meta name="title" content="{{blog.title}}">
@@ -29,13 +25,25 @@
       content="{{blog.abstract}}">
 {% endblock %}
 
+{% block addon_link %}
+<link rel="stylesheet" href="{% static 'css/blog.css' %}">
+{% endblock %}
+
+{% block blog_active %}active{% endblock %}
+
 {% block content %}
 <section class="p-5">
-  <div class="container">
-    <h1 style="font-family: Lora, serif; font-weight: bold;">{{blog.title}}</h1>
-    <p class="text-muted">Published at {{blog.published_at | date:'M d, Y'}} | Author: PasteMe</p>
-    <h5 align="justify" class="text-muted mt-4" style="font-family: Lora, serif;">{{blog.abstract}}</h5><br>
-    <div>{{blog.body | markdown | safe}}</div>
-  </div>
+      <div class="container d-flex justify-content-center">
+      <div class="col-md-9">
+        <h1 class="title">{{blog.title}}</h1>
+        <p class="text-muted">Published on {{blog.published_at | date:'M d, Y'}} &#183;
+            {% for tag in blog.tags.all %}
+                  <span class="badge me-1 bg-black">{{tag.name}}</span>
+            {% endfor %%}
+        </p>
+        <h5 class="text-muted mt-4 mb-4 abstract">{{blog.abstract}}</h5>
+        <div class="body">{{blog.body | markdown | safe}}</div>
+      </div>
+      </div>
 </section>
 {% endblock %}

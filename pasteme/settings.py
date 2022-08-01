@@ -40,8 +40,10 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     # 3rd parties
     "rest_framework",
+    "tailwind",
     "drf_yasg",
     # apps
+    "tailwindcss",
     "snippet",
     "pypi",
 ]
@@ -133,8 +135,14 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 DOMAIN_URL = "https://pasteme.pythonanywhere.com/"
 
-# Import local settings
+# TailWindCSS settings
+TAILWIND_APP_NAME = "tailwindcss"
 
+INTERNAL_IPS = [
+    "127.0.0.1",
+]
+
+# Import local settings
 try:
     from .local_settings import *
 except ImportError:

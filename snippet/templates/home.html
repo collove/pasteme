@@ -1,79 +1,10 @@
 {% extends '_base.html' %}
 {% load static %}
-
 {% block addon_style %}
-<link rel="stylesheet" href="{% static 'css/themes/github.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/themes/github.min.css' %}">
 {% endblock %}
-
 {% block addon_script %}
-<script src="{% static 'js/highlight.min.js' %}"></script>
-<script>hljs.highlightAll();</script>
+  <script src="{% static 'js/highlight.min.js' %}"></script>
+  <script>hljs.highlightAll();</script>
 {% endblock %}
-
-{% block home_active %}active{% endblock %}
-
-{% block body_css %}background: url('{% static 'img/banner.svg' %}') fixed;{% endblock %}
-
-{% block content %}
-<section class="text-white" style="padding: 30px;">
-  <div class="container">
-    <div class="row align-items-center">
-      <div class="col-md">
-          <h2 class="fw-bold" style="line-height: 40px;">Open-Source RESTful Pastebin Service Featured for Hashnode &amp; PlanetScale!</h2>
-          <p align="justify">PasteMe is an open-source pastebin service that works with the power of RESTful APIs. Install the <code class="phrase">pasteme-cli</code> package and start pasting right from your terminals and CLI shells.</p><br>
-          <div class="glow">
-            <pre class="rounded"><code class="language-shell">$ pip install pasteme-cli</code></pre>
-          </div>
-      </div>
-      <div class="col-md">
-        <script src="https://asciinema.org/a/510373.js" id="asciicast-510373" data-theme="tango" data-size="big" data-speed="3" data-rows="20"></script>
-      </div>
-    </div>
-  </div>
-</section>
-<section data-aos="fade-up" data-aos-duration="400" data-aos-once="true" class="font-dark bg-white" style="font-family: Manrope, sans-serif;">
-      <div class="container">
-          <h3 class="text-dark text-center all-capital p-4" data-aos="fade-up" data-aos-duration="400" data-aos-delay="200" data-aos-once="true" style="font-size: 30px;font-weight: 300;line-height: 38px;letter-spacing: 2px;">PyPi Package Statistics <span class="badge bg-dark">{{stats.date.date}}</span></h3>
-          <div class="row" data-aos="fade-up" data-aos-duration="800" data-aos-delay="150" data-aos-once="true" style="padding-top: 20px;padding-bottom: 40px;">
-              <div class="col-sm">
-                  <div><span class="Justify-Flex-Center purecounter counter-font count plus" data-purecounter-start="0" data-purecounter-end="{{stats.total_service_stars}}" data-purecounter-duration="1">{{stats.total_service_stars}}</span>
-                      <p class="text-center text-uppercase">Overall Service Stars</p>
-                  </div>
-              </div>
-              <div class="col-sm">
-                  <div><span class="Justify-Flex-Center purecounter counter-font count plus" data-purecounter-start="0" data-purecounter-end="{{stats.total_downloads}}" data-purecounter-duration="1">{{stats.total_downloads}}</span>
-                      <p class="text-center text-uppercase">Overall Downloads</p>
-                  </div>
-              </div>
-              <div class="col-sm">
-                  <div><span class="Justify-Flex-Center purecounter counter-font count plus" data-purecounter-start="0" data-purecounter-end="{{stats.total_package_stars}}" data-purecounter-duration="1">{{stats.total_package_stars}}</span>
-                      <p class="text-center text-uppercase">Overall Package Stars</p>
-                  </div>
-              </div>
-          </div>
-      </div>
-</section>
-<section class="text-white" style="padding: 30px;">
-  <div class="container">
-    <div class="row align-items-center">
-      <div class="col-md" align="center">
-          <img class="img-fluid" src="{% static 'img/octocat.svg' %}" width="300">
-      </div>
-      <div class="col-md">
-        <h2 class="fw-bold" style="line-height: 40px;">Join the Community & Develop PasteMe!</h2>
-        <p align="justify">PasteMe is an open-source Django-based service that is being developed on GitHub. Join the community and feel free to contribute.</p>
-        <a class="btn btn-outline-light ms-md-2" role="button" href="https://github.com/collove/pasteme" target="blank">View Repository</a>
-      </div>
-      <div class="row align-items-center">
-        <div class="col-md">
-          <h2 class="fw-bold" style="line-height: 40px;">Hashnode's July Hackathon!</h2>
-          <p align="justify">This idea is being developed for Hashnode's July Hackathon. That being said, there is an article describing the development and deployment steps behind this service.</p>
-          <a class="btn btn-outline-light ms-md-2" role="button" href="https://imsadra.me/pasteme-paste-codes-from-your-terminal" target="blank">Read Article</a>
-        </div>
-        <div class="col-md order-first order-md-last" align="center">
-          <img class="img-fluid" src="{% static 'img/hackathon.svg' %}">
-      </div>
-    </div>
-  </div>
-</section>
-{% endblock %}
+{% block content %}<h1 class="text-8xl text-center font-bold">Hello World</h1>{% endblock %}

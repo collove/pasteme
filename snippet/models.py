@@ -2,15 +2,10 @@ from shortuuid.django_fields import ShortUUIDField
 from django.db import models
 
 
-from .constants import LANGUAGES, THEMES
+from .constants import LANGUAGES, THEMES, EXPIRY_OPTIONS
 
 
 class Snippet(models.Model):
-    class ExpiryOptions(models.TextChoices):
-        ONE_DAY = "1d", "One Day"
-        ONE_WEEK = "1w", "One Week"
-        ONE_MONTH = "1m", "One Month"
-
     id = ShortUUIDField(
         length=5,
         max_length=40,
@@ -37,10 +32,10 @@ class Snippet(models.Model):
         auto_now=True,
         editable=False,
     )
-    expires_at = models.CharField(
-        max_length=2,
-        choices=ExpiryOptions.choices,
-        default=ExpiryOptions.ONE_DAY,
+    expires_in = models.SmallIntegerField(
+        verbose_name="Expires in",
+        choices=EXPIRY_OPTIONS,
+        default=1,
     )
 
     def __str__(self):

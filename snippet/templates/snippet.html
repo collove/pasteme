@@ -40,7 +40,7 @@
             </p>
             <p>
                 <span class="badge bg-dark">Created at {{ snippet.created_at.date }}</span>
-                <span class="badge bg-dark">Expires at {{ snippet.get_expires_at_display | lower }}</span>
+                <span class="badge bg-dark">Expires in {{ snippet.get_expires_in_display | lower }}</span>
             </p>
             <div>
                 <pre class="rounded"><code class="language-{{snippet.language}}">{{snippet.body}}</code></pre>

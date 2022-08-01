@@ -1,5 +1,4 @@
 # Language choices
-
 LANGUAGES = (
     ("bash", "Bash"),
     ("c", "C"),
@@ -20,7 +19,6 @@ LANGUAGES = (
 )
 
 # Themes
-
 THEMES = (
     ("default", "Default Light"),
     ("dark", "Default Dark"),
@@ -28,4 +26,10 @@ THEMES = (
     ("atom-one-dark", "Atom One Dark"),
     ("github", "Github Light"),
     ("github-dark", "Github Dark"),
+)
+
+EXPIRY_OPTIONS = (
+    (1, "One Day"),
+    (7, "One Week"),
+    (30, "One Month"),
 )

@@ -11,6 +11,6 @@ class CreateSnippetAPI(CreateAPIView):
 
 class GetSnippetAPI(RetrieveAPIView):
     model = Snippet
-    lookup_field = 'pk'
+    lookup_field = "pk"
     serializer_class = SnippetSerializer
     queryset = Snippet.objects.all()

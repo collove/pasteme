@@ -9,5 +9,6 @@ class Statistic(models.Model):
     total_service_stars = models.PositiveIntegerField()
     total_package_stars = models.PositiveIntegerField()
     date = models.DateTimeField(auto_now=True)
-    
-    def __str__(self): return f'{self.id} at {self.date}'
+
+    def __str__(self):
+        return f"{self.id} at {self.date}"

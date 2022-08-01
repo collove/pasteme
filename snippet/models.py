@@ -1,7 +1,8 @@
-from django.db import models
 from shortuuid.django_fields import ShortUUIDField
+from django.db import models
 
-from .constants import LANGUAGES, THEMES
+
+from .constants import LANGUAGES, THEMES, EXPIRY_OPTIONS
 
 
 class Snippet(models.Model):
@@ -13,23 +14,29 @@ class Snippet(models.Model):
     )
     title = models.CharField(
         max_length=120,
-        default='Untitled',
+        default="Untitled",
     )
     body = models.TextField()
     language = models.CharField(
         max_length=120,
         choices=LANGUAGES,
-        default='plaintext',
+        default="plaintext",
     )
     theme = models.CharField(
         max_length=120,
-        default='default',
+        default="default",
         choices=THEMES,
     )
     created_at = models.DateTimeField(
-        verbose_name='Created at',
+        verbose_name="Created at",
         auto_now=True,
         editable=False,
     )
+    expires_in = models.SmallIntegerField(
+        verbose_name="Expires in",
+        choices=EXPIRY_OPTIONS,
+        default=1,
+    )
 
-    def __str__(self): return f'{self.title} at {self.created_at.date()}'
+    def __str__(self):
+        return f"{self.title} at {self.created_at.date()}"

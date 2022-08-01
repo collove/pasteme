@@ -8,19 +8,69 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='Snippet',
+            name="Snippet",
             fields=[
-                ('id', shortuuid.django_fields.ShortUUIDField(alphabet='abcdefg12345', length=5, max_length=40, prefix='', primary_key=True, serialize=False)),
-                ('title', models.CharField(default='Untitled', max_length=120)),
-                ('body', models.TextField()),
-                ('language', models.CharField(choices=[('bash', 'Bash'), ('c', 'C'), ('cpp', 'C++'), ('csharp', 'C#'), ('css', 'CSS'), ('go', 'Go'), ('html', 'HTML'), ('java', 'Java'), ('js', 'JavaScript'), ('json', 'JSON'), ('lua', 'Lua'), ('md', 'MarkDown'), ('php', 'PHP'), ('plaintext', 'PlainText'), ('python', 'Python'), ('rb', 'Ruby')], default='plaintext', max_length=120)),
-                ('theme', models.CharField(choices=[('default', 'Default Light'), ('dark', 'Default Dark'), ('atom-one-light', 'Atom One Light'), ('atom-one-dark', 'Atom One Dark'), ('github', 'Github Light'), ('github-dark', 'Github Dark')], default='default', max_length=120)),
-                ('created_at', models.DateTimeField(auto_now=True, verbose_name='Created at')),
+                (
+                    "id",
+                    shortuuid.django_fields.ShortUUIDField(
+                        alphabet="abcdefg12345",
+                        length=5,
+                        max_length=40,
+                        prefix="",
+                        primary_key=True,
+                        serialize=False,
+                    ),
+                ),
+                ("title", models.CharField(default="Untitled", max_length=120)),
+                ("body", models.TextField()),
+                (
+                    "language",
+                    models.CharField(
+                        choices=[
+                            ("bash", "Bash"),
+                            ("c", "C"),
+                            ("cpp", "C++"),
+                            ("csharp", "C#"),
+                            ("css", "CSS"),
+                            ("go", "Go"),
+                            ("html", "HTML"),
+                            ("java", "Java"),
+                            ("js", "JavaScript"),
+                            ("json", "JSON"),
+                            ("lua", "Lua"),
+                            ("md", "MarkDown"),
+                            ("php", "PHP"),
+                            ("plaintext", "PlainText"),
+                            ("python", "Python"),
+                            ("rb", "Ruby"),
+                        ],
+                        default="plaintext",
+                        max_length=120,
+                    ),
+                ),
+                (
+                    "theme",
+                    models.CharField(
+                        choices=[
+                            ("default", "Default Light"),
+                            ("dark", "Default Dark"),
+                            ("atom-one-light", "Atom One Light"),
+                            ("atom-one-dark", "Atom One Dark"),
+                            ("github", "Github Light"),
+                            ("github-dark", "Github Dark"),
+                        ],
+                        default="default",
+                        max_length=120,
+                    ),
+                ),
+                (
+                    "created_at",
+                    models.DateTimeField(auto_now=True, verbose_name="Created at"),
+                ),
             ],
         ),
     ]

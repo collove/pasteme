@@ -19,9 +19,9 @@
           content="{{ snippet.title }} ({{ snippet.get_language_display }})">
     <meta property="twitter:description" content="">
 {% endblock %}
-{% block addon_style %}
-    <link rel="stylesheet"
-          href="{% static 'css/themes/' %}{{ snippet.theme }}.min.css">
+
+{% block addon_link %}
+<link rel="stylesheet" href="{% static 'css/themes/' %}{{snippet.theme}}.min.css">
 {% endblock %}
 {% block addon_script %}
     <script src="{% static 'js/highlight.min.js' %}"></script>

@@ -42,8 +42,9 @@ INSTALLED_APPS = [
     "rest_framework",
     "drf_yasg",
     # apps
-    "snippet",
-    "pypi",
+    'snippet',
+    'blog',
+    'pypi',
 ]
 
 MIDDLEWARE = [

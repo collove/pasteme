@@ -35,12 +35,11 @@
     <section>
         <div class="container p-5">
             <h3 style="font-weight: bold;">{{ snippet.title }}</h3>
-            <p class="mb-0">
-                <span class="badge bg-dark">{{ snippet.get_language_display }}</span>&nbsp;<span class="badge bg-dark">{{ snippet.get_theme_display }} Theme</span>
-            </p>
-            <p>
-                <span class="badge bg-dark">Created at {{ snippet.created_at.date }}</span>
-                <span class="badge bg-dark">Expires in {{ snippet.get_expires_in_display | lower }}</span>
+            <p class="mb-3">
+                <span class="badge bg-dark" style="border: solid black thin;">Created at {{ snippet.created_at.date }}</span>
+                <span class="badge bg-dark" style="border: solid black thin;">Expires in {{ snippet.get_expires_in_display }}</span>
+                <span class="badge bg-white text-dark" style="border: solid black thin;">{{ snippet.get_language_display }}</span>
+                <span class="badge bg-white text-dark" style="border: solid black thin;">{{ snippet.get_theme_display }} Theme</span>
             </p>
             <div>
                 <pre class="rounded"><code class="language-{{snippet.language}}">{{snippet.body}}</code></pre>

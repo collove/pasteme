@@ -5,6 +5,8 @@
  * https://unpkg.com/browse/tailwindcss@latest/stubs/defaultConfig.stub.js
  */
 
+const defaultTheme = require("tailwindcss/defaultTheme");
+
 module.exports = {
   content: [
     /**
@@ -41,9 +43,22 @@ module.exports = {
      */
     // '../../**/*.py'
   ],
-  darkMode: "class",
+  darkMode: "media",
   theme: {
-    extend: {},
+    fontFamily: {
+      sans: ["Manrope", ...defaultTheme.fontFamily.sans],
+    },
+    extend: {
+      navBarIcon: {},
+      backgroundImage: {
+        "body-pattern": "url('/static/img/pattern.svg')",
+      },
+    },
+  },
+  variants: {
+    extend: {
+      navBarIcon: ["dark"],
+    },
   },
   plugins: [
     /**

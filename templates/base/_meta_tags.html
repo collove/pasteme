@@ -32,15 +32,20 @@
       type="image/png"
       sizes="16x16"
       href="{% static 'img/fav16.png' %}"/>
-{% compress css file styles %}
-      <link rel="stylesheet" href="{% static 'css/fonts.css' %}"/>
+{% compress css preload %}
       {% tailwind_preload_css %}
+{% endcompress %}
+{% compress css file styles %}
       {% tailwind_css %}
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link rel="stylesheet" href="{% static 'css/fonts.css' %}"/>
       <link rel="stylesheet" href="{% static 'css/Incrementing-Animation.css' %}"/>
       <link rel="stylesheet" href="{% static 'css/Navbar-With-Button.css' %}"/>
       <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}"/>
       <link rel="stylesheet" href="{% static 'css/Projects-Grid.css' %}"/>
       <link rel="stylesheet" href="{% static 'css/aos.css' %}"/>
+      <link rel="stylesheet" href="{% static 'css/extra.css' %}"/>
 {% endcompress %}
 {% block addon_style %}
 {% endblock addon_style %}

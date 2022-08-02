@@ -1,10 +1,53 @@
 {% load static %}
-<div>
-    <navbar class="flex flex-col items-center justify-between px-6 py-2 bg-gray-200 sm:flex-row">
-    <p class="text-gray-700">
-        <b>
-            Navbar content
-        </b>
-    </p>
-    </navbar>
-</div>
+<nav class="bg-white shadow dark:bg-black">
+    <div class="container px-6 py-5 mx-auto md:flex text-gray-800 dark:text-white">
+        <div class="flex items-center justify-between">
+            <a href="{% url 'home' %}" class="md:mr-3 w-10">
+                <img src="{% static 'img/icon.svg' %}"
+                     width="40"
+                     height="40"
+                     alt="PasteMe Icon"/>
+            </a>
+            <a href="{% url 'home' %}"
+               class="text-transparent text-xl font-bold lg:text-2xl bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600">PasteMe</a>
+            <!-- Mobile menu button -->
+            <div class="flex md:hidden">
+                <button type="button"
+                        class="text-gray-500 dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-400 focus:outline-none focus:text-gray-600 dark:focus:text-gray-400"
+                        aria-label="toggle menu">
+                    <svg viewBox="0 0 24 24" class="w-6 h-6 fill-current">
+                        <path fill-rule="evenodd" d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z">
+                        </path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu open: "block", Menu closed: "hidden" -->
+        <div class="w-full md:flex md:items-center md:justify-between">
+            <div class="flex flex-col md:flex-row mt-4 md:mt-0 md:mx-4">
+                <ul class="flex flex-col md:flex-row text-center md:text-left gap-4 text-gray-500 dark:text-gray-400">
+                    <li class="hover:text-black dark:hover:text-white">
+                        <a href="{% url 'home' %}" class="{% block home_active %}{% endblock %}">Home</a>
+                    </li>
+                    <li class="hover:text-black dark:hover:text-white">
+                        <a href="{% url 'home' %}" class="{% block blog_active %}{% endblock %}">Blog</a>
+                    </li>
+                    <li class="hover:text-black dark:hover:text-white">
+                        <a href="{% url 'schema-redoc' %}" target="blank">API Docs</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="hidden md:flex items-center gap-3">
+                <p>Open Source on</p>
+                <a class="flex w-7 h-7 relative"
+                   href="https://github.com/collove/pasteme"
+                   target="blank">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-zinc-400 opacity-75"></span>
+                    <img src="{% static 'img/GitHub-Mark.png' %}"
+                         alt="GitHub Logo"
+                         class="inline"/>
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>

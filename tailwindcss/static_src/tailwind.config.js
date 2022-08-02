@@ -43,21 +43,24 @@ module.exports = {
      */
     // '../../**/*.py'
   ],
-  darkMode: "media",
+  darkMode: "class",
   theme: {
     fontFamily: {
       sans: ["Manrope", ...defaultTheme.fontFamily.sans],
     },
     extend: {
-      navBarIcon: {},
       backgroundImage: {
         "body-pattern": "url('/static/img/pattern.svg')",
+        "icon-light": "url('/static/img/icon-dark.svg')",
+        "icon-dark": "url('/static/img/icon-light.svg')",
+        "github-light": "url('/static/img/Github-dark.png')",
+        "github-dark": "url('/static/img/Github-light.png')",
       },
     },
   },
   variants: {
     extend: {
-      navBarIcon: ["dark"],
+      backgroundImage: ["dark"],
     },
   },
   plugins: [

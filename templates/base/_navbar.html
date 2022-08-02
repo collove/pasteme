@@ -1,15 +1,11 @@
 {% load static %}
-<nav class="bg-white shadow dark:bg-black">
+<nav class="bg-white dark:bg-black transition-colors ease-in-out duration-300">
     <div class="container px-6 py-5 mx-auto md:flex text-gray-800 dark:text-white">
         <div class="flex items-center justify-between">
-            <a href="{% url 'home' %}" class="md:mr-3 w-10">
-                <img src="{% static 'img/icon.svg' %}"
-                     width="40"
-                     height="40"
-                     alt="PasteMe Icon"/>
-            </a>
             <a href="{% url 'home' %}"
-               class="text-transparent text-xl font-bold lg:text-2xl bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600">PasteMe</a>
+               class="md:mr-3 w-10 h-10 bg-icon-light dark:bg-icon-dark"></a>
+            <a href="{% url 'home' %}"
+               class="text-transparent text-3xl font-bold lg:text-2xl bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600">PasteMe</a>
             <!-- Mobile menu button -->
             <div class="flex md:hidden">
                 <button type="button"
@@ -38,15 +34,7 @@
                 </ul>
             </div>
             <div class="hidden md:flex items-center gap-3">
-                <p>Open Source on</p>
-                <a class="flex w-7 h-7 relative"
-                   href="https://github.com/collove/pasteme"
-                   target="blank">
-                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-zinc-400 opacity-75"></span>
-                    <img src="{% static 'img/GitHub-Mark.png' %}"
-                         alt="GitHub Logo"
-                         class="inline"/>
-                </a>
+                <span class="darkmode-switch"></span>
             </div>
         </div>
     </div>

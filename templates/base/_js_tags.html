@@ -1,10 +1,19 @@
 {% load static %}
 {% load compress %}
-{% compress js file scripts %}
+{% compress js %}
     <script src="{% static 'js/aos.js' %}"></script>
     <script src="{% static 'js/jquery.min.js' %}"></script>
     <script src="{% static 'js/owl.carousel.min.js' %}"></script>
     <script src="{% static 'js/Incrementing-Animation.js' %}"></script>
+    <script>
+    html_el = document.getElementsByTagName('html')[0];
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        html_el.classList.add('dark');
+    }
+    $('.darkmode-switch').on("click", function () {
+        $('html').toggleClass('dark');
+    });
+    </script>
 {% endcompress %}
 {% block addon_script %}
 {% endblock addon_script %}

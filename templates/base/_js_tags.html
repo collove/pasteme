@@ -1,0 +1,10 @@
+{% load static %}
+{% load compress %}
+{% compress js file scripts %}
+    <script src="{% static 'js/aos.js' %}"></script>
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'js/Incrementing-Animation.js' %}"></script>
+{% endcompress %}
+{% block addon_script %}
+{% endblock addon_script %}

@@ -1,4 +1,5 @@
 {% load static %}
+{% load compress %}
 {% load static tailwind_tags %}
 <meta charset="utf-8"/>
 <meta name="viewport"
@@ -23,12 +24,6 @@
       <meta property="twitter:description"
             content="PasteMe is an open-source pastebin service that works with the power of RESTful APIs."/>
 {% endblock metas %}
-<link rel="stylesheet"
-      href="https://fonts.googleapis.com/css?family=Manrope&amp;display=swap"/>
-<link rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"/>
-<link rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"/>
 <link rel="icon"
       type="image/png"
       sizes="32x32"
@@ -37,10 +32,15 @@
       type="image/png"
       sizes="16x16"
       href="{% static 'img/fav16.png' %}"/>
-{% tailwind_preload_css %}
-{% tailwind_css %}
-<link rel="stylesheet" href="{% static 'css/Incrementing-Animation.css' %}"/>
-<link rel="stylesheet" href="{% static 'css/Navbar-With-Button.css' %}"/>
-<link rel="stylesheet" href="{% static 'css/Projects-Grid.css' %}"/>
+{% compress css file styles %}
+      <link rel="stylesheet" href="{% static 'css/fonts.css' %}"/>
+      {% tailwind_preload_css %}
+      {% tailwind_css %}
+      <link rel="stylesheet" href="{% static 'css/Incrementing-Animation.css' %}"/>
+      <link rel="stylesheet" href="{% static 'css/Navbar-With-Button.css' %}"/>
+      <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}"/>
+      <link rel="stylesheet" href="{% static 'css/Projects-Grid.css' %}"/>
+      <link rel="stylesheet" href="{% static 'css/aos.css' %}"/>
+{% endcompress %}
 {% block addon_style %}
 {% endblock addon_style %}

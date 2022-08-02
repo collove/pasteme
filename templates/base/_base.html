@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" class="h-full">
     <head>
-        {% include "_meta_tags.html" %}
+        {% include "base/_meta_tags.html" %}
         <title>
             {% block title %}
                 PasteMe Service
@@ -9,12 +9,12 @@
         </title>
     </head>
     <body class="h-full bg-gray-50 dark:bg-gray-900 grid grid-rows-[auto_1fr_auto] leading-normal tracking-normal">
-        {% include "_navbar.html" %}
+        {% include "base/_navbar.html" %}
         <main class="container mx-auto my-4">
             {% block content %}
             {% endblock content %}
         </main>
-        {% include "_footer.html" %}
-        {% include "_js_tags.html" %}
+        {% include "base/_footer.html" %}
+        {% include "base/_js_tags.html" %}
     </body>
 </html>

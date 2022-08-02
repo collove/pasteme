@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     # 3rd parties
     "rest_framework",
+    "compressor",
     "tailwind",
     "drf_yasg",
     # apps
@@ -141,6 +142,15 @@ TAILWIND_APP_NAME = "tailwindcss"
 INTERNAL_IPS = [
     "127.0.0.1",
 ]
+
+# Compressor settings
+STATICFILES_FINDERS = (
+    "django.contrib.staticfiles.finders.FileSystemFinder",
+    "django.contrib.staticfiles.finders.AppDirectoriesFinder",
+    "compressor.finders.CompressorFinder",
+)
+
+COMPRESS_ENABLED = True
 
 # Import local settings
 try:

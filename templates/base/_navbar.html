@@ -1,11 +1,13 @@
 {% load static %}
 <nav class="bg-white dark:bg-black transition-colors ease-in-out duration-300 relative">
-    <div class="container p-6 mx-auto md:flex text-gray-800 dark:text-white overflow-y-hidden">
+    <div class="container py-6 md:flex text-gray-800 dark:text-white overflow-y-hidden">
         <div class="flex items-center justify-between">
-            <a href="{% url 'home' %}"
-               class="md:mr-3 w-10 h-10 bg-icon-light dark:bg-icon-dark"></a>
-            <a href="{% url 'home' %}"
-               class="text-black dark:text-white text-2xl font-semibold">PasteMe</a>
+            <div class="flex items-center gap-2">
+                <a href="{% url 'home' %}"
+                   class="md:mr-3 w-10 h-10 bg-icon-light dark:bg-icon-dark"></a>
+                <a href="{% url 'home' %}"
+                   class="text-black dark:text-white text-2xl float-left">PasteMe</a>
+            </div>
             <!-- Mobile menu button -->
             <div class="flex md:hidden" id="menu-toggle">
                 <button type="button"

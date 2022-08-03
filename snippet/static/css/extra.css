@@ -42,7 +42,6 @@ code.phrase {
 .glow {
   position: relative;
   padding: 0 2px;
-  margin: 2px;
 }
 .glow:before {
   content: "";

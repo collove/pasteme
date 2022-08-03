@@ -7,4 +7,7 @@
   <script src="{% static 'js/highlight.min.js' %}"></script>
   <script>hljs.highlightAll();</script>
 {% endblock %}
-{% block content %}<h1 class="text-4xl">Hello</h1>{% endblock %}
+{% block content %}
+  {% include "home_sections/hero.html" %}
+  {% include "home_sections/stat.html" %}
+{% endblock %}

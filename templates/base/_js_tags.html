@@ -3,16 +3,23 @@
 {% compress js %}
     <script src="{% static 'js/aos.js' %}"></script>
     <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/particles.min.js' %}"></script>
     <script src="{% static 'js/owl.carousel.min.js' %}"></script>
     <script src="{% static 'js/Incrementing-Animation.js' %}"></script>
     <script>
+    particlesJS.load('particles-js', 'static/js/particles.json', function() {
+        console.log('callback - particles.js config loaded');
+    });
+
     html_el = document.getElementsByTagName('html')[0];
     if (!window.matchMedia('(prefers-color-scheme: dark)').matches) {
         html_el.classList.remove('dark');
     }
+
     $('.darkmode-switch').on("click", function () {
         $('html').toggleClass('dark');
     });
+
     $('#menu-toggle').on("click", function () {
         if ($('#menu').hasClass('z-10')) {
             $('#menu').removeClass('z-10');
@@ -22,7 +29,7 @@
         } else {
             $('#menu').toggleClass('top-[100%_!important]');
             setTimeout(function () {
-                $('#menu').toggleClass('z-10');
+                $('#menu').toggleClass('z-[10_!important]');
             }, 200);
         }
     });

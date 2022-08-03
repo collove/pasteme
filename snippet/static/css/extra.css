@@ -187,3 +187,37 @@ code.phrase {
   background-position: 20% 20%, 65% 30%, 120% 100%, 20% 80%;
   box-shadow: 0px 0px 20px 10px rgba(255, 255, 255, 0.2);
 }
+
+.ham {
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform 400ms;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.hamRotate.active {
+  transform: rotate(45deg);
+}
+.hamRotate180.active {
+  transform: rotate(180deg);
+}
+.line {
+  fill: none;
+  transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+  stroke-width: 5.5;
+  stroke-linecap: round;
+}
+.ham1 .top {
+  stroke-dasharray: 40 139;
+}
+.ham1 .bottom {
+  stroke-dasharray: 40 180;
+}
+.ham1.active .top {
+  stroke-dashoffset: -98px;
+}
+.ham1.active .bottom {
+  stroke-dashoffset: -138px;
+}

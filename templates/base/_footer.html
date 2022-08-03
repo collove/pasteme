@@ -1,6 +1,6 @@
 {% load static %}
 <footer class="bg-white dark:bg-black transition-colors ease-in-out duration-300">
-    <div class="py-6 text-gray-900 dark:text-gray-200 bg-gray-200 dark:bg-neutral-900 flex flex-col gap-3 items-center justify-center transition-colors ease-in-out duration-300">
+    <div class="p-6 text-gray-900 dark:text-gray-200 bg-gray-200 dark:bg-neutral-900 flex flex-col gap-3 items-center justify-center transition-colors ease-in-out duration-300">
         <span>
             <a class="flex w-7 h-7 relative"
                href="https://github.com/collove/pasteme"
@@ -9,7 +9,7 @@
                 <span class="w-10 h-10 bg-contain bg-no-repeat bg-github-light dark:bg-github-dark"></span>
             </a>
         </span>
-        <p>
+        <p class="text-center">
             <b>PasteMe</b>
             is proudly Open Source on
             <b>GitHub.</b>
@@ -17,22 +17,22 @@
     </div>
     <div class="container mx-auto px-6 py-4 text-gray-500 flex flex-col lg:flex-row items-center justify-between">
         <div class="underline">
-            <ul class="flex flex-col sm:flex-row gap-2 sm:gap-4 text-center sm:text-left">
-                <li class="transition-colors duration-100 hover:text-gray-900 dark:hover:text-gray-200">
+            <ul class="flex flex-wrap items-center justify-center sm:flex-row gap-2 sm:gap-4 sm:text-left">
+                <li class="w-fit transition-colors duration-100 hover:text-gray-900 dark:hover:text-gray-200">
                     <a class="link-secondary" href="{% url 'home' %}">Blog</a>
                 </li>
-                <li class="transition-colors duration-100 hover:text-gray-900 dark:hover:text-gray-200">
+                <li class="w-fit transition-colors duration-100 hover:text-gray-900 dark:hover:text-gray-200">
                     <a class="link-secondary" href="{% url 'schema-redoc' %}" target="blank">API Documentation</a>
                 </li>
-                <li class="transition-colors duration-100 hover:text-gray-900 dark:hover:text-gray-200">
+                <li class="w-fit transition-colors duration-100 hover:text-gray-900 dark:hover:text-gray-200">
                     <a class="link-secondary"
                        href="https://github.com/collove/pasteme"
                        target="blank">GitHub</a>
                 </li>
-                <li class="transition-colors duration-100 hover:text-gray-900 dark:hover:text-gray-200">
+                <li class="w-fit transition-colors duration-100 hover:text-gray-900 dark:hover:text-gray-200">
                     <a class="link-secondary" href="https://hashnode.com" target="blank">Hashnode</a>
                 </li>
-                <li class="transition-colors duration-100 hover:text-gray-900 dark:hover:text-gray-200">
+                <li class="w-fit transition-colors duration-100 hover:text-gray-900 dark:hover:text-gray-200">
                     <a class="link-secondary" href="https://planetscale.com" target="blank">PlanetScale</a>
                 </li>
             </ul>

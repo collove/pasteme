@@ -1,13 +1,6 @@
 {% extends 'base/_base.html' %}
-{% load static %}
-{% block addon_style %}
-  <link rel="stylesheet" href="{% static 'css/themes/github.min.css' %}">
-{% endblock %}
-{% block addon_script %}
-  <script src="{% static 'js/highlight.min.js' %}"></script>
-  <script>hljs.highlightAll();</script>
-{% endblock %}
 {% block content %}
   {% include "home_sections/hero.html" %}
   {% include "home_sections/stat.html" %}
+  {% include "home_sections/repo.html" %}
 {% endblock %}

@@ -41,7 +41,6 @@ code.phrase {
 
 .glow {
   position: relative;
-  padding: 0 2px;
 }
 .glow:before {
   content: "";
@@ -119,72 +118,6 @@ code.phrase {
   /* W3C */
   filter: blur(5px);
   /* IE6-9 */
-}
-
-.darkmode-switch {
-  display: inline-block;
-  width: 45px;
-  height: 25px;
-  border-radius: 34px;
-  position: relative;
-  background-color: #ccc;
-  cursor: pointer;
-  transition: 0.4s;
-  background-color: #2196f3;
-  background-image: radial-gradient(circle, #fefefe 20%, transparent 30%),
-    radial-gradient(circle, #fefefe 20%, transparent 30%),
-    radial-gradient(circle, #fefefe 20%, transparent 30%),
-    radial-gradient(circle, #fefefe 20%, transparent 30%),
-    radial-gradient(circle, #fefefe 20%, transparent 30%),
-    radial-gradient(circle, #fefefe 20%, transparent 30%);
-  background-size: 50% 50%, 60% 60%, 40% 40%, 40% 40%, 50% 50%, 40% 40%;
-  background-position: 60% 82%, 80% 80%, 82% 80%, 110% 20%, 134% 12%, 130% 20%;
-  background-repeat: no-repeat;
-}
-.darkmode-switch:before {
-  content: "";
-  bottom: 11.7647059%;
-  height: 76.4705882%;
-  width: 43.3333333%;
-  left: 6.666666667%;
-  position: absolute;
-  background-color: #fff;
-  transition: 0.4s;
-  border-radius: 50%;
-  background-color: #ffeb3b;
-  background-image: radial-gradient(circle, #ffc107 15%, #ffeb3b 100%);
-  box-shadow: 0px 0px 20px 10px rgba(255, 235, 255, 0.4);
-  transition: transform ease-in 0.2s;
-  border-radius: 50%;
-  background-repeat: no-repeat;
-}
-.dark .darkmode-switch {
-  background-color: #66bb6a;
-  background-color: #023660;
-  background-image: radial-gradient(circle, #fff 10%, transparent 30%),
-    radial-gradient(circle, #fff 10%, transparent 30%),
-    radial-gradient(circle, #fff 10%, transparent 30%),
-    radial-gradient(circle, #fff 10%, transparent 30%),
-    radial-gradient(circle, #fff 10%, transparent 30%),
-    radial-gradient(circle, #fff 10%, transparent 30%),
-    radial-gradient(circle, #fff 10%, transparent 30%),
-    radial-gradient(circle, #fff 10%, transparent 30%),
-    radial-gradient(circle, #fff 10%, transparent 30%);
-  background-size: 8% 8%, 7% 7%, 6% 6%, 8% 8%, 8% 8%, 6% 6%, 6% 6%, 8% 8%, 7% 7%;
-  background-position: 20% 20%, 45% 30%, 25% 55%, 20% 90%, 40% 60%, 5% 50%,
-    58% 10%, 58% 60%, 50% 80%;
-  background-repeat: no-repeat;
-}
-.dark .darkmode-switch:before {
-  transform: translateX(100%);
-  background-color: #ddd;
-  background-image: radial-gradient(circle, #c4c4c4 50%, transparent 50%),
-    radial-gradient(circle, #c9c9c9 50%, transparent 50%),
-    radial-gradient(circle, #c9c9c9 50%, transparent 50%),
-    radial-gradient(circle, #c9c9c9 50%, transparent 50%);
-  background-size: 40% 40%, 25% 25%, 50% 50%, 30% 30%;
-  background-position: 20% 20%, 65% 30%, 120% 100%, 20% 80%;
-  box-shadow: 0px 0px 20px 10px rgba(255, 255, 255, 0.2);
 }
 
 .ham {

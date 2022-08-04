@@ -22,28 +22,21 @@
                     <a class="link-secondary" href="{% url 'home' %}">Blog</a>
                 </li>
                 <li class="w-fit transition-colors duration-100 hover:text-gray-900 dark:hover:text-gray-200">
-                    <a class="link-secondary" href="{% url 'schema-redoc' %}" target="blank">API Documentation</a>
-                </li>
-                <li class="w-fit transition-colors duration-100 hover:text-gray-900 dark:hover:text-gray-200">
                     <a class="link-secondary"
                        href="https://github.com/collove/pasteme"
                        target="blank">GitHub</a>
                 </li>
                 <li class="w-fit transition-colors duration-100 hover:text-gray-900 dark:hover:text-gray-200">
-                    <a class="link-secondary" href="https://hashnode.com" target="blank">Hashnode</a>
-                </li>
-                <li class="w-fit transition-colors duration-100 hover:text-gray-900 dark:hover:text-gray-200">
-                    <a class="link-secondary" href="https://planetscale.com" target="blank">PlanetScale</a>
+                    <a class="link-secondary" href="{% url 'schema-redoc' %}" target="blank">API Documentation</a>
                 </li>
             </ul>
         </div>
-        <div class="flex flex-col items-center sm:flex-row gap-2 md:gap-3 text-center sm:text-left mt-2 sm:mt-0">
-            <a class="flex flex-row gap-1 items-center"
-               href="https://github.com/collove"
-               target="blank">
+        <div class="mt-2 sm:mt-0 flex flex-col items-center sm:flex-row gap-2 text-center sm:text-left">
+            <a href="https://github.com/collove" target="blank">
                 Developed by
-                <span class="font-bold text-black dark:text-white">Collove</span>
-                <span class="w-6 h-3.5 bg-collove-dark dark:bg-collove-light bg-no-repeat"></span>
+                <span class="font-bold text-black dark:text-white hover:bg-clip-text hover:text-transparent hover:bg-gradient-to-tr hover:from-pink-600 hover:to-violet-700 transition-colors duration-500 ease-in-out">
+                    Collove
+                </span>
                 team
             </a>
             <span class="hidden sm:inline-block">&bullet;</span>

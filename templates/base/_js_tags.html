@@ -7,9 +7,9 @@
     <script src="{% static 'js/owl.carousel.min.js' %}"></script>
     <script src="{% static 'js/Incrementing-Animation.js' %}"></script>
     <script>
-    particlesJS.load('particles-js', 'static/js/particles.json', function() {
-        console.log('callback - particles.js config loaded');
-    });
+    AOS.init();
+
+    particlesJS.load('particles-js', 'static/js/particles.json');
 
     html_el = document.getElementsByTagName('html')[0];
     if (!window.matchMedia('(prefers-color-scheme: dark)').matches) {

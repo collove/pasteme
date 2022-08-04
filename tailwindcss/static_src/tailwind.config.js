@@ -60,7 +60,6 @@ module.exports = {
     },
     extend: {
       backgroundImage: {
-        "body-pattern": "url('/static/img/pattern.svg')",
         "icon-light": "url('/static/img/icon-dark.svg')",
         "icon-dark": "url('/static/img/icon-light.svg')",
         "github-light": "url('/static/img/Github-dark.png')",

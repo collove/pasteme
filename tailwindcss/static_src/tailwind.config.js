@@ -64,6 +64,8 @@ module.exports = {
         "icon-dark": "url('/static/img/icon-light.svg')",
         "github-light": "url('/static/img/Github-dark.png')",
         "github-dark": "url('/static/img/Github-light.png')",
+        "collove-light": "url('/static/img/collove-light.svg')",
+        "collove-dark": "url('/static/img/collove-dark.svg')",
       },
     },
   },

@@ -1,0 +1,30 @@
+{% load static %}
+<section class="container max-w-screen-lg p-8 flex flex-col md:flex-row gap-4 md:gap-4 lg:gap-8 text-white">
+    <div class="flex flex-1 justify-center"
+         data-aos="fade-up"
+         data-aos-duration="400"
+         data-aos-once="true">
+        <img class="mb-4d select-none"
+             src="{% static 'img/octocat.svg' %}"
+             width="300"
+             alt="Octocat"/>
+    </div>
+    <div class="flex-1 flex flex-col items-center justify-center"
+         data-aos="fade-up"
+         data-aos-duration="400"
+         data-aos-once="true">
+        <div class="px-2 lg:px-4">
+            <h2 class="text-2xl sm:text-3xl lg:text-4xl text-center md:text-left font-bold">
+                Join the Community &
+                <br class="hidden md:block"/>
+                Develop PasteMe!
+            </h2>
+            <p class="my-4 text-center md:text-justify">
+                PasteMe is an open-source Django-based service that is being developed on GitHub. Join the community and feel free to contribute.
+            </p>
+            <button class="block mt-8 md:mt-5 mx-auto md:mx-0 bg-transparent hover:bg-gray-100 hover:text-gray-800 font-semibold py-2 px-4 border border-gray-100 rounded transition-colors duration-200">
+                <a href="https://github.com/collove/pasteme" target="blank">View Repository</a>
+            </button>
+        </div>
+    </div>
+</section>

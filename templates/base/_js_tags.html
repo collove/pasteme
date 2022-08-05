@@ -6,39 +6,5 @@
     <script src="{% static 'js/particles.min.js' %}"></script>
     <script src="{% static 'js/owl.carousel.min.js' %}"></script>
     <script src="{% static 'js/Incrementing-Animation.js' %}"></script>
-    <script>
-    AOS.init();
-    let darkmode = true;
-
-    particlesJS.load('particles-js', '/static/js/particles-dark-config.json');
-
-    html_el = document.getElementsByTagName('html')[0];
-    if (!window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        darkmode = false;
-        html_el.classList.remove('dark');
-        particlesJS.load('particles-js', '/static/js/particles-light-config.json');
-    }
-
-    $('.darkmode-switch').on("click", function () {
-        $('html').toggleClass('dark');
-        darkmode === true
-        ? particlesJS.load('particles-js', '/static/js/particles-light-config.json')
-        : particlesJS.load('particles-js', '/static/js/particles-dark-config.json');
-        darkmode = !darkmode;
-    });
-
-    $('#menu-toggle').on("click", function () {
-        if ($('#menu').hasClass('z-10')) {
-            $('#menu').removeClass('z-10');
-            setTimeout(function () {
-                $('#menu').toggleClass('top-[100%_!important]');
-            }, 100);
-        } else {
-            $('#menu').toggleClass('top-[100%_!important]');
-            setTimeout(function () {
-                $('#menu').toggleClass('z-[10_!important]');
-            }, 200);
-        }
-    });
-    </script>
+    <script src="{% static 'js/app.js' %}"></script>
 {% endcompress %}

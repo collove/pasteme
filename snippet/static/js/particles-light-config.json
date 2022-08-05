@@ -1,14 +1,14 @@
 {
   "particles": {
     "number": {
-      "value": 90,
+      "value": 50,
       "density": {
         "enable": true,
         "value_area": 800
       }
     },
     "color": {
-      "value": "#ffffff"
+      "value": "#020202"
     },
     "shape": {
       "type": "circle",
@@ -26,44 +26,44 @@
       }
     },
     "opacity": {
-      "value": 1,
+      "value": 0.5,
       "random": true,
       "anim": {
-        "enable": true,
+        "enable": false,
         "speed": 1,
-        "opacity_min": 0,
+        "opacity_min": 0.1,
         "sync": false
       }
     },
     "size": {
-      "value": 1.4,
+      "value": 3,
       "random": true,
       "anim": {
-        "enable": true,
-        "speed": 0.2,
-        "size_min": 0,
+        "enable": false,
+        "speed": 40,
+        "size_min": 0.1,
         "sync": false
       }
     },
     "line_linked": {
       "enable": false,
       "distance": 150,
-      "color": "#ffffff",
+      "color": "#222222",
       "opacity": 0.4,
       "width": 1
     },
     "move": {
       "enable": true,
-      "speed": 0.1,
+      "speed": 2,
       "direction": "none",
-      "random": true,
+      "random": false,
       "straight": false,
       "out_mode": "out",
       "bounce": false,
       "attract": {
         "enable": false,
         "rotateX": 600,
-        "rotateY": 600
+        "rotateY": 1200
       }
     }
   },
@@ -71,12 +71,12 @@
     "detect_on": "canvas",
     "events": {
       "onhover": {
-        "enable": true,
-        "mode": "bubble"
+        "enable": false,
+        "mode": "repulse"
       },
       "onclick": {
         "enable": false,
-        "mode": "repulse"
+        "mode": "push"
       },
       "resize": true
     },
@@ -88,14 +88,14 @@
         }
       },
       "bubble": {
-        "distance": 250,
-        "size": 0,
+        "distance": 400,
+        "size": 40,
         "duration": 2,
-        "opacity": 0,
+        "opacity": 8,
         "speed": 3
       },
       "repulse": {
-        "distance": 400,
+        "distance": 200,
         "duration": 0.4
       },
       "push": {

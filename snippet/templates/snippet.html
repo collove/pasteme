@@ -32,19 +32,17 @@
     </script>
 {% endblock %}
 {% block content %}
-    <section>
-        <div class="container p-5">
-            <h3 style="font-weight: bold;">{{ snippet.title }}</h3>
-            <p class="mb-0">
-                <span class="badge bg-dark">{{ snippet.get_language_display }}</span>&nbsp;<span class="badge bg-dark">{{ snippet.get_theme_display }} Theme</span>
-            </p>
-            <p>
-                <span class="badge bg-dark">Created at {{ snippet.created_at.date }}</span>
-                <span class="badge bg-dark">Expires in {{ snippet.get_expires_in_display | lower }}</span>
-            </p>
-            <div>
-                <pre class="rounded"><code class="language-{{snippet.language}}">{{snippet.body}}</code></pre>
-            </div>
+    <section class="container py-20 text-black dark:text-white">
+        <h3 class="mb-4 text-2xl lg:text-4xl font-semibold">{{ snippet.title }}</h3>
+        <p class="mb-0">
+            <span class="badge bg-dark">{{ snippet.get_language_display }}</span>&nbsp;<span class="badge bg-dark">{{ snippet.get_theme_display }} Theme</span>
+        </p>
+        <p>
+            <span class="badge bg-dark">Created at {{ snippet.created_at.date }}</span>
+            <span class="badge bg-dark">Expires in {{ snippet.get_expires_in_display | lower }}</span>
+        </p>
+        <div>
+            <pre class="rounded"><code class="language-{{snippet.language}}">{{snippet.body}}</code></pre>
         </div>
     </section>
 {% endblock %}

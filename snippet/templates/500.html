@@ -1,14 +1,14 @@
 {% extends 'base/_base.html' %}
 {% block title %}500 - Some Failures Here{% endblock %}
 {% block content %}
-    <section class="container text-white">
+    <section class="container text-black dark:text-white">
         <div class="mt-12">
             <h2 class="text-2xl lg:text-4xl font-bold">Hmm.. We're facing some issues.</h2>
             <p class="text-lg mt-4">
                 If the problem still presests, <a href="mailto:lnxpylnxpy@gmail.com">contact me</a> and let me fix the issue. :)
             </p>
         </div>
-        <button class="mt-6 py-2 px-4 rounded border hover:bg-white hover:text-black transition-colors duration-200">
+        <button class="mt-6 py-2 px-4 md:mt-5 mx-auto md:mx-0 bg-transparent hover:bg-black dark:hover:bg-white hover:text-white dark:hover:text-black font-semibold border border-black dark:border-neutral-300 rounded transition-colors duration-300">
             <a href="{% url 'home' %}">Go back to home</a>
         </button>
     </section>

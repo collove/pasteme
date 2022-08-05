@@ -1,7 +1,32 @@
 <!DOCTYPE html>
 <html lang="en" class="dark">
     <head>
-        {% include "base/_meta_tags.html" %}
+        <meta charset="utf-8"/>
+        <meta name="viewport"
+              content="width=device-width, initial-scale=1.0, shrink-to-fit=no"/>
+        {% block metas %}
+            <!-- Primary Meta Tags -->
+            <meta name="title" content="PasteMe - Paste Codes From Your Terminal"/>
+            <meta name="description"
+                  content="PasteMe is an open-source pastebin service that works with the power of RESTful APIs."/>
+            <!-- Open Graph / Facebook -->
+            <meta property="og:type" content="website"/>
+            <meta property="og:url" content="https://pasteme.pythonanywhere.com/"/>
+            <meta property="og:title"
+                  content="PasteMe - Paste Codes From Your Terminal"/>
+            <meta property="og:description"
+                  content="PasteMe is an open-source pastebin service that works with the power of RESTful APIs."/>
+            <!-- Twitter -->
+            <meta property="twitter:card" content="summary_large_image"/>
+            <meta property="twitter:url" content="https://pasteme.pythonanywhere.com/"/>
+            <meta property="twitter:title"
+                  content="PasteMe - Paste Codes From Your Terminal"/>
+            <meta property="twitter:description"
+                  content="PasteMe is an open-source pastebin service that works with the power of RESTful APIs."/>
+        {% endblock metas %}
+        {% include "base/_css_tags.html" %}
+        {% block addon_style %}
+        {% endblock addon_style %}
         <title>
             {% block title %}
                 PasteMe Service
@@ -17,5 +42,7 @@
         </main>
         {% include "base/_footer.html" %}
         {% include "base/_js_tags.html" %}
+        {% block addon_script %}
+        {% endblock addon_script %}
     </body>
 </html>

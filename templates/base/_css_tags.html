@@ -1,0 +1,24 @@
+{% load static %}
+{% load compress %}
+{% load static tailwind_tags %}
+<link rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="{% static 'img/fav32.png' %}"/>
+<link rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="{% static 'img/fav16.png' %}"/>
+{% compress css preload %}
+      {% tailwind_preload_css %}
+{% endcompress %}
+{% compress css file styles %}
+      {% tailwind_css %}
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link rel="stylesheet" href="{% static 'css/fonts.css' %}"/>
+      <link rel="stylesheet" href="{% static 'css/aos.css' %}"/>
+      <link rel="stylesheet" href="{% static 'css/Incrementing-Animation.css' %}"/>
+      <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}"/>
+      <link rel="stylesheet" href="{% static 'css/extra.css' %}"/>
+{% endcompress %}

@@ -1,12 +1,13 @@
 {% extends 'base/_base.html' %}
 {% block title %}404 - Not Found{% endblock %}
 {% block content %}
-    <section>
-        <div class="container p-5">
-            <div class="container">
-                <h2>Opps! You're lost.</h2>
-                <p>Looks the page you're looking for is missing at the moment. I mean 404. :(</p>
-            </div>
+    <section class="container text-white">
+        <div class="mt-12">
+            <h2 class="text-2xl lg:text-4xl font-bold">Opps! You're lost.</h2>
+            <p class="text-lg mt-4">Looks the page you're looking for is missing at the moment. I mean 404.</p>
         </div>
+        <button class="mt-6 py-2 px-4 rounded border hover:bg-white hover:text-black transition-colors duration-200">
+            <a href="{% url 'home' %}">Go back to home</a>
+        </button>
     </section>
 {% endblock %}

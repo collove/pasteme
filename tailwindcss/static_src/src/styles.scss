@@ -2,12 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-*::before,
-*::after {
-  margin: 0;
-  box-sizing: border-box;
-}
-
 .darkmode-switch {
   position: relative;
   background: transparent;
@@ -28,7 +22,7 @@
   width: 20px;
   height: 20px;
 
-  transition: transform 0.3s ease;
+  transition: transform 0.45s ease;
   border-radius: 50%;
   background: black;
 }
@@ -49,7 +43,7 @@
   z-index: -1;
   opacity: 0;
 
-  transition: box-shadow 0.3s ease;
+  transition: box-shadow 0.4s 0s ease;
 }
 
 .darkmode-switch .mode::after {
@@ -64,7 +58,7 @@
   border-radius: 50%;
   background: white;
 
-  transition: transform 0.3s ease;
+  transition: transform background 0.4s 0s ease;
 }
 
 html.dark {
@@ -82,7 +76,7 @@ html.dark {
 
     &::after {
       opacity: 0;
-      transition: background 0.3s ease;
+      transition: transform background 0.4s 0s ease;
       transform: translateX(50%) translateY(-50%);
     }
   }

@@ -46,10 +46,8 @@ INSTALLED_APPS = [
     # apps
     "tailwindcss",
     "snippet",
+    "blog",
     "pypi",
-    'snippet',
-    'blog',
-    'pypi',
 ]
 
 MIDDLEWARE = [

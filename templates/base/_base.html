@@ -1,5 +1,7 @@
+{% load static %}
+{% load compress %}
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en">
     <head>
         <meta charset="utf-8"/>
         <meta name="viewport"
@@ -24,6 +26,10 @@
             <meta property="twitter:description"
                   content="PasteMe is an open-source pastebin service that works with the power of RESTful APIs."/>
         {% endblock metas %}
+        {% compress js file jquery %}
+            <script src="{% static 'js/jquery.min.js' %}"></script>
+            <script src="{% static 'js/darkmode.js' %}"></script>
+        {% endcompress %}
         {% include "base/_css_tags.html" %}
         {% block addon_style %}
         {% endblock addon_style %}

@@ -37,7 +37,8 @@
                         <a href="{% url 'home' %}" class="{% block home_active %}{% endblock %}">Home</a>
                     </li>
                     <li class="hover:text-black dark:hover:text-white">
-                        <a href="{% url 'home' %}" class="{% block blog_active %}{% endblock %}">Blog</a>
+                        <a href="{% url 'blogs' %}"
+                           class="{% block blog_active %}{% endblock %}">Blog</a>
                     </li>
                     <li class="hover:text-black dark:hover:text-white">
                         <a href="{% url 'schema-redoc' %}" target="blank">API Docs</a>

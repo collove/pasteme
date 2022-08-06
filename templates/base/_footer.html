@@ -1,6 +1,6 @@
 {% load static %}
 <footer class="bg-white dark:bg-black transition-colors duration-300">
-    <div class="p-6 text-gray-900 dark:text-gray-200 bg-gray-200 dark:bg-zinc-900 flex flex-col gap-3 items-center justify-center transition-colors duration-300">
+    <div class="p-6 text-gray-900 dark:text-gray-200 bg-[#f0f0f0] dark:bg-[#121212] flex flex-col gap-3 items-center justify-center transition-colors duration-300">
         <span>
             <a class="flex w-7 h-7 relative"
                href="https://github.com/collove/pasteme"
@@ -15,37 +15,40 @@
             <b>GitHub.</b>
         </p>
     </div>
-    <div class="container py-4 text-gray-500 flex flex-col lg:flex-row items-center justify-between">
-        <div class="underline">
-            <ul class="flex flex-wrap items-center justify-center sm:flex-row gap-2 sm:gap-4 sm:text-left">
-                <li class="w-fit transition-colors duration-100 hover:text-gray-900 dark:hover:text-gray-200">
-                    <a class="link-secondary" href="{% url 'home' %}">Blog</a>
-                </li>
-                <li class="w-fit transition-colors duration-100 hover:text-gray-900 dark:hover:text-gray-200">
-                    <a class="link-secondary"
-                       href="https://github.com/collove/pasteme"
-                       target="blank">GitHub</a>
-                </li>
-                <li class="w-fit transition-colors duration-100 hover:text-gray-900 dark:hover:text-gray-200">
-                    <a class="link-secondary" href="{% url 'schema-redoc' %}" target="blank">API Documentation</a>
-                </li>
-            </ul>
-        </div>
-        <div class="mt-2 sm:mt-0 flex flex-col items-center sm:flex-row gap-2 text-center sm:text-left">
-            <a href="https://github.com/collove" target="blank">
-                Developed by
-                <span class="font-bold text-black dark:text-white hover:bg-clip-text dark:hover:bg-clip-text hover:text-transparent dark:hover:text-transparent hover:bg-gradient-to-tr hover:from-pink-600 hover:to-violet-700 dark:hover:from-pink-600 dark:hover:to-violet-700">
-                    Collove
-                </span>
-                team
-            </a>
-            <span class="hidden sm:inline-block">&bullet;</span>
-            <p>
-                <a href="https://github.com/collove/pasteme/blob/main/LICENSE"
-                   class="text-sky-700 dark:text-sky-500 underline"
-                   target="blank">MIT License</a>
-                <span>&copy; {% now 'Y' %} PasteMe</span>
-            </p>
+    <div>
+        <div class="w-full h-1 bg-gradient-to-r from-[#00d5ff] via-[#ff00c3] to-[#ff0000]"></div>
+        <div class="container py-4 flex flex-col lg:flex-row items-center justify-between text-gray-500">
+            <div class="underline">
+                <ul class="flex flex-wrap items-center justify-center sm:flex-row gap-2 sm:gap-4 sm:text-left">
+                    <li class="w-fit transition-colors duration-100 hover:text-gray-900 dark:hover:text-gray-200">
+                        <a class="link-secondary" href="{% url 'home' %}">Blog</a>
+                    </li>
+                    <li class="w-fit transition-colors duration-100 hover:text-gray-900 dark:hover:text-gray-200">
+                        <a class="link-secondary"
+                           href="https://github.com/collove/pasteme"
+                           target="blank">GitHub</a>
+                    </li>
+                    <li class="w-fit transition-colors duration-100 hover:text-gray-900 dark:hover:text-gray-200">
+                        <a class="link-secondary" href="{% url 'schema-redoc' %}" target="blank">API Documentation</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="mt-2 sm:mt-0 flex flex-col items-center sm:flex-row gap-2 text-center sm:text-left">
+                <a href="https://github.com/collove" target="blank">
+                    Developed by
+                    <span class="font-bold text-black dark:text-white hover:bg-clip-text dark:hover:bg-clip-text hover:text-transparent dark:hover:text-transparent hover:bg-gradient-to-tr hover:from-pink-600 hover:to-violet-700 dark:hover:from-pink-600 dark:hover:to-violet-700">
+                        Collove
+                    </span>
+                    team
+                </a>
+                <span class="hidden sm:inline-block">&bullet;</span>
+                <p>
+                    <a href="https://github.com/collove/pasteme/blob/main/LICENSE"
+                       class="text-sky-700 dark:text-sky-500 underline"
+                       target="blank">MIT License</a>
+                    <span>&copy; {% now 'Y' %} PasteMe</span>
+                </p>
+            </div>
         </div>
     </div>
 </footer>

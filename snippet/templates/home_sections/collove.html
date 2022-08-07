@@ -1,0 +1,43 @@
+{% load static %}
+<section class="container py-14 lg:px-10 text-black dark:text-white">
+    <div class="mx-auto max-w-screen-lg flex flex-col md:flex-row  md:gap-2 lg:gap-4">
+        <div class="flex flex-1 items-center justify-center"
+             data-aos="fade-up"
+             data-aos-duration="400"
+             data-aos-once="true">
+            <div class="px-2 lg:px-4">
+                <h2 class="text-2xl sm:text-3xl lg:text-4xl text-center md:text-left font-bold">
+                    PasteMe is from
+                    <br class="hidden md:block"/>
+                    <span class="text-pink-600">Collove</span> team
+                </h2>
+                <p class="my-4 text-center md:text-justify">
+                    Collove is a lovely community where people help each other to find solutions and innovate new techs with help of open source and collaborative tools. PasteMe is a simple result of this collaboration!
+                </p>
+            </div>
+        </div>
+        <div class="flex flex-1 flex-col items-center justify-center"
+             data-aos="fade-up"
+             data-aos-duration="400"
+             data-aos-once="true">
+            <div class="bg-collove-dark dark:bg-collove-light w-40 h-32 sm:w-64 sm:h-48 lg:w-80 lg:h-60 bg-no-repeat bg-center">
+            </div>
+        </div>
+    </div>
+    <div data-aos="fade-up" data-aos-duration="400" data-aos-once="true">
+        <div class="sm:w-2/3 md:w-3/4 lg:mt-4 mb-2 md:mb-4 mx-auto relative flex py-5 items-center select-none">
+            <div class="grow rounded-full h-[1px] bg-gradient-to-l from-neutral-400 dark:from-neutral-600"></div>
+            <span class="flex-shrink mx-2 md:mx-4 text-sm text-neutral-500 dark:text-neutral-400 uppercase tracking-widest">
+                Project Contributors
+            </span>
+            <div class="grow rounded-full h-[1px] bg-gradient-to-r from-neutral-400 dark:from-neutral-600"></div>
+        </div>
+        <div class="container max-w-screen-sm flex items-center justify-center">
+            <a href="https://github.com/collove/pasteme/graphs/contributors">
+                <img src="{% static 'img/contributors.svg' %}"
+                     class="w-2/3 md:w-3/4 mx-auto"
+                     alt="Collove Contributors"/>
+            </a>
+        </div>
+    </div>
+</section>

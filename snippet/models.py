@@ -35,7 +35,7 @@ class Snippet(models.Model):
     expires_in = models.SmallIntegerField(
         verbose_name="Expires in",
         choices=EXPIRY_OPTIONS,
-        default=1,
+        default=7,
     )
 
     def __str__(self):

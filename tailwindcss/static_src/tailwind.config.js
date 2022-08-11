@@ -71,6 +71,33 @@ module.exports = {
                 2: 2,
                 3: 3,
             },
+            typography: {
+                DEFAULT: {
+                    css: {
+                        pre: false,
+                    },
+                },
+                sm: {
+                    css: {
+                        pre: false,
+                    },
+                },
+                lg: {
+                    css: {
+                        pre: false,
+                    },
+                },
+                xl: {
+                    css: {
+                        pre: false,
+                    },
+                },
+                "2xl": {
+                    css: {
+                        pre: false,
+                    },
+                },
+            },
         },
     },
     variants: {

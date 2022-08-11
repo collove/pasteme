@@ -19,11 +19,11 @@
 {% endblock addon_style %}
 {% block addon_script %}
       <script src="{% static 'js/highlight.min.js' %}"></script>
-      <script>hljs.highlightAll();</script>
+      <script>hljs.initHighlightingOnLoad();</script>
 {% endblock %}
 {% block content %}
       <section class="py-10">
-            <div class="container md:px-0 prose prose-emerald dark:prose-invert prose-pre:text-sm prose-code:rounded">
+            <div class="container md:px-0 prose prose-emerald dark:prose-invert prose-pre:text-sm prose-code:rounded prose-code:whitespace-pre-wrap">
                   <h1 class="mb-2">{{ blog.title }}</h1>
                   <p class="text-sm">
                         Published on {{ blog.published_at | date:'M d, Y' }}

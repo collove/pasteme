@@ -6,28 +6,34 @@
          data-aos-delay="200"
          data-aos-once="true">
         <div class="flex flex-col md:flex-row gap-2 items-center justify-center">
-            <h3 class="text-xl sm:text-2xl xl:text-3xl text-center uppercase leading-tight tracking-wider">
-                PyPi Package Statistics
-            </h3>
-            <span class="px-3 py-1 bg-neutral-900 dark:bg-neutral-800 text-neutral-300 font-semibold rounded">{{ stats.date.date }}</span>
+            {% if status %}
+                <h3 class="text-xl sm:text-2xl xl:text-3xl text-center uppercase leading-tight tracking-wider">
+                    PyPi Package Statistics
+                </h3>
+                <span class="px-3 py-1 bg-neutral-900 dark:bg-neutral-800 text-neutral-300 font-semibold rounded">{{ stats.date.date }}</span>
+            {% else %}
+                <h3 class="text-xl text-center text-pink-600 font-bold">PyPi Package Statistics Not Found</h3>
+            {% endif %}
         </div>
-        <div class="w-full lg:w-3/4 flex flex-col md:flex-row gap-4 md:gap-0 items-center justify-between"
-             data-aos="fade-up"
-             data-aos-duration="800"
-             data-aos-delay="150"
-             data-aos-once="true">
-            <div class="flex flex-col justify-center">
-                <span class="counter-font">{{ stats.total_service_stars | millify }}</span>
-                <p class="text-center uppercase">Overall Service Stars</p>
+        {% if status %}
+            <div class="w-full lg:w-3/4 flex flex-col md:flex-row gap-4 md:gap-0 items-center justify-between"
+                 data-aos="fade-up"
+                 data-aos-duration="800"
+                 data-aos-delay="150"
+                 data-aos-once="true">
+                <div class="flex flex-col justify-center">
+                    <span class="counter-font">{{ stats.total_service_stars | millify }}</span>
+                    <p class="text-center uppercase">Overall Service Stars</p>
+                </div>
+                <div class="flex flex-col justify-center">
+                    <span class="counter-font">{{ stats.total_downloads | millify }}</span>
+                    <p class="text-center uppercase">Overall Downloads</p>
+                </div>
+                <div class="flex flex-col justify-center">
+                    <span class="counter-font">{{ stats.total_package_stars | millify }}</span>
+                    <p class="text-center uppercase">Overall Package Stars</p>
+                </div>
             </div>
-            <div class="flex flex-col justify-center">
-                <span class="counter-font">{{ stats.total_downloads | millify }}</span>
-                <p class="text-center uppercase">Overall Downloads</p>
-            </div>
-            <div class="flex flex-col justify-center">
-                <span class="counter-font">{{ stats.total_package_stars | millify }}</span>
-                <p class="text-center uppercase">Overall Package Stars</p>
-            </div>
-        </div>
+        {% endif %}
     </div>
 </section>

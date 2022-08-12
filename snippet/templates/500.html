@@ -22,13 +22,13 @@
                      stroke-width="2">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
-                <span class="text-center">You're all good. Our developers are trying to fix the issue.</span>
+                <span class="text-center">You're all good. Our developers are trying to catch the bugs.</span>
             </p>
-            <div class="mt-6 flex flex-col md:flex-row gap-1">
-                <button class="py-1.5 px-3 bg-black hover:bg-white text-white dark:text-black hover:text-black dark:bg-white dark:hover:bg-transparent dark:hover:text-white font-semibold border border-black dark:border-neutral-300 rounded transition-colors duration-300">
-                    <a href="{% url 'home' %}">Contact Us</a>
+            <div class="mt-6 flex flex-col md:flex-row gap-2">
+                <button class="py-1.5 px-3 bg-neutral-900 hover:scale-105 text-white dark:bg-neutral-800 font-semibold rounded transition-all duration-200">
+                    <a href="mailto:lnxpylnxpy@gmail.com">Contact Us</a>
                 </button>
-                <button class="py-1.5 px-3 bg-transparent hover:bg-black dark:hover:bg-white hover:text-white dark:hover:text-black font-semibold border border-black dark:border-neutral-300 rounded transition-colors duration-300">
+                <button class="py-1.5 px-3 bg-transparent hover:bg-neutral-900 dark:hover:bg-neutral-800 hover:text-white dark:hover:text-white font-semibold underline rounded transition-colors duration-300">
                     <a href="{% url 'home' %}">Go back to home</a>
                 </button>
             </div>
@@ -40,6 +40,6 @@
 {% endblock %}
 {% block footer_msg %}
     <p class="p-4 text-center text-black dark:text-white bg-neutral-200 dark:bg-neutral-800 font-semibold text-sm transition-colors duration-300">
-        If the problem persists, send us a message via the contact form  please.
+        If the problem persists, send us a message please.
     </p>
 {% endblock footer_msg %}

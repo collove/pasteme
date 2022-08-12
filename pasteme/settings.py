@@ -137,6 +137,9 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 DOMAIN_URL = "https://pasteme.pythonanywhere.com/"
 
+# Used for disclaimer view
+SITE_URL = "pasteme.pythonanywhere.com"
+
 # TailWindCSS settings
 TAILWIND_APP_NAME = "tailwindcss"
 

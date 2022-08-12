@@ -6,16 +6,25 @@ from snippet.models import Snippet
 
 
 class Command(BaseCommand):
-    help = "Delete Expired Snippets"
+    help = "Removes expired snippets."
 
     def handle(self, *args, **options):
         expired_snippets = Snippet.objects.filter(
             expires_in__lt=timezone.now().date() - F("created_at__date"),
         )
+        
         expired_snippets_count = expired_snippets.count()
         expired_snippets.delete()
-        self.stdout.write(
-            self.style.SUCCESS(
-                f"{expired_snippets_count} snippet(s) deleted successfully"
+        
+        if expired_snippets_count:
+            self.stdout.write(
+                self.style.SUCCESS(
+                    f"{expired_snippets_count} snippet(s) removed!"
+                )
             )
-        )
+        else:
+            self.stdout.write(
+                self.style.WARNING(
+                    f"No snippets expires today!"
+                )
+            )

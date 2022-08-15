@@ -24,11 +24,6 @@ repos:
     rev: 20.8b1
     hooks:
       - id: black
-  - repo: https://github.com/pycqa/bandit
-    rev: 1.7.0
-    hooks:
-      - id: bandit
-        args: [ "-iii", "-ll" ]
   - repo: https://gitlab.com/pycqa/flake8
     rev: 3.8.4
     hooks:

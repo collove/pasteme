@@ -7,11 +7,6 @@ repos:
     rev: v3.4.0
     hooks:
       # See https://pre-commit.com/hooks.html for more hooks
-      - id: check-ast
-      - id: check-case-conflict
-      - id: check-executables-have-shebangs
-      - id: check-merge-conflict
-      - id: debug-statements
       - id: end-of-file-fixer
       - id: name-tests-test
         args: [ "--django" ]
@@ -21,7 +16,7 @@ repos:
     hooks:
       - id: isort
   - repo: https://github.com/psf/black
-    rev: 20.8b1
+    rev: 22.6.0
     hooks:
       - id: black
   - repo: https://gitlab.com/pycqa/flake8
@@ -35,3 +30,6 @@ repos:
             "flake8-print",
             "flake8-simplify",
         ]
+        args: ["--max-line-length=120"]
+        exclude: ^.*\b(migrations)\b.*$
+        exclude: "pasteme/settings.py"

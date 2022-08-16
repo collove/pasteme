@@ -1,4 +1,4 @@
-from django.contrib import admin
+# from django.contrib import admin
 from django.urls import include, path
 from drf_yasg import openapi
 from drf_yasg.views import get_schema_view
@@ -17,9 +17,11 @@ schema_view = get_schema_view(
     authentication_classes=None,
 )
 
-urlpatterns = [    
-   # path('admin/', admin.site.urls),
-   path('apidocs/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
-   path('blog/', include('blog.urls')),
-   path('', include('snippet.urls')),
+urlpatterns = [
+    # path('admin/', admin.site.urls),
+    path(
+        "apidocs/", schema_view.with_ui("redoc", cache_timeout=0), name="schema-redoc"
+    ),
+    path("blog/", include("blog.urls")),
+    path("", include("snippet.urls")),
 ]

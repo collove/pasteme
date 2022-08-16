@@ -1,12 +1,7 @@
-# See https://pre-commit.com for more information
-default_language_version:
-  # default language version for each language used in the repository
-  python: python3.10.4
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v3.4.0
     hooks:
-      # See https://pre-commit.com/hooks.html for more hooks
       - id: end-of-file-fixer
       - id: name-tests-test
         args: [ "--django" ]
@@ -19,8 +14,8 @@ repos:
     rev: 22.6.0
     hooks:
       - id: black
-  - repo: https://gitlab.com/pycqa/flake8
-    rev: 3.8.4
+  - repo: https://github.com/PyCQA/flake8
+    rev: 3.9.0
     hooks:
       - id: flake8
         additional_dependencies: [

@@ -1,12 +1,7 @@
-# See https://pre-commit.com for more information
-default_language_version:
-  # default language version for each language used in the repository
-  python: python3.10.4
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v3.4.0
     hooks:
-      # See https://pre-commit.com/hooks.html for more hooks
       - id: end-of-file-fixer
       - id: name-tests-test
         args: [ "--django" ]

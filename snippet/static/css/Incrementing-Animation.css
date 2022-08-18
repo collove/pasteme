@@ -11,9 +11,24 @@
 }
 
 span.plus-k::after {
-  content: "K +";
+  content: 'K +';
 }
 
 span.plus::after {
-  content: "+";
+  content: '+';
+}
+
+.Justify-Flex-Center {
+  display: flex;
+  justify-content: center;
+}
+
+.font-dark {
+  color: var(--primary-color);
+}
+
+.Justify-Flex-Center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

@@ -1,8 +1,7 @@
-from shortuuid.django_fields import ShortUUIDField
 from django.db import models
+from shortuuid.django_fields import ShortUUIDField
 
-
-from .constants import LANGUAGES, THEMES, EXPIRY_OPTIONS
+from .constants import EXPIRY_OPTIONS, LANGUAGES, THEMES
 
 
 class Snippet(models.Model):
@@ -35,7 +34,7 @@ class Snippet(models.Model):
     expires_in = models.SmallIntegerField(
         verbose_name="Expires in",
         choices=EXPIRY_OPTIONS,
-        default=1,
+        default=7,
     )
 
     def __str__(self):

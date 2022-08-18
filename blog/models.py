@@ -16,6 +16,7 @@ class Blog(models.Model):
     body = models.TextField()
     tags = models.ManyToManyField(Tag, blank=True)
     slug = models.SlugField(unique=True, editable=False)
+    is_featured = models.BooleanField(default=False)
     published_at = models.DateTimeField(auto_now=True)
 
     def __str__(self) -> str:

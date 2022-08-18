@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
+from contextlib import suppress
 from pathlib import Path
 
 from decouple import config
@@ -157,7 +158,5 @@ STATICFILES_FINDERS = (
 COMPRESS_ENABLED = True
 
 # Import local settings
-try:
+with suppress(ImportError):
     from .local_settings import *
-except ImportError:
-    pass

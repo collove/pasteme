@@ -29,9 +29,9 @@
             </div>
         </div>
         <!-- Mobile Menu open: "block", Menu closed: "hidden" -->
-        <div class="w-full mt-8 md:mt-0 md:ml-8 md:flex md:items-center md:justify-between bg-white dark:bg-black transition-colors duration-300"
+        <div class="w-full md:ml-8 flex flex-col md:flex-row gap-6 md:items-center md:justify-between bg-white dark:bg-black transition-all duration-300"
              id="menu">
-            <div class="flex flex-col md:flex-row md:mr-4">
+            <div class="hidden md:flex flex-col md:flex-row md:mr-4">
                 <ul class="flex flex-col md:flex-row text-center md:text-left gap-4 text-gray-500 dark:text-gray-400">
                     <li class="hover:text-neutral-700 dark:hover:text-neutral-300 transition-colors duration-100">
                         <a href="{% url 'home' %}"
@@ -50,7 +50,7 @@
                     </li>
                 </ul>
             </div>
-            <div class="my-6 md:my-0">
+            <div class="hidden md:flex">
                 <button class="darkmode-switch mx-auto">
                     <div class="mode"></div>
                 </button>

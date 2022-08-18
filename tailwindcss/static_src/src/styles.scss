@@ -2,82 +2,91 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+    .menu-open {
+        @apply py-6;
+        div {
+            @apply flex;
+        }
+    }
+}
+
 .darkmode-switch {
-  position: relative;
-  background: transparent;
-  border: 0;
-  width: 30px;
-  height: 30px;
-  padding: 0;
+    position: relative;
+    background: transparent;
+    border: 0;
+    width: 30px;
+    height: 30px;
+    padding: 0;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-  overflow: hidden;
+    overflow: hidden;
 }
 
 .darkmode-switch .mode {
-  position: relative;
-  width: 20px;
-  height: 20px;
+    position: relative;
+    width: 20px;
+    height: 20px;
 
-  transition: transform 0.45s ease;
-  border-radius: 50%;
-  background: black;
+    transition: transform 0.45s ease;
+    border-radius: 50%;
+    background: black;
 }
 
 .darkmode-switch .mode::before {
-  content: "";
-  position: absolute;
+    content: "";
+    position: absolute;
 
-  width: 6px;
-  height: 6px;
-  left: 50%;
-  top: 50%;
-  transform: translateX(-50%) translateY(-50%);
-  border-radius: 50%;
+    width: 6px;
+    height: 6px;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    border-radius: 50%;
 
-  background: inherit;
+    background: inherit;
 
-  z-index: -1;
-  opacity: 0;
+    z-index: -1;
+    opacity: 0;
 
-  transition: box-shadow 0.4s 0s ease;
+    transition: box-shadow 0.4s 0s ease;
 }
 
 .darkmode-switch .mode::after {
-  content: "";
-  position: absolute;
-  width: 90%;
-  height: 90%;
+    content: "";
+    position: absolute;
+    width: 90%;
+    height: 90%;
 
-  top: -20%;
-  left: 30%;
+    top: -20%;
+    left: 30%;
 
-  border-radius: 50%;
-  background: white;
+    border-radius: 50%;
+    background: white;
 
-  transition: transform background 0.4s 0s ease;
+    transition: transform background 0.4s 0s ease;
 }
 
 html.dark {
-  .darkmode-switch .mode {
-    transform: scale(0.5);
-    background: white;
+    .darkmode-switch .mode {
+        transform: scale(0.5);
+        background: white;
 
-    &::before {
-      opacity: 1;
+        &::before {
+            opacity: 1;
 
-      box-shadow: 0 -20px 0 0 white, 0 20px 0 0 white, -20px 0 0 0 white,
-        20px 0 0 0 white, 15px 15px 0 0 white, 15px -15px 0 0 white,
-        -15px 15px 0 0 white, -15px -15px 0 0 white;
+            box-shadow: 0 -20px 0 0 white, 0 20px 0 0 white, -20px 0 0 0 white,
+                20px 0 0 0 white, 15px 15px 0 0 white, 15px -15px 0 0 white,
+                -15px 15px 0 0 white, -15px -15px 0 0 white;
+        }
+
+        &::after {
+            opacity: 0;
+            transition: transform background 0.4s 0s ease;
+            transform: translateX(50%) translateY(-50%);
+        }
     }
-
-    &::after {
-      opacity: 0;
-      transition: transform background 0.4s 0s ease;
-      transform: translateX(50%) translateY(-50%);
-    }
-  }
 }

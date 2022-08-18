@@ -43,6 +43,7 @@ module.exports = {
          */
         // '../../**/*.py'
     ],
+    safelist: ["menu-open"],
     darkMode: "class",
     theme: {
         fontFamily: {

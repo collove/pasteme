@@ -1,25 +1,27 @@
 import json
+from os import path
 
 import pypistats
 import requests
 from django.core.management.base import BaseCommand
 
+from pypi.constants import GITHUB_API_ROOT
 from pypi.models import Statistic
 
 
 class Command(BaseCommand):
-    help = "Collects stats of pasteme-cli package using pypistats SDK"
+    help = "Collects the package stats from PyPIstats and Github."
 
     def handle(self, *args, **options):
         pasteme_totlal_stars = int(
-            requests.get("https://api.github.com/repos/collove/pasteme").json()[
+            requests.get(path.join(GITHUB_API_ROOT, "repos/collove/pasteme")).json()[
                 "stargazers_count"
             ]
         )
         pastemecli_totlal_stars = int(
-            requests.get("https://api.github.com/repos/collove/pasteme-cli").json()[
-                "stargazers_count"
-            ]
+            requests.get(
+                path.join(GITHUB_API_ROOT, "repos/collove/pasteme-cli")
+            ).json()["stargazers_count"]
         )
         daily_payload = json.loads(pypistats.recent("pasteme-cli", format="json"))[
             "data"
@@ -37,6 +39,14 @@ class Command(BaseCommand):
             total_package_stars=pastemecli_totlal_stars,
         )
 
-        obj.save()
-
-        self.stdout.write(f"Statistics {obj} object created!")
+        try:
+            obj.save()
+            self.stdout.write(
+                self.style.SUCCESS(f"New Statistics objects collected w/ NO.{obj}!")
+            )
+        except Exception as e:
+            self.stdout.write(
+                self.style.ERROR(
+                    f"For some reason ({e}), I couldn't generate a new Statistics object!"
+                )
+            )

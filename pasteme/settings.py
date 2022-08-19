@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
+from contextlib import suppress
 from pathlib import Path
 
 from decouple import config
@@ -42,9 +43,9 @@ INSTALLED_APPS = [
     "rest_framework",
     "drf_yasg",
     # apps
-    'snippet',
-    'blog',
-    'pypi',
+    "snippet",
+    "blog",
+    "pypi",
 ]
 
 MIDDLEWARE = [
@@ -136,7 +137,5 @@ DOMAIN_URL = "https://pasteme.pythonanywhere.com/"
 
 # Import local settings
 
-try:
+with suppress(ImportError):
     from .local_settings import *
-except ImportError:
-    pass

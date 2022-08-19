@@ -6,21 +6,29 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('blog', '0003_rename_absract_blog_abstract'),
+        ("blog", "0003_rename_absract_blog_abstract"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='Tag',
+            name="Tag",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=100)),
-                ('description', models.TextField()),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("name", models.CharField(max_length=100)),
+                ("description", models.TextField()),
             ],
         ),
         migrations.AddField(
-            model_name='blog',
-            name='tags',
-            field=models.ManyToManyField(blank=True, to='blog.tag'),
+            model_name="blog",
+            name="tags",
+            field=models.ManyToManyField(blank=True, to="blog.tag"),
         ),
     ]

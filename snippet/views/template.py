@@ -1,7 +1,7 @@
 from django.views.generic import DetailView, TemplateView
 
-from snippet.models import Snippet
 from pypi.models import Statistic
+from snippet.models import Snippet
 
 
 class HomeView(TemplateView):

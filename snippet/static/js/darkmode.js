@@ -1,4 +1,5 @@
 let dark_mode = true;
+let html_element = document.getElementsByTagName("html")[0];
 
 // Disable dark mode if the user's device is not set to dark mode
 if (
@@ -6,9 +7,9 @@ if (
     (!("theme" in localStorage) &&
         window.matchMedia("(prefers-color-scheme: dark)").matches)
 ) {
-    $("html").addClass("dark");
+    html_element.classList.add("dark");
 } else {
-    $("html").removeClass("dark");
+    html_element.classList.remove("dark");
     dark_mode = false;
 }
 

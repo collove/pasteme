@@ -13,6 +13,15 @@ $(function () {
     $("#menu-toggle").on("click", function () {
         $("#menu").toggleClass("menu-open");
     });
+
+    let copy_btn = $("#copy-btn");
+    copy_btn.on("click", function () {
+        navigator.clipboard.writeText($("#command").text());
+        $("#copy-msg").html("Copied to clipboard!");
+        setTimeout(function () {
+            $("#copy-msg").html("");
+        }, 3000);
+    });
 });
 
 // Confetti animation

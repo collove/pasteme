@@ -1,8 +1,29 @@
 {% extends 'base/_base.html' %}
+{% block header_msg %}
+    <div class="w-full relative select-none">
+        <canvas class="w-full h-full absolute left-0 top-0 -z-10" id="banner"></canvas>
+        <p class="p-4 flex flex-row gap-2 items-center justify-center text-center font-semibold text-black dark:text-white">
+            <svg xmlns="http://www.w3.org/2000/svg"
+                 class="hidden md:block h-6 w-6"
+                 fill="none"
+                 viewBox="0 0 24 24"
+                 stroke="currentColor"
+                 stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+            </svg>
+            <span class="text-sm md:text-base">
+                <a href="https://github.com/collove/pasteme/releases" target="_blank">
+                    New Release v2.0 Is Available Now! Check Out the Release Notes on GitHub.
+                </a>
+            </span>
+        </p>
+    </div>
+{% endblock header_msg %}
 {% block content %}
     {% include "home_sections/hero.html" %}
     {% include "home_sections/stat.html" %}
-    {% include "home_sections/collove.html" %}
-    {% include "home_sections/release.html" %}
-    {% include "home_sections/repo.html" %}
+    <section class="bg-gradient-to-t from-white to-neutral-50 dark:from-[#0d0d0d] transition-colors duration-300">
+        {% include "home_sections/collove.html" %}
+        {% include "home_sections/repo.html" %}
+    </section>
 {% endblock %}

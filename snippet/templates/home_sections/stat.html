@@ -21,17 +21,17 @@
                  data-aos-duration="800"
                  data-aos-delay="150"
                  data-aos-once="true">
-                <div class="flex flex-col justify-center">
-                    <span class="counter-font">{{ stats.total_service_stars | millify }}</span>
-                    <p class="text-center uppercase">Overall Service Stars</p>
+                <div class="flex flex-col justify-center text-center">
+                    <span class="text-6xl font-medium leading-tight">{{ stats.total_service_stars | millify }}</span>
+                    <p class="uppercase">Overall Service Stars</p>
                 </div>
-                <div class="flex flex-col justify-center">
-                    <span class="counter-font">{{ stats.total_downloads | millify }}</span>
-                    <p class="text-center uppercase">Overall Downloads</p>
+                <div class="flex flex-col justify-center text-center">
+                    <span class="text-6xl font-medium leading-tight">{{ stats.total_downloads | millify }}</span>
+                    <p class="uppercase">Overall Downloads</p>
                 </div>
-                <div class="flex flex-col justify-center">
-                    <span class="counter-font">{{ stats.total_package_stars | millify }}</span>
-                    <p class="text-center uppercase">Overall Package Stars</p>
+                <div class="flex flex-col justify-center text-center">
+                    <span class="text-6xl font-medium leading-tight">{{ stats.total_package_stars | millify }}</span>
+                    <p class="uppercase">Overall Package Stars</p>
                 </div>
             </div>
         {% endif %}

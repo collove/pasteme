@@ -5,6 +5,7 @@ code.phrase {
     border-radius: 5px;
     font-weight: bold;
 }
+
 .hljs-ln-numbers {
     -webkit-touch-callout: none;
     -webkit-user-select: none;
@@ -18,9 +19,11 @@ code.phrase {
     vertical-align: top;
     padding-right: 5px;
 }
+
 .hljs-ln-code {
     padding-left: 18px !important;
 }
+
 .hackathon {
     font-weight: bold;
     background: linear-gradient(

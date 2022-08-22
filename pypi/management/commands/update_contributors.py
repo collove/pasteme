@@ -3,7 +3,7 @@ from os import path
 import requests
 from django.core.management.base import BaseCommand
 
-DOWNLOAD_URL = "https://contrib.rocks/image\?repo\=collove/pasteme"
+DOWNLOAD_URL = "https://contrib.rocks/preview?repo=collove%2Fpasteme"
 
 
 class Command(BaseCommand):

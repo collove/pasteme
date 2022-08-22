@@ -26,7 +26,7 @@
             <meta property="twitter:description"
                   content="PasteMe is an open-source pastebin service that works with the power of RESTful APIs."/>
         {% endblock metas %}
-        {% compress js file darkmode %}
+        {% compress js inline %}
             <script src="{% static 'js/darkmode.js' %}"></script>
         {% endcompress %}
         {% include "base/_css_tags.html" %}
@@ -39,6 +39,15 @@
         </title>
     </head>
     <body class="bg-neutral-50 dark:bg-[#0d0d0d] grid grid-rows-[auto_1fr_auto] leading-normal tracking-normal relative min-h-screen transition-colors duration-300 selection:text-white selection:bg-black dark:selection:text-black dark:selection:bg-white">
+        <div id="loading-msg" class="bg-white dark:bg-black">
+            <div>G</div>
+            <div>N</div>
+            <div>I</div>
+            <div>D</div>
+            <div>A</div>
+            <div>O</div>
+            <div>L</div>
+        </div>
         <div id="particles-js" class="absolute w-full h-full left-0 top-0 -z-10"></div>
         {% block header_msg %}
         {% endblock header_msg %}

@@ -22,6 +22,8 @@ $(function () {
             $("#copy-msg").html("");
         }, 3000);
     });
+
+    $("#loading-msg").addClass("loaded");
 });
 
 // Confetti animation

@@ -16,6 +16,10 @@
       <meta property="twitter:description"
             content="Follow the feed and keep up with the tech.">
 {% endblock %}
+{% block addon_script %}
+      <script src="{% static 'js/aos.js' %}"></script>
+      <script src="{% static 'js/app.js' %}"></script>
+{% endblock addon_script %}
 {% block content %}
       <section class="py-6 md:py-10 text-black dark:text-white">
             <div class="container"

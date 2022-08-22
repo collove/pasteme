@@ -1,4 +1,6 @@
 {% extends 'base/_base.html' %}
+{% load static %}
+{% load compress %}
 {% block header_msg %}
     <div class="w-full relative select-none">
         <canvas class="w-full h-full absolute left-0 top-0 -z-10" id="banner"></canvas>
@@ -27,4 +29,12 @@
         {% include "home_sections/repo.html" %}
     </section>
     {% include "home_sections/hashnode.html" %}
-{% endblock %}
+{% endblock content %}
+{% block addon_script %}
+    {% compress js file scripts %}
+        <script src="{% static 'js/aos.js' %}"></script>
+        <script src="{% static 'js/confetti.min.js' %}"></script>
+        <script src="{% static 'js/asciinema-player.min.js' %}"></script>
+        <script src="{% static 'js/app.js' %}"></script>
+    {% endcompress %}
+{% endblock addon_script %}

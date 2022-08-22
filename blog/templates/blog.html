@@ -1,26 +1,40 @@
-{% extends 'base/_base.html' %}
-{% load static %}
+{% extends "base/_base.html" %}
 {% load markdown_extras %}
-{% block title %}{{ blog.title }}{% endblock %}
-{% block metas %}
-      <meta name="title" content="{{ blog.title }}">
-      <meta name="description" content="{{ blog.abstract }}">
-      <meta property="og:type" content="website">
-      <meta property="og:url" content="{% url 'blog' blog.slug %}">
-      <meta property="og:title" content="{{ blog.title }}">
-      <meta property="og:description" content="{{ blog.abstract }}">
-      <meta property="twitter:card" content="summary_large_image">
-      <meta property="twitter:url" content="{% url 'blog' blog.slug %}">
-      <meta property="twitter:title" content="{{ blog.title }}">
-      <meta property="twitter:description" content="{{ blog.abstract }}">
-{% endblock %}
+{% load static %}
+<!-- Titles -->
+{% block title %}
+      PasteMe - {{ blog.title }}
+{% endblock title %}
+{% block meta_title %}
+      PasteMe - {{ blog.title }}
+{% endblock meta_title %}
+{% block meta_og_title %}
+      PasteMe - {{ blog.title }}
+{% endblock meta_og_title %}
+{% block meta_tw_title %}
+      {{ blog.title }}
+{% endblock meta_tw_title %}
+<!-- URLs -->
+{% block meta_og_url %}
+      {% url 'blog' blog.slug %}
+{% endblock meta_og_url %}
+{% block meta_tw_url %}
+      {% url 'blog' blog.slug %}
+{% endblock meta_tw_url %}
+<!-- Description -->
+{% block meta_og_desc %}
+      {{ blog.abstract }}
+{% endblock meta_og_desc %}
+{% block meta_tw_desc %}
+      {{ blog.abstract }}
+{% endblock meta_tw_desc %}
 {% block addon_style %}
-      <link rel="stylesheet" href="{% static 'css/themes/dark.min.css' %}">
+      <link rel="stylesheet" href="{% static 'css/themes/dark.min.css' %}"/>
 {% endblock addon_style %}
 {% block addon_script %}
       <script src="{% static 'js/highlight.min.js' %}"></script>
       <script>hljs.initHighlightingOnLoad();</script>
-{% endblock %}
+{% endblock addon_script %}
 {% block content %}
       <section class="py-10">
             <div class="container md:px-0 prose prose-emerald dark:prose-invert prose-pre:text-sm prose-code:rounded prose-code:whitespace-pre-wrap prose-hr:border-dashed prose-hr:border-t-2">
@@ -38,4 +52,4 @@
                   <div class="text-justify">{{ blog.body | markdown | safe }}</div>
             </div>
       </section>
-{% endblock %}
+{% endblock content %}

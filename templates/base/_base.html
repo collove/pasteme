@@ -6,26 +6,38 @@
         <meta charset="utf-8"/>
         <meta name="viewport"
               content="width=device-width, initial-scale=1.0, shrink-to-fit=no"/>
-        {% block metas %}
-            <!-- Primary Meta Tags -->
-            <meta name="title" content="PasteMe - Paste Codes From Your Terminal"/>
-            <meta name="description"
-                  content="PasteMe is an open-source pastebin service that works with the power of RESTful APIs."/>
-            <!-- Open Graph / Facebook -->
-            <meta property="og:type" content="website"/>
-            <meta property="og:url" content="https://pasteme.pythonanywhere.com/"/>
-            <meta property="og:title"
-                  content="PasteMe - Paste Codes From Your Terminal"/>
-            <meta property="og:description"
-                  content="PasteMe is an open-source pastebin service that works with the power of RESTful APIs."/>
-            <!-- Twitter -->
-            <meta property="twitter:card" content="summary_large_image"/>
-            <meta property="twitter:url" content="https://pasteme.pythonanywhere.com/"/>
-            <meta property="twitter:title"
-                  content="PasteMe - Paste Codes From Your Terminal"/>
-            <meta property="twitter:description"
-                  content="PasteMe is an open-source pastebin service that works with the power of RESTful APIs."/>
-        {% endblock metas %}
+        <!-- Primary Meta Tags -->
+        <meta name="title"
+              content="{% block meta_title %}PasteMe - Paste Codes From Your Terminal{% endblock meta_title %}"/>
+        <meta name="description"
+              content="{% block meta_desc %}A free open-source modern Pastebin service that works with the power of RESTful APIs.{% endblock meta_desc %}"/>
+        <!-- Open Graph / Facebook -->
+        <meta property="og:type" content="website"/>
+        <meta property="og:url"
+              content="{% block meta_og_url %}{% url 'home' %}{% endblock meta_og_url %}"/>
+        <meta property="og:title"
+              content="{% block meta_og_title %}PasteMe - Paste Codes From Your Terminal{% endblock meta_og_title %}"/>
+        <meta property="og:description"
+              content="{% block meta_og_desc %}A free open-source modern Pastebin service that works with the power of RESTful APIs.{% endblock meta_og_desc %}"/>
+        <meta property="og:image" content="{% static 'img/og.png' %}"/>
+        <!-- Twitter -->
+        <meta property="twitter:card" content="summary_large_image"/>
+        <meta property="twitter:url"
+              content="{% block meta_tw_url %}{% url 'home' %}{% endblock meta_tw_url %}"/>
+        <meta property="twitter:title"
+              content="{% block meta_tw_title %}PasteMe - Paste Codes From Your Terminal{% endblock meta_tw_title %}"/>
+        <meta property="twitter:description"
+              content="{% block meta_tw_desc %}A free open-source modern Pastebin service that works with the power of RESTful APIs.{% endblock meta_tw_desc %}"/>
+        <meta property="twitter:image" content="{% static 'img/og.png' %}"/>
+        <!-- Favicon -->
+        <link rel="icon"
+              type="image/png"
+              sizes="16x16"
+              href="{% static 'img/fav16.png' %}"/>
+        <link rel="icon"
+              type="image/png"
+              sizes="32x32"
+              href="{% static 'img/fav32.png' %}"/>
         {% compress js inline %}
             <script src="{% static 'js/darkmode.js' %}"></script>
         {% endcompress %}
@@ -34,7 +46,7 @@
         {% endblock addon_style %}
         <title>
             {% block title %}
-                PasteMe Service
+                PasteMe - Paste Codes From Your Terminal
             {% endblock title %}
         </title>
     </head>

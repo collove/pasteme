@@ -1,14 +1,6 @@
 {% load static %}
 {% load compress %}
 {% load static tailwind_tags %}
-<link rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="{% static 'img/fav32.png' %}"/>
-<link rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="{% static 'img/fav16.png' %}"/>
 {% compress css preload %}
       {% tailwind_preload_css %}
 {% endcompress %}

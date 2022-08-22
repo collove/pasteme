@@ -1,0 +1,36 @@
+{% load static %}
+<section class="container max-w-screen-lg p-6 flex flex-col md:flex-row-reverse gap-4 md:gap-4 lg:gap-8 text-black dark:text-white">
+    <div class="flex-1 flex justify-center"
+         data-aos="fade-up"
+         data-aos-duration="400"
+         data-aos-once="true">
+        <img src="{% static 'img/hackathon.svg' %}"
+             alt="Hackathon Image"
+             width="300">
+    </div>
+    <div class="flex-1 basis-1/4 flex flex-col items-center justify-center"
+         data-aos="fade-up"
+         data-aos-duration="400"
+         data-aos-once="true">
+        <div class="px-2 lg:px-4">
+            <h2 class="text-3xl lg:text-4xl text-center md:text-left font-bold">
+                Hashnode <span class="hackathon">X</span> PlanetScale!
+            </h2>
+            <p class="my-4 text-center md:text-justify">
+                PasteMe is developed for the great
+                <a href="https://townhall.hashnode.com/planetscale-hackathon"
+                   target="_blank"
+                   class="font-semibold text-blue-600">
+                Hashnode's July Hackathon</a>.
+                By this partnership with
+                <a href="https://planetscale.com"
+                   target="_blank"
+                   class="font-semibold text-blue-600">PlanetScale</a>, all your pastes and snippets are stored in the powerful PlanetScale databases!
+            </p>
+            <button class="block mt-8 md:mt-5 mx-auto md:mx-0 bg-transparent hover:bg-black dark:hover:bg-white hover:text-white dark:hover:text-black font-semibold py-2 px-4 border border-black dark:border-neutral-300 rounded transition-colors duration-300">
+                <a href="https://imsadra.me/pasteme-paste-codes-from-your-terminal"
+                   target="blank">Read Article</a>
+            </button>
+        </div>
+    </div>
+</section>

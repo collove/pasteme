@@ -1,0 +1,60 @@
+{% load static %}
+<nav class="bg-white dark:bg-black transition-colors duration-300 relative">
+    <div class="container py-6 md:flex text-gray-800 dark:text-white overflow-y-hidden">
+        <div class="flex items-center justify-between">
+            <a href="{% url 'home' %}"
+               class="md:mr-3 w-10 h-10 bg-icon-light dark:bg-icon-dark"></a>
+            <a href="{% url 'home' %}"
+               class="text-black dark:text-white text-2xl md:text-xl float-left">PasteMe</a>
+            <!-- Mobile menu button -->
+            <div class="flex md:hidden" id="menu-toggle">
+                <button type="button"
+                        class="text-gray-500 dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-400 focus:outline-none focus:text-gray-600 dark:focus:text-gray-400"
+                        aria-label="toggle menu">
+                    <svg class="w-10 h-10 ham hamRotate ham1"
+                         viewBox="0 0 100 100"
+                         width="80"
+                         onclick="this.classList.toggle('active')">
+                        <path
+                        class="line top stroke-black dark:stroke-white"
+                        d="m 30,33 h 40 c 0,0 9.044436,-0.654587 9.044436,-8.508902 0,-7.854315 -8.024349,-11.958003 -14.89975,-10.85914 -6.875401,1.098863 -13.637059,4.171617 -13.637059,16.368042 v 40" />
+                        <path
+                        class="line middle stroke-black dark:stroke-white"
+                        d="m 30,50 h 40" />
+                        <path
+                        class="line bottom stroke-black dark:stroke-white"
+                        d="m 30,67 h 40 c 12.796276,0 15.357889,-11.717785 15.357889,-26.851538 0,-15.133752 -4.786586,-27.274118 -16.667516,-27.274118 -11.88093,0 -18.499247,6.994427 -18.435284,17.125656 l 0.252538,40" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu open: "block", Menu closed: "hidden" -->
+        <div class="w-full md:ml-8 flex flex-col md:flex-row gap-6 md:items-center md:justify-between bg-white dark:bg-black transition-all duration-300"
+             id="menu">
+            <div class="hidden md:flex flex-col md:flex-row md:mr-4">
+                <ul class="flex flex-col md:flex-row text-center md:text-left gap-4 text-gray-500 dark:text-gray-400">
+                    <li class="hover:text-neutral-700 dark:hover:text-neutral-300 transition-colors duration-100">
+                        <a href="{% url 'home' %}"
+                           class="{% if request.path == "/" %}text-black dark:text-white font-semibold{% endif %}">
+                            Home
+                        </a>
+                    </li>
+                    <li class="hover:text-neutral-700 dark:hover:text-neutral-300 transition-colors duration-100">
+                        <a href="{% url 'blogs' %}"
+                           class="{% if request.path == "/blog/" %}text-black dark:text-white font-semibold{% endif %}">
+                            Blog
+                        </a>
+                    </li>
+                    <li class="hover:text-neutral-700 dark:hover:text-neutral-300 transition-colors duration-100">
+                        <a href="{% url 'schema-redoc' %}" target="blank">API Docs</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="hidden md:flex">
+                <button class="darkmode-switch mx-auto">
+                    <div class="mode"></div>
+                </button>
+            </div>
+        </div>
+    </div>
+</nav>

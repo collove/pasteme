@@ -41,8 +41,11 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     # 3rd parties
     "rest_framework",
+    "compressor",
+    "tailwind",
     "drf_yasg",
     # apps
+    "tailwindcss",
     "snippet",
     "blog",
     "pypi",
@@ -135,7 +138,25 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 DOMAIN_URL = "https://pasteme.pythonanywhere.com/"
 
-# Import local settings
+# Used for disclaimer view
+SITE_URL = "pasteme.pythonanywhere.com"
 
+# TailWindCSS settings
+TAILWIND_APP_NAME = "tailwindcss"
+
+INTERNAL_IPS = [
+    "127.0.0.1",
+]
+
+# Compressor settings
+STATICFILES_FINDERS = (
+    "django.contrib.staticfiles.finders.FileSystemFinder",
+    "django.contrib.staticfiles.finders.AppDirectoriesFinder",
+    "compressor.finders.CompressorFinder",
+)
+
+COMPRESS_ENABLED = True
+
+# Import local settings
 with suppress(ImportError):
     from .local_settings import *

@@ -24,11 +24,14 @@ $(function () {
     });
 
     $("#loading-msg").addClass("loaded");
+    setTimeout(function () {
+        $("#loading-msg").hide();
+    }, 1000);
 });
 
 // Confetti animation
 var skew = 1;
-var duration = 8 * 1000;
+var duration = 10 * 1000;
 var animationEnd = Date.now() + duration;
 
 var canvas = document.getElementById("banner");
@@ -54,7 +57,7 @@ function randomInRange(min, max) {
         },
         colors: ["#ff005d"],
         shapes: ["circle"],
-        gravity: randomInRange(0.4, 0.6),
+        gravity: randomInRange(0.2, 0.4),
         scalar: randomInRange(0.4, 1),
         drift: randomInRange(-0.4, 0.4),
     });

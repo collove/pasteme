@@ -38,7 +38,7 @@
                   type="image/png"
                   sizes="32x32"
                   href="{% static 'img/fav32.png' %}"/>
-            {% compress js inline %}
+            {% compress js file %}
                   <script src="{% static 'js/darkmode.js' %}"></script>
                   <script src="{% static 'js/cash.min.js' %}"></script>
                   <script src="{% static 'js/loading.js' %}"></script>
@@ -73,7 +73,7 @@
             {% block footer_msg %}
             {% endblock footer_msg %}
             {% include "base/_footer.html" %}
-            {% include "base/_js_tags.html" %}
+            <script src="{% static 'js/interactive.js' %}"></script>
             {% block addon_script %}
             {% endblock addon_script %}
       </body>

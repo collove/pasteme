@@ -11,6 +11,10 @@
     }
 }
 
+.sticky {
+    @apply fixed w-full top-0 z-50 border-b dark:border-[#1a1a1a];
+}
+
 .darkmode-switch {
     position: relative;
     background: transparent;

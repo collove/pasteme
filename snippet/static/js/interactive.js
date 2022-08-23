@@ -1,5 +1,3 @@
-console.log("interactive.js");
-
 // Dark-mode switch functionality
 $(".darkmode-switch").on("click", function () {
     $("html").toggleClass("dark");
@@ -11,3 +9,27 @@ $(".darkmode-switch").on("click", function () {
 $("#menu-toggle").on("click", function () {
     $("#menu").toggleClass("menu-open");
 });
+
+window.onscroll = function () {
+    fixNavbar();
+};
+
+var navbar = document.getElementById("navbar");
+var sticky = navbar.offsetTop;
+
+function fixNavbar() {
+    if (window.pageYOffset > sticky) {
+        // duration class makes the color switch to be smooth and
+        // look glitchy when scrolling down so I disable it temporarily
+        navbar.classList.remove("transition-colors", "duration-300");
+        navbar.classList.add("sticky");
+
+        // transition is used for dark mode switching smoothness so
+        // we need it back
+        setTimeout(function () {
+            navbar.classList.add("transition-colors", "duration-300");
+        }, 100);
+    } else {
+        navbar.classList.remove("sticky");
+    }
+}

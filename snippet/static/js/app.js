@@ -56,8 +56,8 @@ $(function () {
                     y: Math.random() * skew - 0.2,
                 },
                 colors: ["#ff005d"],
-                shapes: ["circle"],
-                gravity: randomInRange(0.2, 0.4),
+                shapes: ["triangle"],
+                gravity: randomInRange(0.3, 0.4),
                 scalar: randomInRange(0.4, 1),
                 drift: randomInRange(-0.4, 0.4),
             });

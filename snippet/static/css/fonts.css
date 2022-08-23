@@ -1,28 +1,35 @@
 @font-face {
     font-family: "Manrope";
+    src: local("Manrope Bold"), local("Manrope-Bold"),
+        url("/static/css/fonts/Manrope-Bold.woff2") format("woff2"),
+        url("/static/css/fonts/Manrope-Bold.ttf") format("truetype");
+    font-weight: bold;
     font-style: normal;
-    font-weight: 400;
-    font-display: swap;
-    src: url(../fonts/Manrope/Manrope-regular.ttf) format("ttf");
 }
+
 @font-face {
     font-family: "Manrope";
-    font-style: normal;
+    src: local("Manrope Medium"), local("Manrope-Medium"),
+        url("/static/css/fonts/Manrope-Medium.woff2") format("woff2"),
+        url("/static/css/fonts/Manrope-Medium.ttf") format("truetype");
     font-weight: 500;
-    font-display: swap;
-    src: url(../fonts/Manrope/Manrope-medium.ttf) format("tff");
+    font-style: normal;
 }
+
 @font-face {
     font-family: "Manrope";
+    src: local("Manrope Regular"), local("Manrope-Regular"),
+        url("/static/css/fonts/Manrope-Regular.woff2") format("woff2"),
+        url("/static/css/fonts/Manrope-Regular.ttf") format("truetype");
+    font-weight: normal;
     font-style: normal;
+}
+
+@font-face {
+    font-family: "Manrope";
+    src: local("Manrope SemiBold"), local("Manrope-SemiBold"),
+        url("/static/css/fonts/Manrope-SemiBold.woff2") format("woff2"),
+        url("/static/css/fonts/Manrope-SemiBold.ttf") format("truetype");
     font-weight: 600;
-    font-display: swap;
-    src: url(../fonts/Manrope/Manrope-semibold.ttf) format("tff");
-}
-@font-face {
-    font-family: "Manrope";
     font-style: normal;
-    font-weight: 700;
-    font-display: swap;
-    src: url(../fonts/Manrope/Manrope-bold.ttf) format("tff");
 }

@@ -2,18 +2,6 @@ $(function () {
     // Initialize the AOS library
     AOS.init();
 
-    // Dark-mode switch functionality
-    $(".darkmode-switch").on("click", function () {
-        $("html").toggleClass("dark");
-        dark_mode = !dark_mode;
-        localStorage.theme = dark_mode ? "dark" : "light";
-    });
-
-    // Menu toggle functionality
-    $("#menu-toggle").on("click", function () {
-        $("#menu").toggleClass("menu-open");
-    });
-
     let copy_btn = $("#copy-btn");
     copy_btn.on("click", function () {
         navigator.clipboard.writeText($("#command").text());
@@ -68,8 +56,8 @@ $(function () {
                     y: Math.random() * skew - 0.2,
                 },
                 colors: ["#ff005d"],
-                shapes: ["circle"],
-                gravity: randomInRange(0.2, 0.4),
+                shapes: ["triangle"],
+                gravity: randomInRange(0.3, 0.4),
                 scalar: randomInRange(0.4, 1),
                 drift: randomInRange(-0.4, 0.4),
             });

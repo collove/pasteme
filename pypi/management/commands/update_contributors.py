@@ -1,6 +1,6 @@
 from os import path
 
-import requests
+import urllib.request as request
 from django.core.management.base import BaseCommand
 
 from pypi.constants import DOWNLOAD_URL
@@ -13,15 +13,12 @@ class Command(BaseCommand):
         CUR_DIR = path.dirname(path.realpath(__file__))
         STAT_FILES_DIR = path.join(CUR_DIR, "../../../snippet/static/img/")
         try:
-            response = requests.get(DOWNLOAD_URL)
-            if response.status_code == 200:
-                with open(path.join(STAT_FILES_DIR, "contributors.svg"), "wb") as f:
-                    f.write(response.content)
-                    self.stdout.write(
-                        self.style.SUCCESS("Successfully updated contributors image")
-                    )
-            else:
-                raise Exception("Could not download contributors image")
+            request.urlretrieve(
+                DOWNLOAD_URL, path.join(STAT_FILES_DIR, "contributors.svg")
+            )
+            self.stdout.write(
+                self.style.SUCCESS("Successfully updated contributors image")
+            )
         except Exception as e:
             self.stdout.write(
                 self.style.ERROR(f"Error updating contributors image: {e}")

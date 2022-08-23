@@ -33,3 +33,6 @@ function fixNavbar() {
         navbar.classList.remove("sticky");
     }
 }
+
+// Initialize the AOS library
+AOS.init();

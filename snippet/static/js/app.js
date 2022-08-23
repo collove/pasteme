@@ -1,7 +1,4 @@
 $(function () {
-    // Initialize the AOS library
-    AOS.init();
-
     let copy_btn = $("#copy-btn");
     copy_btn.on("click", function () {
         navigator.clipboard.writeText($("#command").text());

@@ -1,79 +1,40 @@
-{% extends '_base.html' %}
+{% extends 'base/_base.html' %}
 {% load static %}
-
-{% block addon_link %}
-<link rel="stylesheet" href="{% static 'css/themes/github.min.css' %}">
-{% endblock %}
-
-{% block addon_script %}
-<script src="{% static 'js/highlight.min.js' %}"></script>
-<script>hljs.highlightAll();</script>
-{% endblock %}
-
-{% block home_active %}active{% endblock %}
-
-{% block body_css %}background: url('{% static 'img/banner.svg' %}') fixed;{% endblock %}
-
+{% load compress %}
+{% block header_msg %}
+    <div class="w-full relative select-none">
+        <canvas class="w-full h-full absolute left-0 top-0 -z-10" id="banner"></canvas>
+        <p class="p-2 md:p-4 flex flex-row gap-2 items-center justify-center text-center font-semibold text-black dark:text-white">
+            <svg xmlns="http://www.w3.org/2000/svg"
+                 class="hidden md:block h-6 w-6"
+                 fill="none"
+                 viewBox="0 0 24 24"
+                 stroke="currentColor"
+                 stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+            </svg>
+            <span class="text-sm md:text-base">
+                <a href="https://github.com/collove/pasteme/releases" target="_blank">
+                    New Release V2.0 is Available Now! Check Out the Release Notes on GitHub.
+                </a>
+            </span>
+        </p>
+    </div>
+{% endblock header_msg %}
 {% block content %}
-<section class="text-white" style="padding: 30px;">
-  <div class="container">
-    <div class="row align-items-center">
-      <div class="col-md">
-          <h2 class="fw-bold" style="line-height: 40px;">Open-Source RESTful Pastebin Service Featured for Hashnode &amp; PlanetScale!</h2>
-          <p align="justify">PasteMe is an open-source pastebin service that works with the power of RESTful APIs. Install the <code class="phrase">pasteme-cli</code> package and start pasting right from your terminals and CLI shells.</p><br>
-          <div class="glow">
-            <pre class="rounded"><code class="language-shell">$ pip install pasteme-cli</code></pre>
-          </div>
-      </div>
-      <div class="col-md">
-        <script src="https://asciinema.org/a/510373.js" id="asciicast-510373" data-theme="tango" data-size="big" data-speed="3" data-rows="20"></script>
-      </div>
-    </div>
-  </div>
-</section>
-<section data-aos="fade-up" data-aos-duration="400" data-aos-once="true" class="font-dark bg-white" style="font-family: Manrope, sans-serif;">
-      <div class="container">
-          <h3 class="text-dark text-center all-capital p-4" data-aos="fade-up" data-aos-duration="400" data-aos-delay="200" data-aos-once="true" style="font-size: 30px;font-weight: 300;line-height: 38px;letter-spacing: 2px;">PyPi Package Statistics <span class="badge bg-dark">{{stats.date.date}}</span></h3>
-          <div class="row" data-aos="fade-up" data-aos-duration="800" data-aos-delay="150" data-aos-once="true" style="padding-top: 20px;padding-bottom: 40px;">
-              <div class="col-sm">
-                  <div><span class="Justify-Flex-Center purecounter counter-font count plus" data-purecounter-start="0" data-purecounter-end="{{stats.total_service_stars}}" data-purecounter-duration="1">{{stats.total_service_stars}}</span>
-                      <p class="text-center text-uppercase">Overall Service Stars</p>
-                  </div>
-              </div>
-              <div class="col-sm">
-                  <div><span class="Justify-Flex-Center purecounter counter-font count plus" data-purecounter-start="0" data-purecounter-end="{{stats.total_downloads}}" data-purecounter-duration="1">{{stats.total_downloads}}</span>
-                      <p class="text-center text-uppercase">Overall Downloads</p>
-                  </div>
-              </div>
-              <div class="col-sm">
-                  <div><span class="Justify-Flex-Center purecounter counter-font count plus" data-purecounter-start="0" data-purecounter-end="{{stats.total_package_stars}}" data-purecounter-duration="1">{{stats.total_package_stars}}</span>
-                      <p class="text-center text-uppercase">Overall Package Stars</p>
-                  </div>
-              </div>
-          </div>
-      </div>
-</section>
-<section class="text-white" style="padding: 30px;">
-  <div class="container">
-    <div class="row align-items-center">
-      <div class="col-md" align="center">
-          <img class="img-fluid" src="{% static 'img/octocat.svg' %}" width="300">
-      </div>
-      <div class="col-md">
-        <h2 class="fw-bold" style="line-height: 40px;">Join the Community & Develop PasteMe!</h2>
-        <p align="justify">PasteMe is an open-source Django-based service that is being developed on GitHub. Join the community and feel free to contribute.</p>
-        <a class="btn btn-outline-light ms-md-2" role="button" href="https://github.com/collove/pasteme" target="blank">View Repository</a>
-      </div>
-      <div class="row align-items-center">
-        <div class="col-md">
-          <h2 class="fw-bold" style="line-height: 40px;">Hashnode's July Hackathon!</h2>
-          <p align="justify">This idea is being developed for Hashnode's July Hackathon. That being said, there is an article describing the development and deployment steps behind this service.</p>
-          <a class="btn btn-outline-light ms-md-2" role="button" href="https://imsadra.me/pasteme-paste-codes-from-your-terminal" target="blank">Read Article</a>
-        </div>
-        <div class="col-md order-first order-md-last" align="center">
-          <img class="img-fluid" src="{% static 'img/hackathon.svg' %}">
-      </div>
-    </div>
-  </div>
-</section>
-{% endblock %}
+    {% include "home_sections/hero.html" %}
+    {% include "home_sections/stat.html" %}
+    <section class="bg-gradient-to-b from-neutral-50 to-white dark:bg-none dark:bg-[#0d0d0d] transition-colors duration-300">
+        {% include "home_sections/collove.html" %}
+        {% include "home_sections/repo.html" %}
+    </section>
+    {% include "home_sections/hashnode.html" %}
+{% endblock content %}
+{% block addon_script %}
+    {% compress js file scripts %}
+        <script src="{% static 'js/aos.js' %}"></script>
+        <script src="{% static 'js/confetti.min.js' %}"></script>
+        <script src="{% static 'js/asciinema-player.min.js' %}"></script>
+        <script src="{% static 'js/app.js' %}"></script>
+    {% endcompress %}
+{% endblock addon_script %}

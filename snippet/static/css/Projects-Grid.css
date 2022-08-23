@@ -1,3 +1,0 @@
-.fit-cover {
-  object-fit: cover;
-}

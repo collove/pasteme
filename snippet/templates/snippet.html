@@ -1,49 +1,65 @@
-{% extends '_base.html' %}
+{% extends 'base/_base.html' %}
 {% load static %}
-{% block title %}{{ snippet.title }} ({{ snippet.get_language_display }}){% endblock %}
-{% block metas %}
-    <!-- Primary Meta Tags -->
-    <meta name="title"
-          content="{{ snippet.title }} ({{ snippet.get_language_display }})">
-    <meta name="description" content="">
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="{% url 'view-paste' snippet.id %}">
-    <meta property="og:title"
-          content="{{ snippet.title }} ({{ snippet.get_language_display }})">
-    <meta property="og:description" content="">
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="{% url 'view-paste' snippet.id %}">
-    <meta property="twitter:title"
-          content="{{ snippet.title }} ({{ snippet.get_language_display }})">
-    <meta property="twitter:description" content="">
-{% endblock %}
-
-{% block addon_link %}
-<link rel="stylesheet" href="{% static 'css/themes/' %}{{snippet.theme}}.min.css">
-{% endblock %}
+<!-- Titles -->
+{% block title %}
+    {{ snippet.title }} ({{ snippet.get_language_display }})
+{% endblock title %}
+{% block meta_title %}
+    {{ snippet.title }} ({{ snippet.get_language_display }})
+{% endblock meta_title %}
+{% block meta_og_title %}
+    {{ snippet.title }} ({{ snippet.get_language_display }})
+{% endblock meta_og_title %}
+{% block meta_tw_title %}
+    {{ snippet.title }} ({{ snippet.get_language_display }})
+{% endblock meta_tw_title %}
+<!-- URLs -->
+{% block meta_og_url %}
+    {% url 'view-paste' snippet.id %}
+{% endblock meta_og_url %}
+{% block meta_tw_url %}
+    {% url 'view-paste' snippet.id %}
+{% endblock meta_tw_url %}
+<!-- Description -->
+{% block meta_og_desc %}
+    Created at {{ snippet.created_at.date }} • Expires in {{ snippet.get_expires_in_display | lower }}
+{% endblock meta_og_desc %}
+{% block meta_tw_desc %}
+    Created at {{ snippet.created_at.date }} • Expires in {{ snippet.get_expires_in_display | lower }}
+{% endblock meta_tw_desc %}
+{% block addon_style %}
+    <link rel="stylesheet"
+          href="{% static 'css/themes/' %}{{ snippet.theme }}.min.css"/>
+{% endblock addon_style %}
 {% block addon_script %}
     <script src="{% static 'js/highlight.min.js' %}"></script>
     <script src="{% static 'js/highlightjs-line-numbers.min.js' %}"></script>
     <script>
-    hljs.highlightAll();
-    hljs.initLineNumbersOnLoad();
+        hljs.highlightAll();
+        hljs.initLineNumbersOnLoad({
+            singleLine: true
+        });
     </script>
-{% endblock %}
+{% endblock addon_script %}
 {% block content %}
-    <section>
-        <div class="container p-5">
-            <h3 style="font-weight: bold;">{{ snippet.title }}</h3>
-            <p class="mb-3">
-                <span class="badge bg-dark" style="border: solid black thin;">Created at {{ snippet.created_at.date }}</span>
-                <span class="badge bg-dark" style="border: solid black thin;">Expires in {{ snippet.get_expires_in_display }}</span>
-                <span class="badge bg-white text-dark" style="border: solid black thin;">{{ snippet.get_language_display }}</span>
-                <span class="badge bg-white text-dark" style="border: solid black thin;">{{ snippet.get_theme_display }} Theme</span>
-            </p>
-            <div>
-                <pre class="rounded"><code class="language-{{snippet.language}}">{{snippet.body}}</code></pre>
-            </div>
+    <section class="container py-10 md:py-14 lg:py-20 text-black dark:text-white">
+        <h3 class="text-2xl lg:text-3xl font-semibold">{{ snippet.title }}</h3>
+        <ul class="mt-3 flex flex-wrap gap-1 text-xs md:text-sm select-none text-white dark:text-black">
+            <li class="bg-black dark:bg-white py-0.5 px-2 rounded">
+                <span>Created at {{ snippet.created_at.date }}</span>
+            </li>
+            <li class="bg-black dark:bg-white py-0.5 px-2 rounded">
+                <span>Expires in {{ snippet.get_expires_in_display | lower }}</span>
+            </li>
+            <li class="bg-transparent py-0.5 px-2 border border-neutral-300 dark:border-neutral-700 text-black dark:text-white rounded">
+                <span>{{ snippet.get_language_display }}</span>
+            </li>
+            <li class="bg-transparent py-0.5 px-2 border border-neutral-300 dark:border-neutral-700 text-black dark:text-white rounded">
+                <span>{{ snippet.get_theme_display }} Theme</span>
+            </li>
+        </ul>
+        <div class="mt-4">
+            <pre class="grid"><code class="language-{{snippet.language}} rounded">{{snippet.body}}</code></pre>
         </div>
     </section>
-{% endblock %}
+{% endblock content %}

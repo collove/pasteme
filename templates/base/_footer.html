@@ -1,0 +1,86 @@
+{% load static %}
+<footer class="transition-colors duration-300">
+    <div class="py-10 px-6 text-gray-900 dark:text-gray-200 border-t-[3px] border-dashed border-[#efefef] dark:border-[#1a1a1a] flex flex-col gap-3 items-center justify-center transition-colors duration-300">
+        <span>
+            <a class="flex w-7 h-7 relative"
+               href="https://github.com/collove/pasteme"
+               target="blank">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-zinc-400 opacity-75"></span>
+                <span class="w-10 h-10 bg-contain bg-no-repeat bg-github-light dark:bg-github-dark"></span>
+            </a>
+        </span>
+        <p class="text-center">
+            <b>PasteMe</b>
+            is proudly Open Source on
+            <b>GitHub.</b>
+        </p>
+    </div>
+    <div class="dark:bg-black">
+        <div class="w-full h-1 bg-gradient-to-r from-[#00d5ff] via-[#ff00c3] to-[#ff0000]"></div>
+        <div class="container py-4 flex flex-col lg:flex-row items-center justify-between text-gray-500">
+            <div class="underline">
+                <ul class="flex flex-wrap items-center justify-center sm:flex-row gap-2 sm:gap-4 sm:text-left">
+                    <li class="w-fit transition-colors duration-100 hover:text-gray-900 dark:hover:text-gray-200">
+                        <a class="link-secondary" href="{% url 'home' %}">Blog</a>
+                    </li>
+                    <li class="w-fit transition-colors duration-100 hover:text-gray-900 dark:hover:text-gray-200">
+                        <a class="link-secondary" href="{% url 'disclaimer' %}">Disclaimer</a>
+                    </li>
+                    <li class="w-fit transition-colors duration-100 hover:text-gray-900 dark:hover:text-gray-200">
+                        <a class="link-secondary"
+                           href="https://github.com/collove/pasteme"
+                           target="blank">GitHub</a>
+                    </li>
+                    <li class="w-fit transition-colors duration-100 hover:text-gray-900 dark:hover:text-gray-200">
+                        <a class="link-secondary" href="{% url 'schema-redoc' %}" target="blank">API Documentation</a>
+                    </li>
+                </ul>
+            </div>
+            {% comment %} <div class="mt-2 sm:mt-0 flex flex-col items-center sm:flex-row gap-2 text-center sm:text-left">
+                <a href="https://github.com/collove" target="blank">
+                    Developed by
+                    <span class="font-bold text-black dark:text-white hover:bg-clip-text dark:hover:bg-clip-text hover:text-transparent dark:hover:text-transparent hover:bg-gradient-to-tr hover:from-pink-600 hover:to-violet-700 dark:hover:from-pink-600 dark:hover:to-violet-700">
+                        Collove
+                    </span>
+                    team
+                </a>
+                <span class="hidden sm:inline-block">&bullet;</span>
+                <p>
+                    <a href="https://github.com/collove/pasteme/blob/main/LICENSE" class="text-sky-700 dark:text-sky-500 underline" target="blank">MIT License</a>
+                    <span>&copy; {% now 'Y' %} PasteMe</span>
+                </p>
+            </div> {% endcomment %}
+            <div class="mt-2 sm:mt-0 flex flex-col items-center sm:flex-row gap-2 text-center sm:text-left">
+                <div class="flex flex-row items-center gap-1">
+                    <span>Developed for</span>
+                    <div class="flex flex-row items-center gap-1">
+                        <div class="flex flex-row items-center gap-1">
+                            <svg class="w-4 h-4 fill-black dark:fill-zinc-400"
+                                 viewBox="0 0 44 44"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0 22C1.03435e-06 9.84973 9.84974 -1.03435e-06 22 0C30.9336 7.80998e-07 38.6235 5.3248 42.069 12.9737L12.9737 42.069C11.7252 41.5066 10.5385 40.8311 9.42689 40.0555L27.4824 22H22L6.44366 37.5563C2.46244 33.5751 -5.31105e-07 28.0751 0 22Z">
+                                </path>
+                                <path d="M44 22.0076L22.0076 44C34.1518 43.9959 43.9959 34.1518 44 22.0076Z"></path>
+                            </svg>
+                            <span>X</span>
+                            <svg class="w-4 h-4 fill-blue-600"
+                                 xmlns="http://www.w3.org/2000/svg"
+                                 viewBox="0 0 512 512">
+                                <path d="M35.19 171.1C-11.72 217.1-11.72 294 35.19 340.9L171.1 476.8C217.1 523.7 294 523.7 340.9 476.8L476.8 340.9C523.7 294 523.7 217.1 476.8 171.1L340.9 35.19C294-11.72 217.1-11.72 171.1 35.19L35.19 171.1zM315.5 315.5C282.6 348.3 229.4 348.3 196.6 315.5C163.7 282.6 163.7 229.4 196.6 196.6C229.4 163.7 282.6 163.7 315.5 196.6C348.3 229.4 348.3 282.6 315.5 315.5z">
+                                </path>
+                            </svg>
+                        </div>
+                        <span class="hackathon">Hackathon</span>
+                    </div>
+                </div>
+                <span class="hidden sm:inline-block">&bullet;</span>
+                <p>
+                    <a href="https://github.com/collove/pasteme/blob/main/LICENSE"
+                       class="text-sky-700 dark:text-sky-500 underline"
+                       target="blank">MIT License</a>
+                    <span>&copy; {% now 'Y' %} PasteMe</span>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>

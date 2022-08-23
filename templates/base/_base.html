@@ -1,0 +1,81 @@
+{% load static %}
+{% load compress %}
+<!DOCTYPE html>
+<html lang="en">
+      <head>
+            <meta charset="utf-8"/>
+            <meta name="viewport"
+                  content="width=device-width, initial-scale=1.0, shrink-to-fit=no"/>
+            <!-- Primary Meta Tags -->
+            <meta name="title"
+                  content="{% block meta_title %}PasteMe - Paste Codes From Your Terminal{% endblock meta_title %}"/>
+            <meta name="description"
+                  content="{% block meta_desc %}A free open-source modern Pastebin service that works with the power of RESTful APIs.{% endblock meta_desc %}"/>
+            <!-- Open Graph / Facebook -->
+            <meta property="og:type" content="website"/>
+            <meta property="og:url"
+                  content="{% block meta_og_url %}{% url 'home' %}{% endblock meta_og_url %}"/>
+            <meta property="og:title"
+                  content="{% block meta_og_title %}PasteMe - Paste Codes From Your Terminal{% endblock meta_og_title %}"/>
+            <meta property="og:description"
+                  content="{% block meta_og_desc %}A free open-source modern Pastebin service that works with the power of RESTful APIs.{% endblock meta_og_desc %}"/>
+            <meta property="og:image" content="{% static 'img/og.png' %}"/>
+            <!-- Twitter -->
+            <meta property="twitter:card" content="summary_large_image"/>
+            <meta property="twitter:url"
+                  content="{% block meta_tw_url %}{% url 'home' %}{% endblock meta_tw_url %}"/>
+            <meta property="twitter:title"
+                  content="{% block meta_tw_title %}PasteMe - Paste Codes From Your Terminal{% endblock meta_tw_title %}"/>
+            <meta property="twitter:description"
+                  content="{% block meta_tw_desc %}A free open-source modern Pastebin service that works with the power of RESTful APIs.{% endblock meta_tw_desc %}"/>
+            <meta property="twitter:image" content="{% static 'img/og.png' %}"/>
+            <!-- Favicon -->
+            <link rel="icon"
+                  type="image/png"
+                  sizes="16x16"
+                  href="{% static 'img/fav16.png' %}"/>
+            <link rel="icon"
+                  type="image/png"
+                  sizes="32x32"
+                  href="{% static 'img/fav32.png' %}"/>
+            {% compress js file %}
+                  <script src="{% static 'js/darkmode.js' %}"></script>
+                  <script src="{% static 'js/cash.min.js' %}"></script>
+                  <script src="{% static 'js/loading.js' %}"></script>
+            {% endcompress %}
+            {% include "base/_css_tags.html" %}
+            {% block addon_style %}
+            {% endblock addon_style %}
+            <title>
+                  {% block title %}
+                        PasteMe - Paste Codes From Your Terminal
+                  {% endblock title %}
+            </title>
+      </head>
+      <body class="bg-neutral-50 dark:bg-[#0d0d0d] grid grid-rows-[auto_1fr_auto] leading-normal tracking-normal relative min-h-screen transition-colors duration-300 selection:text-white selection:bg-black dark:selection:text-black dark:selection:bg-white">
+            <div id="loading-msg" class="bg-white dark:bg-black">
+                  <div>G</div>
+                  <div>N</div>
+                  <div>I</div>
+                  <div>D</div>
+                  <div>A</div>
+                  <div>O</div>
+                  <div>L</div>
+            </div>
+            {% block header_msg %}
+            {% endblock header_msg %}
+            <header>
+                  {% include "base/_navbar.html" %}
+            </header>
+            <main class="transition-colors ease-in-out duration-300 relative">
+                  {% block content %}
+                  {% endblock content %}
+            </main>
+            {% block footer_msg %}
+            {% endblock footer_msg %}
+            {% include "base/_footer.html" %}
+            <script src="{% static 'js/interactive.js' %}"></script>
+            {% block addon_script %}
+            {% endblock addon_script %}
+      </body>
+</html>

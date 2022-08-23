@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
+import os
 from contextlib import suppress
 from pathlib import Path
 
@@ -41,8 +42,11 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     # 3rd parties
     "rest_framework",
+    "compressor",
+    "tailwind",
     "drf_yasg",
     # apps
+    "tailwindcss",
     "snippet",
     "blog",
     "pypi",
@@ -123,7 +127,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_URL = "/static/"
-STATIC_ROOT = "static/"
+STATIC_ROOT = BASE_DIR / "static"
 
 MEDIA_URL = "/media/"
 MEDIA_ROOT = "media/"
@@ -135,7 +139,25 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 DOMAIN_URL = "https://pasteme.pythonanywhere.com/"
 
-# Import local settings
+# Used for disclaimer view
+SITE_URL = "pasteme.pythonanywhere.com"
 
+# TailWindCSS settings
+TAILWIND_APP_NAME = "tailwindcss"
+
+INTERNAL_IPS = [
+    "127.0.0.1",
+]
+
+# Compressor settings
+STATICFILES_FINDERS = (
+    "django.contrib.staticfiles.finders.FileSystemFinder",
+    "django.contrib.staticfiles.finders.AppDirectoriesFinder",
+    "compressor.finders.CompressorFinder",
+)
+
+COMPRESS_ENABLED = True
+
+# Import local settings
 with suppress(ImportError):
     from .local_settings import *

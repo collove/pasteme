@@ -1,0 +1,66 @@
+{% extends 'base/_base.html' %}
+<!-- Titles -->
+{% block title %}
+    PasteMe - Disclaimer
+{% endblock title %}
+{% block meta_title %}
+    This is a free-to-use service for the general public. The hosting provider is not liable for the content stored on this service. We do not know what is sent to our storage servers and we can't control or filter the data. We also can not give out any details about the author of the paste because we do not log them.
+{% endblock meta_title %}
+{% block meta_og_title %}
+    This is a free-to-use service for the general public. The hosting provider is not liable for the content stored on this service. We do not know what is sent to our storage servers and we can't control or filter the data. We also can not give out any details about the author of the paste because we do not log them.
+{% endblock meta_og_title %}
+{% block meta_tw_title %}
+    This is a free-to-use service for the general public. The hosting provider is not liable for the content stored on this service. We do not know what is sent to our storage servers and we can't control or filter the data. We also can not give out any details about the author of the paste because we do not log them.
+{% endblock meta_tw_title %}
+{% block content %}
+    <div class="md:container h-full flex items-center justify-center">
+        <div class="py-12 flex flex-col items-center justify-center gap-2">
+            <div class="mx-auto flex flex-col items-center justify-center gap-3 select-none">
+                <svg xmlns="http://www.w3.org/2000/svg"
+                     class="h-12 w-12 fill-red-600"
+                     viewBox="0 0 20 20"
+                     fill="currentColor">
+                    <path fill-rule="evenodd" d="M10 1.944A11.954 11.954 0 012.166 5C2.056 5.649 2 6.319 2 7c0 5.225 3.34 9.67 8 11.317C14.66 16.67 18 12.225 18 7c0-.682-.057-1.35-.166-2.001A11.954 11.954 0 0110 1.944zM11 14a1 1 0 11-2 0 1 1 0 012 0zm0-7a1 1 0 10-2 0v3a1 1 0 102 0V7z" clip-rule="evenodd" />
+                </svg>
+                <h1 class="text-xl font-bold text-red-500">PasteMe Project</h1>
+            </div>
+            <div class="w-4/5 sm:w-2/3 md:w-3/4 mx-auto relative flex py-5 items-center select-none">
+                <div class="grow rounded-full h-[1px] bg-gradient-to-l from-neutral-400 dark:from-neutral-600"></div>
+                <span class="flex-shrink mx-2 md:mx-4 text-sm text-neutral-500 dark:text-neutral-400 uppercase tracking-widest">
+                    Disclaimer
+                </span>
+                <div class="grow rounded-full h-[1px] bg-gradient-to-r from-neutral-400 dark:from-neutral-600"></div>
+            </div>
+            <div class="w-3/4 md:w-2/3 text-neutral-700 dark:text-neutral-400 text-justify">
+                <p>
+                    This is a free-to-use service for the general public.
+                    The hosting provider <b>is not</b> liable for the content stored on this service. We do not know what is sent to our storage servers and we can't control or filter the data. We also can not give out any details about the author of the paste because we do not log them.
+                </p>
+                <br/>
+                <p >
+                    The information provided by PasteMe ("we," "us," or "our") on {{ SITE_URL }} (the "Site") is for general informational purposes only. All information on the Site is provided in good faith, however we make no representation or warranty of any kind, express or implied, regarding the accuracy, adequacy, validity, reliability, availability, or completeness of any information on the Site.
+                </p>
+                <br/>
+                <p class="uppercase">
+                    UNDER NO CIRCUMSTANCE SHALL WE HAVE ANY LIABILITY TO YOU FOR ANY LOSS OR DAMAGE OF ANY KIND INCURRED AS A RESULT OF THE USE OF THE SITE OR RELIANCE ON ANY INFORMATION PROVIDED ON THE SITE. YOUR USE OF THE SITE AND YOUR RELIANCE ON ANY INFORMATION ON THE SITE IS SOLELY AT YOUR OWN RISK.
+                </p>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
+{% block footer_msg %}
+    <p class="p-3 bg-neutral-200 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-400 text-xs flex flex-col sm:flex-row gap-2 sm:gap-1 items-center justify-center font-bold transition-colors duration-300">
+        <svg xmlns="http://www.w3.org/2000/svg"
+             class="h-6 w-6 sm:h-4 sm:w-4"
+             fill="none"
+             viewBox="0 0 24 24"
+             stroke="currentColor"
+             stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+        <span class="text-center">
+            For feedback or issues please send a mail to: <a href="mailto:lnxpylnxpy@gmail.com"
+    class="underline hover:text-sky-700 dark:hover:text-sky-500">lnxpylnxpy@gmail.com</a>
+        </span>
+    </p>
+{% endblock footer_msg %}

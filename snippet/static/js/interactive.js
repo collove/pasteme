@@ -14,14 +14,16 @@ window.onscroll = function () {
     fixNavbar();
 };
 
-var navbar = document.getElementById("navbar");
-var sticky = navbar.offsetTop;
+let navbar = document.getElementById("navbar");
+let hero = document.getElementById("hero");
+let sticky = navbar.offsetTop;
 
 function fixNavbar() {
     if (window.pageYOffset > sticky) {
         // duration class makes the color switch to be smooth and
         // look glitchy when scrolling down so I disable it temporarily
         navbar.classList.remove("transition-colors", "duration-300");
+        hero.classList.add("pt-[120px]");
         navbar.classList.add("sticky");
 
         // transition is used for dark mode switching smoothness so
@@ -30,6 +32,7 @@ function fixNavbar() {
             navbar.classList.add("transition-colors", "duration-300");
         }, 100);
     } else {
+        hero.classList.remove("pt-[120px]");
         navbar.classList.remove("sticky");
     }
 }

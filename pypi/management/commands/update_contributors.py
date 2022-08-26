@@ -1,6 +1,6 @@
+import urllib.request as request
 from os import path
 
-import urllib.request as request
 from django.core.management.base import BaseCommand
 
 from pypi.constants import DOWNLOAD_URL

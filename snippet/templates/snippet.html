@@ -22,10 +22,10 @@
 {% endblock meta_tw_url %}
 <!-- Description -->
 {% block meta_og_desc %}
-    Created at {{ snippet.created_at.date }} • Expires in {{ snippet.get_expires_in_display | lower }}
+    Created on {{ snippet.created_at.date }} • Expires in {{ snippet.get_expires_in_display | lower }}
 {% endblock meta_og_desc %}
 {% block meta_tw_desc %}
-    Created at {{ snippet.created_at.date }} • Expires in {{ snippet.get_expires_in_display | lower }}
+    Created on {{ snippet.created_at.date }} • Expires in {{ snippet.get_expires_in_display | lower }}
 {% endblock meta_tw_desc %}
 {% block addon_style %}
     <link rel="stylesheet"
@@ -46,7 +46,7 @@
         <h3 class="text-2xl lg:text-3xl font-semibold">{{ snippet.title }}</h3>
         <ul class="mt-3 flex flex-wrap gap-1 text-xs md:text-sm select-none text-white dark:text-black">
             <li class="bg-black dark:bg-white py-0.5 px-2 rounded">
-                <span>Created at {{ snippet.created_at.date }}</span>
+                <span>Created on {{ snippet.created_at.date }}</span>
             </li>
             <li class="bg-black dark:bg-white py-0.5 px-2 rounded">
                 <span>Expires in {{ snippet.get_expires_in_display | lower }}</span>

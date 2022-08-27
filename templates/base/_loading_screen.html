@@ -1,0 +1,21 @@
+<div id="loading-msg"
+     class="w-full h-full fixed left-0 top-0 bg-white dark:bg-black grid grid-rows-[1fr_auto] z-50 select-none">
+   <div class="flex flex-col items-center justify-center gap-1">
+      <a href="{% url 'home' %}"
+         class="w-20 h-20 bg-icon-light dark:bg-icon-dark animate-pulse"></a>
+   </div>
+   <div class="py-4 border-t border-[#efefef] dark:border-[#1a1a1a] text-neutral-700 dark:text-neutral-500">
+      <p class="text-sm flex flex-col sm:flex-row gap-2 sm:gap-1 items-center justify-center font-bold">
+         <svg xmlns="http://www.w3.org/2000/svg"
+              class="h-7 w-7 sm:h-5 sm:w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+         </svg>
+         <span class="text-center">If there is any problem, please send us an email at
+            <a href="mailto:lnxpylnxpy@gmail.com" class="underline">lnxpylnxpy@gmail.com</a>.</span>
+      </p>
+   </div>
+</div>

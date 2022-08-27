@@ -24,11 +24,11 @@ $(function () {
     } catch (error) {}
 
     // Confetti animation
-    var skew = 1;
-    var duration = 10 * 1000;
-    var animationEnd = Date.now() + duration;
+    let skew = 1;
+    let duration = 10 * 1000;
+    let animationEnd = Date.now() + duration;
 
-    var canvas = document.getElementById("banner");
+    let canvas = document.getElementById("banner");
 
     if (canvas) {
         canvas.confetti =
@@ -39,8 +39,8 @@ $(function () {
         }
 
         (function frame() {
-            var timeLeft = animationEnd - Date.now();
-            var ticks = Math.max(200, 500 * (timeLeft / duration));
+            let timeLeft = animationEnd - Date.now();
+            let ticks = Math.max(200, 500 * (timeLeft / duration));
             skew = Math.max(0.8, skew - 0.001);
 
             canvas.confetti({

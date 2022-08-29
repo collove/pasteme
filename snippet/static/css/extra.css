@@ -147,3 +147,16 @@ code.phrase {
 .ham1.active .bottom {
     stroke-dashoffset: -138px;
 }
+
+#loading-msg.loaded {
+    animation: slide-out 0.5s ease-in-out forwards;
+}
+
+@keyframes slide-out {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(100%);
+    }
+}

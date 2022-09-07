@@ -22,6 +22,20 @@
     </div>
 {% endblock header_msg %}
 {% block content %}
+    {% if modal %}
+        {% compress js %}
+            <script>
+                if (sessionStorage.getItem("show-modal") == null) {
+                    sessionStorage.setItem("show-modal", "true");
+                }
+            </script>
+        {% endcompress %}
+    {% else %}
+        {% compress js %}
+            <script>sessionStorage.setItem("show-modal", "false");</script>
+        {% endcompress %}
+    {% endif %}
+    {% include "modals/modal.html" with modal=modal %}
     {% include "home_sections/hero.html" %}
     {% include "home_sections/stat.html" %}
     <section class="bg-gradient-to-b from-neutral-50 to-white dark:bg-none dark:bg-[#0d0d0d] transition-colors duration-300">

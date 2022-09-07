@@ -1,6 +1,6 @@
 from django.conf import settings
-
-# from django.contrib import admin
+from django.conf.urls.static import static
+from django.contrib import admin
 from django.urls import include, path
 from django.views.generic import TemplateView
 from drf_yasg import openapi
@@ -21,7 +21,7 @@ schema_view = get_schema_view(
 )
 
 urlpatterns = [
-    # path("admin/", admin.site.urls),
+    path("admin/", admin.site.urls),
     path(
         "apidocs/", schema_view.with_ui("redoc", cache_timeout=0), name="schema-redoc"
     ),
@@ -35,4 +35,4 @@ urlpatterns = [
     ),
     path("blog/", include("blog.urls")),
     path("", include("snippet.urls")),
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

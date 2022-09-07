@@ -130,3 +130,6 @@ dmypy.json
 
 # Static files
 /static/
+
+# Media files
+/media/

@@ -1,5 +1,10 @@
 $(function () {
-  if (sessionStorage.getItem("show_modal") === "true") {
+  if (localStorage.show_modal === "true") {
+    console.log("show modal");
+    // This property is active on the body element by default, this is
+    // used to block user from scrolling the page while the modal is
+    // active. It gets removed when the loading screen is removed, so I
+    // need to add it back. @loading.js
     $("body").addClass("overflow-hidden");
   }
 
@@ -71,14 +76,27 @@ $(function () {
     }
   }
 
+  // If a modal is being shown to the user, it has a X button that
+  // can be used to close the modal.
   $("#modal-close").on("click", function () {
     $("#modal").hide();
+
+    // Make page scrollable again.
     $("body").removeClass("overflow-hidden");
-    sessionStorage.setItem("show_modal", "false");
+
+    // Save this preference to the storage that modal doesn't show
+    // again. (if there be a new modal to show, it will be shown because
+    // the modal_id is also saved in storage @home.html in the inline scripts)
+    localStorage.show_modal = 'false';
+
+    // If a modal is being shown, all other background animations are
+    // blocked until the user closes the modal. I need to play them when
+    // the modal is closed.
     play_page_animations();
   });
 
-  if (sessionStorage.getItem("show_modal") === "false") {
+  if (localStorage.show_modal === "false") {
+    // Hide the modal element if the user has already closed it.
     $("#modal").hide();
     play_page_animations();
   }

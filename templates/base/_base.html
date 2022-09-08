@@ -38,11 +38,13 @@
                   type="image/png"
                   sizes="32x32"
                   href="{% static 'img/fav32.png' %}"/>
+            <!--- These are the very first files that are loaded -->
             {% compress js file %}
                   <script src="{% static 'js/darkmode.js' %}"></script>
                   <script src="{% static 'js/cash.min.js' %}"></script>
                   <script src="{% static 'js/loading.js' %}"></script>
             {% endcompress %}
+            <!--- Common CSS style sheets required for all pages -->
             {% include "base/_css_tags.html" %}
             {% block addon_style %}
             {% endblock addon_style %}
@@ -66,7 +68,11 @@
             {% block footer_msg %}
             {% endblock footer_msg %}
             {% include "base/_footer.html" %}
+            <!--- Common JS scripts required for all pages -->
             <script src="{% static 'js/aos.js' %}"></script>
+            <!--- interactive.js handles DOM events related to the interactive elements on the page,
+                  these include the navbar (needs to be fixed on scroll), the darkmode toggle, and the
+                  menu toggle. It also handles initializing the AOS library. -->
             <script src="{% static 'js/interactive.js' %}"></script>
             {% block addon_script %}
             {% endblock addon_script %}

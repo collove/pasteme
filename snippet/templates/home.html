@@ -1,6 +1,9 @@
 {% extends 'base/_base.html' %}
 {% load static %}
 {% load compress %}
+{% block addon_style %}
+    <link rel="stylesheet" href="{% static 'css/asciinema-player.css' %}"/>
+{% endblock addon_style %}
 {% block header_msg %}
     <div class="w-full relative select-none">
         <canvas class="w-full h-full absolute left-0 top-0 -z-10" id="banner"></canvas>
@@ -25,18 +28,24 @@
     {% if modal %}
         {% compress js %}
             <script>
-                let show_modal = sessionStorage.getItem('show_modal');
-                let modal_id = sessionStorage.getItem('modal_id');
+                // If there is a modal to show, check if the user have already seen it or not,
+                // if not, show it. If the user have seen it, check if it's a new modal or not,
+                // if it's a new modal, show it.
+                let show_modal = localStorage.show_modal
+                let modal_id = localStorage.modal_id
 
-                if (show_modal === null || (show_modal === 'false' && modal_id != {{ modal.pk }})) {
-                    sessionStorage.setItem("show_modal", "true");
-                    sessionStorage.setItem("modal_id", {{ modal.pk }});
+                if (show_modal == null || (show_modal === 'false' && modal_id != {{ modal.pk }})) {
+                    localStorage.show_modal = 'true';
+                    localStorage.modal_id = '{{ modal.pk }}';
                 }
             </script>
         {% endcompress %}
     {% else %}
         {% compress js %}
-            <script>sessionStorage.setItem("show_modal", "false");</script>
+            <script>
+                // If there is no modal, then disable the modal feature.
+                localStorage.show_modal = 'false';
+            </script>
         {% endcompress %}
     {% endif %}
     {% include "modals/modal.html" with modal=modal %}

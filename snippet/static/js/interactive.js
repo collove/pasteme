@@ -10,6 +10,8 @@
     $("#menu").toggleClass("menu-open");
   });
 
+  // This function needs to calculate the display property of the navbar
+  // every time the user scrolls.
   window.onscroll = function () {
     fixNavbar();
   };
@@ -31,7 +33,7 @@
       // we need it back
       setTimeout(function () {
         navbar.classList.add("transition-colors", "duration-300");
-      }, 100);
+      }, 100); // This 100ms delay is needed for the color-change to take effect
     } else {
       main.style.paddingTop = 0;
       navbar.classList.remove("sticky");

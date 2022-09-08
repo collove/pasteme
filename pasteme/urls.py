@@ -1,8 +1,9 @@
 from django.conf import settings
-
-# from django.contrib import admin
+from django.conf.urls.static import static
 from django.urls import include, path
 from django.views.generic import TemplateView
+
+# from django.contrib import admin
 from drf_yasg import openapi
 from drf_yasg.views import get_schema_view
 from rest_framework import permissions
@@ -35,4 +36,4 @@ urlpatterns = [
     ),
     path("blog/", include("blog.urls")),
     path("", include("snippet.urls")),
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

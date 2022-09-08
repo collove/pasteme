@@ -1,0 +1,41 @@
+{% load static %}
+{% if modal %}
+    <div id="modal"
+         class="w-full h-full fixed left-0 top-0 flex justify-center items-center z-40 select-none backdrop-blur transition-colors duration-300 bg-black/10 dark:bg-black/60">
+        <div class="m-8 max-w-lg {% if modal.icon %}px-8 md:px-16 pb-6 md:pb-12{% else %}p-8 md:p-12{% endif %} bg-white dark:bg-black text-black dark:text-white flex-row justify-center items-center text-center rounded dark:border dark:border-white/10 relative">
+            <div class="absolute right-4 top-4 cursor-pointer" id="modal-close">
+                <svg xmlns="http://www.w3.org/2000/svg"
+                     fill="none"
+                     viewBox="0 0 24 24"
+                     stroke-width="1.5"
+                     stroke="currentColor"
+                     class="w-5 h-5 stroke-gray-400 dark:stroke-gray-700 hover:stroke-black dark:hover:stroke-white     transition-colors duration-150">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+            </div>
+            {% if modal.external_link %}<a href="{{ modal.external_link }}" target="_blank">{% endif %}
+            <div>
+                {% if modal.icon %}
+                    <div class="w-full pb-4">
+                        <div class="w-24 h-24 -mt-12 mx-auto flex justify-center items-center overflow-hidden rounded-full">
+                            <img src="{% get_media_prefix %}{{ modal.icon }}"
+                                 alt="Icon"
+                                 class="h-20 w-20"/>
+                        </div>
+                    </div>
+                {% endif %}
+                <p class="text-2xl md:text-3xl font-bold mb-4">{{ modal.title }}</p>
+                <div class="w-full {% if modal.footer_title or modal.footer_description %}mb-10{% endif %}">
+                    <div class="text-3xl text-pink-700 text-left leading-tight h-3">“</div>
+                    <p class="text-sm text-gray-600 text-center px-5">{{ modal.description }}</p>
+                    <div class="text-3xl text-pink-700 text-right leading-tight h-3 -mt-3">”</div>
+                </div>
+                <div class="w-full">
+                    <p class="text-md text-pink-700 font-bold text-center">{{ modal.footer_title | default:"" }}</p>
+                    <p class="text-xs text-gray-500 text-center">{{ modal.footer_description | default:"" }}</p>
+                </div>
+            </div>
+            {% if modal.external_link %}</a>{% endif %}
+        </div>
+    </div>
+{% endif %}

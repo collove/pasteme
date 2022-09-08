@@ -15,10 +15,14 @@ class Modal(models.Model):
     footer_description = models.TextField(max_length=400, blank=True, null=True)
 
     icon = models.FileField(
-        upload_to="modal/icon/", validators=[validate_file_extension]
+        upload_to="modal/icon/",
+        validators=[validate_file_extension],
+        blank=True,
+        null=True,
     )
 
     external_link = models.URLField(blank=True, null=True)
+    created_at = models.DateTimeField(auto_now_add=True)
     expires_at = models.DateField(blank=True, null=True)
 
     def __str__(self):

@@ -25,14 +25,18 @@
     {% if modal %}
         {% compress js %}
             <script>
-                if (sessionStorage.getItem("show-modal") == null) {
-                    sessionStorage.setItem("show-modal", "true");
+                let show_modal = sessionStorage.getItem('show_modal');
+                let modal_id = sessionStorage.getItem('modal_id');
+
+                if (show_modal === null || (show_modal === 'false' && modal_id != {{ modal.pk }})) {
+                    sessionStorage.setItem("show_modal", "true");
+                    sessionStorage.setItem("modal_id", {{ modal.pk }});
                 }
             </script>
         {% endcompress %}
     {% else %}
         {% compress js %}
-            <script>sessionStorage.setItem("show-modal", "false");</script>
+            <script>sessionStorage.setItem("show_modal", "false");</script>
         {% endcompress %}
     {% endif %}
     {% include "modals/modal.html" with modal=modal %}

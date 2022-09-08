@@ -1,5 +1,5 @@
 $(function () {
-  if (sessionStorage.getItem("show-modal") === "true") {
+  if (sessionStorage.getItem("show_modal") === "true") {
     $("body").addClass("overflow-hidden");
   }
 
@@ -72,14 +72,13 @@ $(function () {
   }
 
   $("#modal-close").on("click", function () {
-    console.log("close");
     $("#modal").hide();
     $("body").removeClass("overflow-hidden");
-    sessionStorage.setItem("show-modal", "false");
+    sessionStorage.setItem("show_modal", "false");
     play_page_animations();
   });
 
-  if (sessionStorage.getItem("show-modal") === "false") {
+  if (sessionStorage.getItem("show_modal") === "false") {
     $("#modal").hide();
     play_page_animations();
   }

@@ -28,6 +28,8 @@ $(function () {
           preload: true,
           autoplay: true,
           idleTimeLimit: 1,
+          loop: true,
+          speed: 2,
           theme: "asciinema",
         }
       );

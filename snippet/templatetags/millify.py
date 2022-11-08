@@ -1,22 +1,34 @@
-from math import floor, log10
-
-from django import template
-
-register = template.Library()
+import math
+import re
+from decimal import Decimal
 
 
-@register.filter
-def millify(n):
-    mill_names = ["", "K", "M"]
+def remove_exponent(d):
+    return d.quantize(Decimal(1)) if d == d.to_integral() else d.normalize()
+
+
+def millify(n, precision=0, drop_nulls=True, prefixes=[]):
+    """Humanize number."""
+    millnames = ['', 'k', 'M', 'B', 'T', 'P', 'E', 'Z', 'Y']
+    if prefixes:
+        millnames = ['']
+        millnames.extend(prefixes)
     n = float(n)
-    mill_idx = max(
-        0,
-        min(
-            len(mill_names) - 1,
-            int(floor(0 if n == 0 else log10(abs(n)) / 3)),
-        ),
-    )
+    millidx = max(0, min(len(millnames) - 1,
+                         int(math.floor(0 if n == 0 else math.log10(abs(n)) / 3))))
+    result = '{:.{precision}f}'.format(n / 10**(3 * millidx), precision=precision)
+    if drop_nulls:
+        result = remove_exponent(Decimal(result))
+    return '{0}{dx}'.format(result, dx=millnames[millidx])
 
-    is_more = "+" if mill_names[mill_idx] else ""
 
-    return "{}{:.0f}{}".format(is_more, n / 10 ** (3 * mill_idx), mill_names[mill_idx])
+def prettify(amount, separator=','):
+    """Separate with predefined separator."""
+    orig = str(amount)
+    new = re.sub("^(-?\d+)(\d{3})", "\g<1>{0}\g<2>".format(separator), str(amount))
+    if orig == new:
+        return new
+    else:
+        return prettify(new)
+
+

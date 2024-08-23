@@ -10,6 +10,8 @@
 
 > ⚙️: PasteMe uses [django-psdb-engine](https://github.com/lnxpy/django-psdb-engine) for the PlanetScale integration.
 
+<a href="https://www.producthunt.com/products/pasteme/reviews?utm_source=badge-product_review&utm_medium=badge&utm_souce=badge-pasteme" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/product_review.svg?product_id=502730&theme=light" alt="PasteMe - Paste&#0032;Codes&#0032;From&#0032;Your&#0032;Terminal&#0033; | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" /></a>
+
 A RESTful pastebin service made for [@hashnode](https://github.com/hashnode) purposes powered by the [@PlanetScale](https://github.com/planetscale) MySQL DBaaS. Two key tech stacks (frameworks) behind thie project are [TailwindCSS](https://tailwindcss.com/) and [DRF](https://www.django-rest-framework.org/).
 
 ### Usage

@@ -6,7 +6,7 @@
 
 > 🍀: [Check out PasteMe Live!](https://pasteme.pythonanywhere.com)
 
-> 📰: [Read the article describing the development and deployment steps behind this service on Hashnode](https://imsadra.me/pasteme-paste-codes-from-your-terminal).
+> 📰: [Read the article describing the development and deployment steps behind this service on Hashnode](https://blog.imsadra.dev/pasteme-paste-codes-from-your-terminal).
 
 > ⚙️: PasteMe uses [django-psdb-engine](https://github.com/lnxpy/django-psdb-engine) for the PlanetScale integration.
 
